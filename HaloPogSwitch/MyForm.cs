@@ -40,24 +40,26 @@ namespace HaloPogSwitch
             // Adress Value setters Linked to UI so they update automatically
             new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13C4), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), controls);
             new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13A4)), new TrainerBool("Speices", "Elite Biped"), FlowLayout_Content.Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 18, 38), new TrainerBool("Spartan Gender", "Is Female"), FlowLayout_Content.Controls);
+            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), FlowLayout_Content.Controls);
 
             // Also a bunch of Trainer Updaers - These use the CVS puller to get automatically created by the CVS files (seen on the google sheets)
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_Helmate.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_Visor.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_Chest.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_LeftShoulder.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_RightShoulder.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Helmate.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Visor.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Chest.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_LeftShoulder.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_RightShoulder.csv"), controls);
             
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_Wrist.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_Utility.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_Kneepad.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Wrist.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Utility.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Kneepad.csv"), controls);
 
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_ArmorEffect.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ArmorEffect.csv"), controls);
 
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_EliteArmor.csv"), controls);
-            CSVPuller.GetTrainerUpdater<short>((@"Reach_EliteEffects.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteArmor.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteEffects.csv"), controls);
 
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), controls);
         }
 
           

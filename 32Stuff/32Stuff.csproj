@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonArray.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonArray.Designer.cs">
+      <DependentUpon>ButtonArray.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrainerBool.cs">
@@ -91,6 +97,18 @@
     </Compile>
     <Compile Include="TrainerBool.Designer.cs">
       <DependentUpon>TrainerBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerButtonList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainerButtonList.Designer.cs">
+      <DependentUpon>TrainerButtonList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerColourPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainerColourPicker.Designer.cs">
+      <DependentUpon>TrainerColourPicker.cs</DependentUpon>
     </Compile>
     <Compile Include="TrainerEnum.cs">
       <SubType>UserControl</SubType>
@@ -140,6 +158,9 @@
     <Compile Include="UC_HaloReach.Designer.cs">
       <DependentUpon>UC_HaloReach.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ButtonArray.resx">
+      <DependentUpon>ButtonArray.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -151,6 +172,12 @@
     </Compile>
     <EmbeddedResource Include="TrainerBool.resx">
       <DependentUpon>TrainerBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerButtonList.resx">
+      <DependentUpon>TrainerButtonList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerColourPicker.resx">
+      <DependentUpon>TrainerColourPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerEnum.resx">
       <DependentUpon>TrainerEnum.cs</DependentUpon>
