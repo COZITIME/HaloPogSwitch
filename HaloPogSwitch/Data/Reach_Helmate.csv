@@ -1,4 +1,4 @@
-Setting Name,Helmate
+Setting Name,Helmet
 Module,haloreach.dll
 Adress,0x27E13AE
 Values,
@@ -48,7 +48,7 @@ MJOLNIR MK. V:UA,29
 PILOT,2A
 PILOT:HUL[3],2B
 PILOT:UA/HUL[3],2C
-PILOT:HUANTED,2D
+PILOT:HAUNTED,2D
 RECON,3A
 RECON:HUL,3B
 RECON:UA/HUL[3],3C

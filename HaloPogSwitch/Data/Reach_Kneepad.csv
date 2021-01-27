@@ -3,7 +3,7 @@ Module,haloreach.dll
 Adress,0x27E13B4
 Values,
 Value Name,Value
-DEFUALT,0
+DEFAULT,0
 FJ/PARA,1
 GUNGNIR,2
 GRENADIER,3
