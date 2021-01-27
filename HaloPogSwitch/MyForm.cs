@@ -64,7 +64,7 @@ namespace HaloPogSwitch
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.Sleep(300);
+            Thread.Sleep(50);
 
             processHandler.UpdateProcess();
 

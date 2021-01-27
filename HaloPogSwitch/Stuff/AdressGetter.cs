@@ -19,7 +19,7 @@ namespace HaloPogSwitch.Stuff
         public IntPtr GetFullAdress()
         {
 
-            Thread.Sleep(300);
+            Thread.Sleep(50);
 
             
 

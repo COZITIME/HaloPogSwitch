@@ -31,7 +31,7 @@ namespace HaloPogSwitch.Stuff
                 else
                 {
                     myProcess = null;
-                    Thread.Sleep(300);
+                    Thread.Sleep(50);
                 }
 
             }
