@@ -104,6 +104,11 @@ namespace HaloPogSwitch
         {
             if (halo2a.Checked) uC_Halo2a1.BringToFront();
         }
+
+        private void FlowLayout_Content_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 
