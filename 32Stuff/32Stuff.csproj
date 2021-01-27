@@ -68,6 +68,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Siticone.UI">
+      <HintPath>..\Dlls\Siticone.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -113,6 +116,30 @@
     <Compile Include="TrainerTreeList.Designer.cs">
       <DependentUpon>TrainerTreeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Halo2a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Halo2a.Designer.cs">
+      <DependentUpon>UC_Halo2a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Halo3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Halo3.Designer.cs">
+      <DependentUpon>UC_Halo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Halo4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Halo4.Designer.cs">
+      <DependentUpon>UC_Halo4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_HaloReach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HaloReach.Designer.cs">
+      <DependentUpon>UC_HaloReach.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -136,6 +163,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerTreeList.resx">
       <DependentUpon>TrainerTreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Halo2a.resx">
+      <DependentUpon>UC_Halo2a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Halo3.resx">
+      <DependentUpon>UC_Halo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Halo4.resx">
+      <DependentUpon>UC_Halo4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_HaloReach.resx">
+      <DependentUpon>UC_HaloReach.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
