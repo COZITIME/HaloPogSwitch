@@ -1,0 +1,13 @@
+Setting Name,Elite Armor
+Module,haloreach.dll
+Adress,0x27E13B5
+Values,
+Value Name,Value
+MINOR,0
+SPEC-OPS,1
+RANGER,2
+ULTRA,3
+ZEALOT,4
+GENERAL,5
+FIELD MARSHAL,6
+OFFICER,7

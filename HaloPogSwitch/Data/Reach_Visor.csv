@@ -1,0 +1,11 @@
+Setting Name, Visor Colour
+Module,haloreach.dll
+Adress,0x27E13A0
+Values,
+Value Name,Value
+DEFUALT,0
+SILVER,1
+BLUE,2
+BLACK,4
+GOLD,3
+MOONLIGHT,5

@@ -1,0 +1,45 @@
+﻿using System;
+using System.Threading;
+
+namespace HaloPogSwitch.Stuff
+{
+    public class AdressGetter
+    {
+        public int adress;
+        public ModuleType moduleType;
+
+        public AdressGetter(ModuleType moduleType, int adress)
+        {
+
+            this.moduleType = moduleType;
+            this.adress = adress;
+            
+        }
+
+        public IntPtr GetFullAdress()
+        {
+
+            Thread.Sleep(300);
+
+            
+
+            var process = ProcessEditorHandler.instance.WaitGetProcess();
+
+         
+            IntPtr mod = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType).BaseAddress;
+//Console.Write(mod);
+
+
+            return mod + adress;
+        }
+
+
+       
+    }
+
+
+
+
+
+
+}

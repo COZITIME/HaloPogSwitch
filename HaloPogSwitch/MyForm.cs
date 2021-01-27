@@ -1,0 +1,161 @@
+﻿using HaloPogSwitch.Stuff;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using UI32;
+
+namespace HaloPogSwitch
+{
+    public partial class MyForm : Form
+    {
+
+      
+
+        public ProcessEditorHandler processHandler = new ProcessEditorHandler();
+
+        public MyForm()
+        {
+            InitializeComponent();
+        }
+
+        private void FuckingCunt_Load(object sender, EventArgs e)
+        {
+            siticoneShadowForm1.SetShadowForm(this);
+
+            //var helmateEnumUi = CSVPuller.GetTrainerEnumFromFile(@"C:\Users\Magic\source\repos\HaloPogSwitch\Data\Reach_Helm.csv");
+
+            //  processHandler.GetMemory();
+
+
+            // controls for where we instatiate the uis
+            var controls = FlowLayout_Content.Controls;
+
+            // Adress Value setters Linked to UI so they update automatically
+            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13C4), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), controls);
+            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13A4)), new TrainerBool("Speices", "Elite Biped"), FlowLayout_Content.Controls);
+            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 18, 38), new TrainerBool("Spartan Gender", "Is Female"), FlowLayout_Content.Controls);
+
+            // Also a bunch of Trainer Updaers - These use the CVS puller to get automatically created by the CVS files (seen on the google sheets)
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_Helmate.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_Visor.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_Chest.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_LeftShoulder.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_RightShoulder.csv"), controls);
+            
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_Wrist.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_Utility.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_Kneepad.csv"), controls);
+
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_ArmorEffect.csv"), controls);
+
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_EliteArmor.csv"), controls);
+            CSVPuller.GetTrainerUpdater<short>((@"Reach_EliteEffects.csv"), controls);
+
+        }
+
+          
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(300);
+
+            processHandler.UpdateProcess();
+
+
+          
+        }
+
+        
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void siticoneButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void haloreach_Click(object sender, EventArgs e)
+        {
+            if (haloreach.Checked) uC_HaloReach1.BringToFront();
+        }
+
+        private void halo4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (halo4.Checked) uC_Halo41.BringToFront();
+        }
+
+        private void halo3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (halo3.Checked) uC_Halo31.BringToFront();
+        }
+
+        private void halo2a_CheckedChanged(object sender, EventArgs e)
+        {
+            if (halo2a.Checked) uC_Halo2a1.BringToFront();
+        }
+    }
+
+
+
+    public class TrainerUpdater<T>
+    {
+        public AdressSetter<T> adressSetter;
+        public UI32.TrainerUI<T> ui;
+
+        public TrainerUpdater(AdressSetter<T> adressSetter, TrainerUI<T> ui, Control.ControlCollection controls)
+        {
+            this.adressSetter = adressSetter;
+            this.ui = ui;
+            controls.Add(ui as UserControl);
+            ui.onValueChanged += ValueChange;
+           
+            ui.SetValue(Read());
+            Start();
+        }
+
+        public void Start()
+        {
+            
+        }
+
+        public void Update()
+        {
+
+
+        }
+
+        public void ValueChange(T value)
+        {
+
+         //   Console.WriteLine("... Writing Value: " + value + " to " + adressSetter.Meme());
+            adressSetter.WriteMemory(value);
+
+            Update();
+        }
+
+        public TrainerUI<T> GetUI()
+        {
+            return ui;
+        }
+
+        public void Write()
+        {
+            adressSetter.WriteMemory(ui.GetValue());
+        }
+        public T Read()
+        {
+         //   Console.WriteLine("REad");
+            return adressSetter.ReadMemory();
+        }
+    }
+}
+

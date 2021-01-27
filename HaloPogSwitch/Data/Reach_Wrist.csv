@@ -1,0 +1,11 @@
+Setting Name,Wrist
+Module,haloreach.dll
+Adress,0x27E13B2
+Values,
+Value Name,Value
+DEFAULT,0
+UA/BUCKLER,1
+UA/BRACER,2
+TACTICAL/TACPAD,3
+TACTICAL/UGPS,5
+ASSUALT/BREACHER,4

@@ -1,0 +1,12 @@
+Setting Name,Elite Effects
+Module,haloreach.dll
+Adress,0x27E13B7
+Values,
+Value Name,Value
+DEFUALT,0
+BIRTHDAY PARTY,6
+HEART ATTACK,3
+PESTILENCE,4
+INCLEMENT WEATHER,5
+LEGENDARY,1
+ETERNAL,2
