@@ -15,7 +15,7 @@ namespace HaloPogSwitch
 
     class CSVPuller
     {
-
+        bool poop = false;
         public static UI32.TrainerEnum GetTrainerEnumFromFile(string file)
         {
 
