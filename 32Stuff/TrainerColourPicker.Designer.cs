@@ -39,16 +39,15 @@ namespace UI32
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(414, 134);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(350, 134);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(350, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -59,9 +58,8 @@ namespace UI32
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TrainerColourPicker";
-            this.Size = new System.Drawing.Size(414, 150);
+            this.Size = new System.Drawing.Size(350, 150);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

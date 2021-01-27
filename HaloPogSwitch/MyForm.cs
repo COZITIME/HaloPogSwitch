@@ -35,31 +35,33 @@ namespace HaloPogSwitch
 
 
             // controls for where we instatiate the uis
-            var controls = FlowLayout_Content.Controls;
+          
 
             // Adress Value setters Linked to UI so they update automatically
-            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13C4), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), controls);
-            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13A4)), new TrainerBool("Speices", "Elite Biped"), FlowLayout_Content.Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), FlowLayout_Content.Controls);
+            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13C4), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
+            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13A4)), new TrainerBool("Speices", "Elite Biped"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
+            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
+
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
             // Also a bunch of Trainer Updaers - These use the CVS puller to get automatically created by the CVS files (seen on the google sheets)
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Helmate.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Visor.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Chest.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_LeftShoulder.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_RightShoulder.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Helmate.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.helmateVisor).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Visor.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.helmateVisor).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Chest.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.chest).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_LeftShoulder.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.shoulder).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_RightShoulder.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.shoulder).Controls);
             
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Wrist.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Utility.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Kneepad.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Wrist.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.wrist).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Utility.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.utility).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Kneepad.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.knees).Controls);
 
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ArmorEffect.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ArmorEffect.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteArmor.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteEffects.csv"), controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteArmor.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteEffects.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), controls);
+         
         }
 
           

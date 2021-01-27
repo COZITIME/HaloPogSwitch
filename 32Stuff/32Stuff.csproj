@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{043C1BE8-97E2-4C50-A787-0D509BADA490}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_32Stuff</RootNamespace>
+    <RootNamespace>UI32</RootNamespace>
     <AssemblyName>32Stuff</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -169,6 +169,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TrainerBool.resx">
       <DependentUpon>TrainerBool.cs</DependentUpon>

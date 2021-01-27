@@ -44,9 +44,12 @@ namespace UI32
             // 
             // treeView1
             // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.Location = new System.Drawing.Point(6, 17);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(418, 130);
+            this.treeView1.Size = new System.Drawing.Size(315, 130);
             this.treeView1.TabIndex = 5;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
             // 
@@ -57,7 +60,7 @@ namespace UI32
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.Label_title);
             this.Name = "TrainerTreeList";
-            this.Size = new System.Drawing.Size(427, 150);
+            this.Size = new System.Drawing.Size(324, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
 
