@@ -39,19 +39,31 @@ namespace HaloPogSwitch.Stuff
     {
         public ByteAdressSetter(AdressGetter getter) : base(getter)
         {
-
+            ReadMemory();
         }
         public override byte ReadMemory()
         {
-            return Meme().ReadByte(getter.GetFullAdress());
+            var val = Meme().ReadByte(getter.GetFullAdress());
+            var adress = Convert.ToString(getter.GetFullAdress().ToInt64(), 16);
+            Console.WriteLine("At Adress " + adress + " Found " + val);
+
+            return val;
         }
         public override void WriteMemory(byte value)
         {
+           
+         ///   var val = Meme().ReadByte(getter.GetFullAdress());
+           /// var adress = Convert.ToString(getter.GetFullAdress().ToInt64(), 16);
 
-            Meme().WriteByte(getter.GetFullAdress(), value);
+        //    Console.WriteLine("At " + adress + " Wrote: " + val);
+
+            Meme().WriteByteArray(getter.GetFullAdress(), new byte[] { value } );
         }
 
-       
+        public static string ByteArrayToString(params byte[] ba)
+        {
+            return BitConverter.ToString(ba).Replace("-", "");
+        }
     }
 
 
@@ -66,7 +78,7 @@ namespace HaloPogSwitch.Stuff
         public override string ReadMemory()
         {
             Console.WriteLine("ST Read Out");
-            string value = Meme().ReadStringUnicode(getter.GetFullAdress(), (uint)(textLength * 4));
+            string value = Meme().ReadStringUnicode(getter.GetFullAdress(), (uint)(textLength * 2));
             Console.WriteLine("ST: " + value);
             return value;
         }
@@ -137,7 +149,7 @@ namespace HaloPogSwitch.Stuff
         }
         public override void WriteMemory(bool value)
         {
-            Meme().WriteInt16(getter.GetFullAdress(), value ? trueV : falseV);
+            Meme().WriteByteArray(getter.GetFullAdress(), new byte[] { value ? trueV : falseV } );
         }
     }
     public abstract class AdressUIManager

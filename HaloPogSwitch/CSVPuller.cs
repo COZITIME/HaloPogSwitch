@@ -36,24 +36,21 @@ namespace HaloPogSwitch
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');
 
-
                     if (l == 1)
                     {
                         titleThing = values[1];
                     }
 
-
                     if (l > 5)
                     {
-
                         byte value = byte.Parse(values[1], System.Globalization.NumberStyles.HexNumber);
                         string name = values[0];
                         diffrentValues.Add(new ValueStringPair(value, name));
                     }
-
-                    //  Console.WriteLine(values[1] + ", " + values[0]);
-
+                    
                 }
+
+             
 
                 return new TrainerEnum(titleThing, diffrentValues.ToArray());
             }
@@ -119,7 +116,7 @@ namespace HaloPogSwitch
             bool isTree = false;
             bool isColour = false;
 
-            int address = 0;
+            long address = 0;
             ModuleType moduleType = ModuleType.baseModule;
 
 
@@ -137,7 +134,6 @@ namespace HaloPogSwitch
 
                     if (l == 3)
                     {
-                        // Console.WriteLine("Adress: "+ values[1]);
                         address = Convert.ToInt32(values[1], 16);
                     }
 
@@ -171,9 +167,9 @@ namespace HaloPogSwitch
             }
 
 
+            //Console.WriteLine("Long: " + address + ", Int: " + address);
 
-
-            var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, address)), ui, Controls);
+            var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, (int) address)), ui, Controls);
 
             return t;
 

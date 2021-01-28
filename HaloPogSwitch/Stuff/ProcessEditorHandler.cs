@@ -36,19 +36,22 @@ namespace HaloPogSwitch.Stuff
 
             }
 
+           
 
-            UpdateModules(myProcess);
+                UpdateModules(myProcess);
             memory = new VAMemory(myProcess.ProcessName);
+
         }
 
         internal VAMemory GetMemory()
         {
-            if (memory == null) 
+            while (myProcess == null || memory == null) 
             {
                
                 UpdateProcess();
+                Thread.Sleep(5);
             }
-         //   Console.WriteLine("Get Memory");
+           
 
             return memory;
         }
