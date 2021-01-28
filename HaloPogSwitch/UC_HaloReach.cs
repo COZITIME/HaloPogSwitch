@@ -35,6 +35,8 @@ namespace HaloPogSwitch
                     return FlowLayout_Utility;
                 case HaloReachMenuType.extra:
                     return FlowLayout_Extra;
+                case HaloReachMenuType.colour:
+                    return FlowLayout_Colour;
                 default:
                     return null;
             }
@@ -42,6 +44,11 @@ namespace HaloPogSwitch
 
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UC_HaloReach_Load(object sender, EventArgs e)
         {
 
         }
@@ -56,6 +63,7 @@ namespace HaloPogSwitch
         wrist,
         knees,
         utility,
+        colour,
         extra,
     
     }

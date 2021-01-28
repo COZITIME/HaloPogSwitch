@@ -46,6 +46,7 @@ namespace HaloPogSwitch
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Extra = new System.Windows.Forms.FlowLayoutPanel();
+            this.FlowLayout_Colour = new System.Windows.Forms.FlowLayoutPanel();
             this.htTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -53,6 +54,7 @@ namespace HaloPogSwitch
             this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -247,6 +249,7 @@ namespace HaloPogSwitch
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage8.Controls.Add(this.FlowLayout_Colour);
             this.tabPage8.ForeColor = System.Drawing.Color.White;
             this.tabPage8.Location = new System.Drawing.Point(4, 31);
             this.tabPage8.Name = "tabPage8";
@@ -280,6 +283,15 @@ namespace HaloPogSwitch
             this.FlowLayout_Extra.Size = new System.Drawing.Size(790, 427);
             this.FlowLayout_Extra.TabIndex = 2;
             // 
+            // FlowLayout_Colour
+            // 
+            this.FlowLayout_Colour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowLayout_Colour.Location = new System.Drawing.Point(3, 3);
+            this.FlowLayout_Colour.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowLayout_Colour.Name = "FlowLayout_Colour";
+            this.FlowLayout_Colour.Size = new System.Drawing.Size(790, 425);
+            this.FlowLayout_Colour.TabIndex = 3;
+            // 
             // UC_HaloReach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,6 +302,7 @@ namespace HaloPogSwitch
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_HaloReach";
             this.Size = new System.Drawing.Size(629, 457);
+            this.Load += new System.EventHandler(this.UC_HaloReach_Load);
             this.htTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -297,6 +310,7 @@ namespace HaloPogSwitch
             this.tabPage4.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,5 +336,6 @@ namespace HaloPogSwitch
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_Utility;
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_Extra;
         private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayout_Colour;
     }
 }
