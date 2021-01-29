@@ -1,0 +1,10 @@
+Setting Name,Helmates
+Module,groundhog.dll
+Adress,0x19BA316
+Values,
+Value Name,Value
+MARK VI,0
+CENTURION,1
+HOPLITE,2
+INFECTED,3
+NO HELMET,4

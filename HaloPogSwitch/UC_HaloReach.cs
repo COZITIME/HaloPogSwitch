@@ -65,7 +65,7 @@ namespace HaloPogSwitch
         utility,
         colour,
         extra,
-        colour,
+       
     }
 
 }

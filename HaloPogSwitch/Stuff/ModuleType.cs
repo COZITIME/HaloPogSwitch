@@ -9,7 +9,8 @@ namespace HaloPogSwitch.Stuff
     {
         baseModule,
         reach,
-        halo4
+        halo4,
+        halo2A
     }
 
 }

@@ -1,0 +1,9 @@
+Setting Name,Chest
+Module,groundhog.dll
+Adress,0x19BA317
+Values,
+Value Name,Value
+MARK VI,0
+CENTURION,1
+HOPLITE,2
+NAKED,7

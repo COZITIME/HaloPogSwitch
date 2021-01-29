@@ -169,7 +169,7 @@ namespace HaloPogSwitch
 
            
 
-            var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, (int) address)), ui, Controls);
+            var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(moduleType, (int) address)), ui, Controls);
 
             return t;
 
@@ -262,12 +262,16 @@ namespace HaloPogSwitch
 
         public static ModuleType ModFromString(string stringValue)
         {
+            Console.WriteLine(stringValue);
+
             switch (stringValue)
             {
                 case "haloreach.dll":
                     return ModuleType.reach;
                 case "halo4.dll":
                     return ModuleType.halo4;
+                case "groundhog.dll":
+                    return ModuleType.halo2A;
                 default:
                     return ModuleType.baseModule;
             }

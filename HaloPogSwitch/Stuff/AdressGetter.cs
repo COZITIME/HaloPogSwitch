@@ -25,7 +25,8 @@ namespace HaloPogSwitch.Stuff
 
             var process = ProcessEditorHandler.instance.WaitGetProcess();
 
-         
+
+            Console.WriteLine("MODTYPE "+ ProcessEditorHandler.instance.GetModuleFromEnun(moduleType));
             IntPtr mod = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType).BaseAddress;
 //Console.Write(mod);
 

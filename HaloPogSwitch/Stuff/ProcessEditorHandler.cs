@@ -80,6 +80,11 @@ namespace HaloPogSwitch.Stuff
                     case modNameHalo4:
                         modules.halo4Mod = m;
                         break;
+                    case modNameHalo2A:
+                       
+                        modules.halo2AMod = m;
+                        Console.WriteLine(modules.halo2AMod.BaseAddress);
+                        break;
                 }
             }
 
@@ -93,17 +98,19 @@ namespace HaloPogSwitch.Stuff
 
         public ProcessModule GetModuleFromEnun(ModuleType module)
         {
-           
+
             switch (module)
             {
                 case ModuleType.baseModule:
                     return modules.baseMod;
-
                 case ModuleType.reach:
                     return modules.reachMod;
-
                 case ModuleType.halo4:
                     return modules.halo4Mod;
+                case ModuleType.halo2A:
+                    Console.WriteLine("Getting H2a Mod ");
+                    Console.WriteLine(modules.halo2AMod);
+                    return modules.halo2AMod;
             }
 
             return null;
@@ -113,6 +120,7 @@ namespace HaloPogSwitch.Stuff
         private const string processName = "MCC-Win64-Shipping";
         private const string modNameReach = "haloreach.dll";
         private const string modNameHalo4 = "halo4.dll";
+        private const string modNameHalo2A = "groundhog.dll";
 
         public ProcessEditorHandler()
         {
@@ -124,6 +132,7 @@ namespace HaloPogSwitch.Stuff
             public ProcessModule baseMod;
             public ProcessModule reachMod;
             public ProcessModule halo4Mod;
+            public ProcessModule halo2AMod;
         }
     }
 
