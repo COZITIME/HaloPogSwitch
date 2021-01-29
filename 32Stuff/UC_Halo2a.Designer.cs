@@ -51,6 +51,7 @@ namespace HaloPogSwitch
             this.Controls.Add(this.siticoneLabel1);
             this.Name = "UC_Halo2a";
             this.Size = new System.Drawing.Size(586, 428);
+            this.Load += new System.EventHandler(this.UC_Halo2a_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

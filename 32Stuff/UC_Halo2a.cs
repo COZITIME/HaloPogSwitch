@@ -16,5 +16,10 @@ namespace HaloPogSwitch
         {
             InitializeComponent();
         }
+
+        private void UC_Halo2a_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

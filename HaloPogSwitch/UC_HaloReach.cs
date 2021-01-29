@@ -37,6 +37,12 @@ namespace HaloPogSwitch
                     return FlowLayout_Extra;
                 case HaloReachMenuType.colour:
                     return FlowLayout_Colour;
+                case HaloReachMenuType.armoreffects:
+                    return FlowLayout_ArmorEffects;
+                case HaloReachMenuType.elitearmor:
+                    return FlowLayout_EliteArmor;
+                case HaloReachMenuType.species:
+                    return FlowLayout_Species;
                 default:
                     return null;
             }
@@ -52,6 +58,11 @@ namespace HaloPogSwitch
         {
 
         }
+
+        private void UC_HaloReach_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
@@ -64,8 +75,11 @@ namespace HaloPogSwitch
         knees,
         utility,
         colour,
+        armoreffects,
+        elitearmor,
+        species,
         extra,
-       
+
     }
 
 }

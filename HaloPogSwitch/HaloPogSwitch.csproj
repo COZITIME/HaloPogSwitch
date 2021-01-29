@@ -82,7 +82,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dlls\HTAlt.Standart.dll</HintPath>
     </Reference>
-    <Reference Include="Siticone.UI">
+    <Reference Include="Siticone.UI, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dlls\Siticone.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />

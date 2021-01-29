@@ -38,7 +38,7 @@ namespace UI32
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(482, 309);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(737, 309);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Label_title
@@ -47,7 +47,7 @@ namespace UI32
             this.Label_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.Label_title.Location = new System.Drawing.Point(0, 0);
             this.Label_title.Name = "Label_title";
-            this.Label_title.Size = new System.Drawing.Size(75, 13);
+            this.Label_title.Size = new System.Drawing.Size(98, 17);
             this.Label_title.TabIndex = 3;
             this.Label_title.Text = "Biped Speices";
             // 
@@ -57,7 +57,7 @@ namespace UI32
             this.Controls.Add(this.Label_title);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TrainerEnumButton";
-            this.Size = new System.Drawing.Size(482, 325);
+            this.Size = new System.Drawing.Size(737, 325);
             this.ResumeLayout(false);
             this.PerformLayout();
 
