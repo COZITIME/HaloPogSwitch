@@ -8,6 +8,11 @@ namespace UI32
 {
     class MyButton : CheckBox
     {
+        public MyButton()
+        {
+            InitializeComponent();
+        }
+
         private void InitializeComponent()
         {
             this.SuspendLayout();
