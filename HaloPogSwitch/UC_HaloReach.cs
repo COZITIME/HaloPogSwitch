@@ -47,6 +47,11 @@ namespace HaloPogSwitch
         {
 
         }
+
+        private void UC_HaloReach_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
@@ -58,6 +63,7 @@ namespace HaloPogSwitch
         wrist,
         knees,
         utility,
+        colour,
         extra,
         colour,
     }
