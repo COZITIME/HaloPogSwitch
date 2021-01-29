@@ -146,6 +146,12 @@
     <Compile Include="UC_HaloReach.Designer.cs">
       <DependentUpon>UC_HaloReach.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Welcome.Designer.cs">
+      <DependentUpon>UC_Welcome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_HaloReach.resx">
       <DependentUpon>UC_HaloReach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Welcome.resx">
+      <DependentUpon>UC_Welcome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Data\H2A_Arms.csv">

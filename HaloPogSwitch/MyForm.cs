@@ -130,6 +130,11 @@ namespace HaloPogSwitch
         {
 
         }
+
+        private void Welcome_Click(object sender, EventArgs e)
+        {
+            if (Welcome.Checked) uC_Welcome1.BringToFront();
+        }
     }
 
     public class TrainerUpdater<T>

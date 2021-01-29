@@ -34,7 +34,7 @@ namespace HaloPogSwitch
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.siticoneShadowForm1 = new Siticone.UI.WinForms.SiticoneShadowForm(this.components);
             this.siticonePanel1 = new Siticone.UI.WinForms.SiticonePanel();
-            this.siticoneButton1 = new Siticone.UI.WinForms.SiticoneButton();
+            this.Welcome = new Siticone.UI.WinForms.SiticoneButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,7 @@ namespace HaloPogSwitch
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
             this.siticoneDragControl1 = new Siticone.UI.WinForms.SiticoneDragControl(this.components);
             this.siticonePanel3 = new Siticone.UI.WinForms.SiticonePanel();
+            this.uC_Welcome1 = new HaloPog.UC_Welcome();
             this.uC_HaloReach1 = new HaloPogSwitch.UC_HaloReach();
             this.uC_Halo31 = new HaloPogSwitch.UC_Halo3();
             this.uC_Halo41 = new HaloPogSwitch.UC_Halo4();
@@ -66,7 +67,7 @@ namespace HaloPogSwitch
             // siticonePanel1
             // 
             this.siticonePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.siticonePanel1.Controls.Add(this.siticoneButton1);
+            this.siticonePanel1.Controls.Add(this.Welcome);
             this.siticonePanel1.Controls.Add(this.pictureBox2);
             this.siticonePanel1.Controls.Add(this.label2);
             this.siticonePanel1.Controls.Add(this.pictureBox1);
@@ -86,31 +87,32 @@ namespace HaloPogSwitch
             this.siticonePanel1.Size = new System.Drawing.Size(205, 760);
             this.siticonePanel1.TabIndex = 0;
             // 
-            // siticoneButton1
+            // Welcome
             // 
-            this.siticoneButton1.Animated = false;
-            this.siticoneButton1.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.siticoneButton1.Checked = true;
-            this.siticoneButton1.CheckedState.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.siticoneButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.siticoneButton1.CheckedState.Parent = this.siticoneButton1;
-            this.siticoneButton1.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.siticoneButton1.CustomImages.Parent = this.siticoneButton1;
-            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.siticoneButton1.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton1.HoveredState.Parent = this.siticoneButton1;
-            this.siticoneButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.siticoneButton1.Location = new System.Drawing.Point(0, 69);
-            this.siticoneButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.siticoneButton1.Name = "siticoneButton1";
-            this.siticoneButton1.PressedDepth = 0;
-            this.siticoneButton1.ShadowDecoration.Parent = this.siticoneButton1;
-            this.siticoneButton1.Size = new System.Drawing.Size(205, 39);
-            this.siticoneButton1.TabIndex = 8;
-            this.siticoneButton1.Text = "Welcome!";
-            this.siticoneButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.siticoneButton1.TextOffset = new System.Drawing.Point(15, 0);
+            this.Welcome.Animated = false;
+            this.Welcome.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.Welcome.Checked = true;
+            this.Welcome.CheckedState.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.Welcome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.Welcome.CheckedState.Parent = this.Welcome;
+            this.Welcome.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Welcome.CustomImages.Parent = this.Welcome;
+            this.Welcome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Welcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Welcome.ForeColor = System.Drawing.Color.White;
+            this.Welcome.HoveredState.Parent = this.Welcome;
+            this.Welcome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Welcome.Location = new System.Drawing.Point(0, 69);
+            this.Welcome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Welcome.Name = "Welcome";
+            this.Welcome.PressedDepth = 0;
+            this.Welcome.ShadowDecoration.Parent = this.Welcome;
+            this.Welcome.Size = new System.Drawing.Size(205, 39);
+            this.Welcome.TabIndex = 8;
+            this.Welcome.Text = "Welcome!";
+            this.Welcome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Welcome.TextOffset = new System.Drawing.Point(15, 0);
+            this.Welcome.Click += new System.EventHandler(this.Welcome_Click);
             // 
             // pictureBox2
             // 
@@ -302,6 +304,7 @@ namespace HaloPogSwitch
             this.siticonePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticonePanel3.Controls.Add(this.uC_Welcome1);
             this.siticonePanel3.Controls.Add(this.uC_HaloReach1);
             this.siticonePanel3.Controls.Add(this.uC_Halo31);
             this.siticonePanel3.Controls.Add(this.uC_Halo41);
@@ -312,6 +315,17 @@ namespace HaloPogSwitch
             this.siticonePanel3.ShadowDecoration.Parent = this.siticonePanel3;
             this.siticonePanel3.Size = new System.Drawing.Size(1043, 714);
             this.siticonePanel3.TabIndex = 6;
+            // 
+            // uC_Welcome1
+            // 
+            this.uC_Welcome1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.uC_Welcome1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Welcome1.BackgroundImage")));
+            this.uC_Welcome1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.uC_Welcome1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_Welcome1.Location = new System.Drawing.Point(0, 0);
+            this.uC_Welcome1.Name = "uC_Welcome1";
+            this.uC_Welcome1.Size = new System.Drawing.Size(1043, 714);
+            this.uC_Welcome1.TabIndex = 6;
             // 
             // uC_HaloReach1
             // 
@@ -398,7 +412,8 @@ namespace HaloPogSwitch
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Siticone.UI.WinForms.SiticoneButton siticoneButton1;
+        private Siticone.UI.WinForms.SiticoneButton Welcome;
+        private HaloPog.UC_Welcome uC_Welcome1;
     }
 }
 
