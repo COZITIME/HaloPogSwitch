@@ -42,7 +42,6 @@ namespace HaloPogSwitch
             new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13A4)), new TrainerBool("Speices", "Elite Biped"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
             new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
-
             new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13B1)), CSVPuller.GetTrainerEnumFromFile(@"data\Reach_Chest.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.chest).Controls);
             //CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
             //CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
@@ -63,11 +62,11 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteArmor.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_EliteEffects.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.colour).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.colour).Controls);
 
 
-
+            uC_HaloReach1.GetFlow(HaloReachMenuType.colour).Controls.Add(new TrainerEnumNestedButtonHolder());
 
 
         }
@@ -77,9 +76,7 @@ namespace HaloPogSwitch
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             Thread.Sleep(50);
-
             processHandler.UpdateProcess();
-           
 
         }
 
@@ -157,7 +154,6 @@ namespace HaloPogSwitch
         public void ValueChange(T value)
         {
 
-         //   Console.WriteLine("... Writing Value: " + value + " to " + adressSetter.Meme());
             adressSetter.WriteMemory(value);
 
             Update();
@@ -174,7 +170,7 @@ namespace HaloPogSwitch
         }
         public T Read()
         {
-         //   Console.WriteLine("REad");
+         //   
             return adressSetter.ReadMemory();
         }
     }

@@ -19,7 +19,7 @@ namespace HaloPogSwitch
     class CSVPuller
     {
 
-        public static UI32.TrainerEnum GetTrainerEnumFromFile(string file)
+        public static UI32.TrainerEnumButton GetTrainerEnumFromFile(string file)
         {
 
             string titleThing = "";
@@ -52,7 +52,7 @@ namespace HaloPogSwitch
 
              
 
-                return new TrainerEnum(titleThing, diffrentValues.ToArray());
+                return new TrainerEnumButton(titleThing, diffrentValues.ToArray());
             }
 
         }
@@ -99,7 +99,7 @@ namespace HaloPogSwitch
 
                     }
 
-                    //  Console.WriteLine(values[1] + ", " + values[0]);
+                   
 
                 }
 
@@ -111,7 +111,7 @@ namespace HaloPogSwitch
         internal static TrainerUpdater<byte> GetTrainerUpdater<T>(string fileName, Control.ControlCollection Controls)
         {
             string file = GetFile(fileName);
-            // Console.WriteLine(file);
+          
 
             bool isTree = false;
             bool isColour = false;
@@ -167,7 +167,7 @@ namespace HaloPogSwitch
             }
 
 
-            //Console.WriteLine("Long: " + address + ", Int: " + address);
+           
 
             var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, (int) address)), ui, Controls);
 

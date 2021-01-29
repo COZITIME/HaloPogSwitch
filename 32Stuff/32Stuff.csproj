@@ -90,6 +90,9 @@
     <Compile Include="ButtonArray.Designer.cs">
       <DependentUpon>ButtonArray.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrainerBool.cs">
@@ -115,6 +118,18 @@
     </Compile>
     <Compile Include="TrainerEnum.Designer.cs">
       <DependentUpon>TrainerEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerEnumButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainerEnumButton.Designer.cs">
+      <DependentUpon>TrainerEnumButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerEnumNestedButtonHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainerEnumNestedButtonHolder.Designer.cs">
+      <DependentUpon>TrainerEnumNestedButtonHolder.cs</DependentUpon>
     </Compile>
     <Compile Include="TrainerNumeric.cs">
       <SubType>UserControl</SubType>
@@ -161,6 +176,9 @@
     <EmbeddedResource Include="ButtonArray.resx">
       <DependentUpon>ButtonArray.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyButton.resx">
+      <DependentUpon>MyButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -182,6 +200,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerEnum.resx">
       <DependentUpon>TrainerEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerEnumButton.resx">
+      <DependentUpon>TrainerEnumButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerEnumNestedButtonHolder.resx">
+      <DependentUpon>TrainerEnumNestedButtonHolder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerNumeric.resx">
       <DependentUpon>TrainerNumeric.cs</DependentUpon>

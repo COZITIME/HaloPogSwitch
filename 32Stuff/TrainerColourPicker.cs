@@ -83,6 +83,8 @@ namespace UI32
         {
             var butt = buttons.FirstOrDefault(b => b.colourData.value == value);
             SetSelected();
+
+            
         }
 
         public struct ColourData<T>

@@ -45,7 +45,7 @@ namespace HaloPogSwitch.Stuff
         {
             var val = Meme().ReadByte(getter.GetFullAdress());
             var adress = Convert.ToString(getter.GetFullAdress().ToInt64(), 16);
-            Console.WriteLine("At Adress " + adress + " Found " + val);
+          
 
             return val;
         }
@@ -55,7 +55,6 @@ namespace HaloPogSwitch.Stuff
          ///   var val = Meme().ReadByte(getter.GetFullAdress());
            /// var adress = Convert.ToString(getter.GetFullAdress().ToInt64(), 16);
 
-        //    Console.WriteLine("At " + adress + " Wrote: " + val);
 
             Meme().WriteByteArray(getter.GetFullAdress(), new byte[] { value } );
         }
@@ -77,9 +76,9 @@ namespace HaloPogSwitch.Stuff
 
         public override string ReadMemory()
         {
-            Console.WriteLine("ST Read Out");
+          
             string value = Meme().ReadStringUnicode(getter.GetFullAdress(), (uint)(textLength * 2));
-            Console.WriteLine("ST: " + value);
+          
             return value;
         }
 
@@ -90,21 +89,14 @@ namespace HaloPogSwitch.Stuff
             //    Meme().WriteLong(getter.GetFullAdress(), System.Convert.ToInt64(value));
             //} else
 
-
             byte[] bytes = new byte[textLength *2];
-
-            
-         
 
             Meme().WriteByteArray(getter.GetFullAdress(), bytes);
              Meme().WriteStringUnicode(getter.GetFullAdress(), value);
           
-            
-
-
         }
     }
-
+ 
     public class BoolAdressSetter : AdressSetter<bool>
     {
         public BoolAdressSetter(AdressGetter getter) : base(getter)

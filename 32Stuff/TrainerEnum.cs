@@ -53,7 +53,7 @@ namespace UI32
                
             }
 
-            //Console.WriteLine("Byte Val: " + val + " Len " + vals.Length);
+          
             return val;
         }
 
@@ -70,7 +70,7 @@ namespace UI32
                 {
                     currentIndex = i;
                     ListBox.SelectedItem = vals[i];
-                    Console.WriteLine(Label_title.Text + " value: " + value +", Button Index: "+ i);
+                  
                     return;
                 }
             }

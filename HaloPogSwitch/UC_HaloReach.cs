@@ -35,6 +35,8 @@ namespace HaloPogSwitch
                     return FlowLayout_Utility;
                 case HaloReachMenuType.extra:
                     return FlowLayout_Extra;
+                case HaloReachMenuType.colour:
+                    return FlowLayout_Colour;
                 default:
                     return null;
             }
@@ -57,7 +59,7 @@ namespace HaloPogSwitch
         knees,
         utility,
         extra,
-    
+        colour,
     }
 
 }
