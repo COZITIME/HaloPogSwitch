@@ -36,12 +36,12 @@ namespace HaloPogSwitch
             // siticoneLabel1
             // 
             this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneLabel1.ForeColor = System.Drawing.Color.White;
-            this.siticoneLabel1.Location = new System.Drawing.Point(15, 8);
-            this.siticoneLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticoneLabel1.Location = new System.Drawing.Point(0, 0);
+            this.siticoneLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(214, 38);
+            this.siticoneLabel1.Size = new System.Drawing.Size(246, 43);
             this.siticoneLabel1.TabIndex = 1;
             this.siticoneLabel1.Text = "Halo 2: Anniversary";
             // 
@@ -51,22 +51,23 @@ namespace HaloPogSwitch
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 348);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 428);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(440, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(587, 0);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // UC_Halo2a
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.siticoneLabel1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Halo2a";
-            this.Size = new System.Drawing.Size(440, 348);
+            this.Size = new System.Drawing.Size(587, 428);
             this.ResumeLayout(false);
             this.PerformLayout();
 

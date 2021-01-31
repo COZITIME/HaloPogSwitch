@@ -35,11 +35,11 @@ namespace HaloPogSwitch
             // siticoneLabel1
             // 
             this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneLabel1.ForeColor = System.Drawing.Color.White;
-            this.siticoneLabel1.Location = new System.Drawing.Point(20, 10);
+            this.siticoneLabel1.Location = new System.Drawing.Point(0, 0);
             this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(94, 47);
+            this.siticoneLabel1.Size = new System.Drawing.Size(85, 43);
             this.siticoneLabel1.TabIndex = 1;
             this.siticoneLabel1.Text = "Halo 4";
             // 
