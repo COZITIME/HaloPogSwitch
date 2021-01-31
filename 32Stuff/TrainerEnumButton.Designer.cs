@@ -31,33 +31,37 @@ namespace UI32
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Label_title = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 16);
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.Label_title);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(740, 9999999);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(737, 309);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 114);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Label_title
             // 
-            this.Label_title.AutoSize = true;
             this.Label_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_title.Location = new System.Drawing.Point(0, 0);
+            this.Label_title.Location = new System.Drawing.Point(3, 0);
             this.Label_title.Name = "Label_title";
-            this.Label_title.Size = new System.Drawing.Size(98, 17);
+            this.Label_title.Size = new System.Drawing.Size(740, 13);
             this.Label_title.TabIndex = 3;
             this.Label_title.Text = "Biped Speices";
             // 
             // TrainerEnumButton
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.Label_title);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TrainerEnumButton";
-            this.Size = new System.Drawing.Size(737, 325);
+            this.Size = new System.Drawing.Size(740, 114);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
