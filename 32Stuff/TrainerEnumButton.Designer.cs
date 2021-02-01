@@ -50,7 +50,7 @@ namespace UI32
             this.Label_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.Label_title.Location = new System.Drawing.Point(3, 0);
             this.Label_title.Name = "Label_title";
-            this.Label_title.Size = new System.Drawing.Size(740, 13);
+            this.Label_title.Size = new System.Drawing.Size(740, 16);
             this.Label_title.TabIndex = 3;
             this.Label_title.Text = "Biped Speices";
             // 

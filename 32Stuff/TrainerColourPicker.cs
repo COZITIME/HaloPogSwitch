@@ -65,6 +65,7 @@ namespace UI32
 
         public void SetSelected()
         {
+            
             foreach (var item in buttons)
             {
                 item.button.Checked = item.colourData.value == current.value;
