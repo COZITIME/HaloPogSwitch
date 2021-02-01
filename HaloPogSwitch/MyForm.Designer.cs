@@ -34,6 +34,7 @@ namespace HaloPogSwitch
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.siticoneShadowForm1 = new Siticone.UI.WinForms.SiticoneShadowForm(this.components);
             this.siticonePanel1 = new Siticone.UI.WinForms.SiticonePanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Welcome = new Siticone.UI.WinForms.SiticoneButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace HaloPogSwitch
             this.uC_Halo31 = new HaloPogSwitch.UC_Halo3();
             this.uC_Halo41 = new HaloPogSwitch.UC_Halo4();
             this.uC_Halo2a1 = new HaloPogSwitch.UC_Halo2a();
-            this.label1 = new System.Windows.Forms.Label();
             this.siticonePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,6 +88,18 @@ namespace HaloPogSwitch
             this.siticonePanel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.siticonePanel1.Size = new System.Drawing.Size(205, 760);
             this.siticonePanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(1, 735);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "v0.2";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // Welcome
             // 
@@ -369,18 +381,6 @@ namespace HaloPogSwitch
             this.uC_Halo2a1.Name = "uC_Halo2a1";
             this.uC_Halo2a1.Size = new System.Drawing.Size(1043, 714);
             this.uC_Halo2a1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(1, 735);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "V0.2";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // MyForm
             // 

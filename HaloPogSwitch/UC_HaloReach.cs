@@ -33,16 +33,22 @@ namespace HaloPogSwitch
                     return FlowLayout_Knee;
                 case HaloReachMenuType.utility:
                     return FlowLayout_Utility;
-                case HaloReachMenuType.extra:
-                    return FlowLayout_Extra;
-                case HaloReachMenuType.colour:
-                    return FlowLayout_Colour;
+                case HaloReachMenuType.serviceid:
+                    return FlowLayout_ServiceID;
+                case HaloReachMenuType.color:
+                    return FlowLayout_Color;
                 case HaloReachMenuType.armoreffects:
                     return FlowLayout_ArmorEffects;
                 case HaloReachMenuType.elitearmor:
                     return FlowLayout_EliteArmor;
                 case HaloReachMenuType.species:
                     return FlowLayout_Species;
+                case HaloReachMenuType.gender:
+                    return FlowLayout_Gender;
+                case HaloReachMenuType.eliteeffects:
+                    return FlowLayout_EliteEffects;
+                case HaloReachMenuType.firefightvoice:
+                    return FlowLayout_FirefightVoice;
                 default:
                     return null;
             }
@@ -74,11 +80,14 @@ namespace HaloPogSwitch
         wrist,
         knees,
         utility,
-        colour,
+        color,
         armoreffects,
+        eliteeffects,
         elitearmor,
         species,
-        extra,
+        gender,
+        serviceid,
+        firefightvoice,
 
     }
 
