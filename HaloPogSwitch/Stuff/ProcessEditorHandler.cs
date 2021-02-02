@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HaloPogSwitch.Stuff
 {
@@ -12,7 +13,7 @@ namespace HaloPogSwitch.Stuff
         public static ProcessEditorHandler instance;
 
         Process myProcess;
-        HaloModules modules;
+     
 
         public VAMemory memory;
 
@@ -21,11 +22,20 @@ namespace HaloPogSwitch.Stuff
 
         public void UpdateProcess()
         {
+
+            var procs = Process.GetProcessesByName(processName);
+
+            if (procs.Length > 0)
+            {
+                myProcess = procs[0];
+                
+            }
+
             while (myProcess == null)
             {
 
 
-                var procs = Process.GetProcessesByName(processName);
+               
 
                 if (procs.Length > 0)
                 {
@@ -44,7 +54,11 @@ namespace HaloPogSwitch.Stuff
             UpdateModules(myProcess);
             haloMods.UpdateButtons();
 
+
+
             memory = new VAMemory(myProcess.ProcessName);
+
+            
 
         }
 
@@ -70,21 +84,26 @@ namespace HaloPogSwitch.Stuff
         {
             if (process == null) return;
 
-
-
             ProcessModuleCollection mods = process.Modules;
-            foreach (ProcessModule m in mods)
+
+            foreach (KeyValuePair<ModuleType, ModuleData> item in haloMods.moduals)
             {
 
-                foreach (KeyValuePair<ModuleType, ModuleData> item in haloMods.moduals)
+                foreach (ProcessModule m in mods)
                 {
+                    item.Value.modual = null;
                     if (item.Value.moduleName == m.ModuleName)
                     {
-                        item.Value.moduleName = m.ModuleName;
                         item.Value.modual = m;
+                        break;
                     }
                 }
+
+                
             }
+
+            
+            
 
         }
 
@@ -134,7 +153,8 @@ namespace HaloPogSwitch.Stuff
             {
                 moduals.Add(ModuleType.baseModule, new ModuleData("MCC-Win64-Shipping"));
                 moduals.Add(ModuleType.reach, new ModuleData("haloreach.dll"));
-                moduals.Add(ModuleType.halo2A, new ModuleData("modNameHalo2A"));
+                moduals.Add(ModuleType.halo2A, new ModuleData("groundhog.dll"));
+                moduals.Add(ModuleType.halo3, new ModuleData("halo3.dll"));
                 moduals.Add(ModuleType.halo4, new ModuleData("halo4.dll"));
             }
 
@@ -151,6 +171,26 @@ namespace HaloPogSwitch.Stuff
                     item.Value.UpdateButton();
                 }
             }
+
+            internal ModuleType GetModTypeViaString(string stringValue)
+            {
+                return GetModuleFromString(stringValue).Key;
+            }
+
+            public KeyValuePair<ModuleType, ModuleData> GetModuleFromString (string stringValue)
+            {
+                return moduals.FirstOrDefault(x => x.Value.moduleName == stringValue);
+            }
+
+            internal int GetOpenCount()
+            {
+                int val = 0;
+                foreach (var item in moduals)
+                {
+                    if (item.Value.modual != null) val += 1;
+                }
+                return val;
+            }
         }
 
 
@@ -164,7 +204,9 @@ namespace HaloPogSwitch.Stuff
 
             public void UpdateButton()
             {
+                
                 if (modButton != null)
+                   
                 modButton.Enabled = modual != null;
             }
 

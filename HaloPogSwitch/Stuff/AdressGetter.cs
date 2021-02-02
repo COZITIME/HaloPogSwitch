@@ -19,7 +19,7 @@ namespace HaloPogSwitch.Stuff
         public IntPtr GetFullAdress()
         {
 
-            Thread.Sleep(50);
+          //  Thread.Sleep(50);
             
 
 
@@ -27,10 +27,11 @@ namespace HaloPogSwitch.Stuff
 
             while(ProcessEditorHandler.instance.GetModuleFromEnun(moduleType) == null)
             {
-                Thread.Sleep(500);
+                return new IntPtr();
+                // Thread.Sleep(500);
             }
 
-     Console.WriteLine("MODTYPE "+ ProcessEditorHandler.instance.GetModuleFromEnun(moduleType));
+     
             
             IntPtr mod = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType).BaseAddress;
             //Console.Write(mod);

@@ -262,7 +262,8 @@ namespace HaloPogSwitch
 
         public static ModuleType ModFromString(string stringValue)
         {
-            Console.WriteLine(stringValue);
+            return ProcessEditorHandler.instance.haloMods.GetModTypeViaString(stringValue);
+          
 
             switch (stringValue)
             {

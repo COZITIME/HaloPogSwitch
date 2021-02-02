@@ -20,6 +20,8 @@ namespace HaloPogSwitch
 
         public ProcessEditorHandler processHandler = new ProcessEditorHandler();
 
+        public int prevOpenCount = 0;
+
         public MyForm()
         {
             InitializeComponent();
@@ -32,10 +34,19 @@ namespace HaloPogSwitch
         {
             pp++;
 
-            if (pp > 5) 
+            if (pp > 100) 
             {
-                
+               
                 processHandler.UpdateProcess();
+
+               int openCount = processHandler.haloMods.GetOpenCount();
+                if (openCount != prevOpenCount)
+                {
+                    prevOpenCount = openCount;
+                }
+
+               
+                uIUpdate?.Invoke();
                
                 pp = 0;
             }
@@ -87,22 +98,26 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_FireFightVoice.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.firefightvoice).Controls);
 
 
-
             processHandler.PairModule(haloreach, ModuleType.reach);
             processHandler.PairModule(halo2a, ModuleType.halo2A);
+            processHandler.PairModule(halo3, ModuleType.halo3);
+            processHandler.PairModule(halo4, ModuleType.halo4);
+
+
+            //  processHandler.PairModule(halo2a, ModuleType.halo2A);
 
             //C_HaloReach1.GetFlow(HaloReachMenuType.colour).Controls.Add(new TrainerEnumNestedButtonHolder());
             //CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             //CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourSecondary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
             //// Halo 2A
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_Helmates.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_Visors.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_LShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            //CSVPuller.GetTrainerUpdater<byte>((@"H2A_RShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Helmates.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Visors.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_LShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_RShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
 
         }
@@ -111,7 +126,7 @@ namespace HaloPogSwitch
         
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.Sleep(1000);
+          
 
              
 
@@ -168,6 +183,9 @@ namespace HaloPogSwitch
         {
             if (Welcome.Checked) uC_Welcome1.BringToFront();
         }
+
+        public delegate void ReadUIUpdate();
+     public static ReadUIUpdate uIUpdate;
     }
 
     public class TrainerUpdater<T>
@@ -184,11 +202,18 @@ namespace HaloPogSwitch
            
             ui.SetValue(Read());
             Start();
+
+            MyForm.uIUpdate += UIUpdate;
         }
 
         public void Start()
         {
             
+        }
+
+        public void UIUpdate ()
+        {
+            ui.SetValue(Read());
         }
 
         public void Update()
