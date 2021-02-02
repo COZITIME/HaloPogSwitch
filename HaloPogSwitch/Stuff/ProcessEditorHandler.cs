@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Siticone.UI.WinForms;
+using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace HaloPogSwitch.Stuff
 {
@@ -13,11 +16,14 @@ namespace HaloPogSwitch.Stuff
 
         public VAMemory memory;
 
+
+        private const string processName = "MCC-Win64-Shipping";
+
         public void UpdateProcess()
         {
             while (myProcess == null)
             {
-                
+
 
                 var procs = Process.GetProcessesByName(processName);
 
@@ -35,20 +41,22 @@ namespace HaloPogSwitch.Stuff
             }
 
 
-                UpdateModules(myProcess);
+            UpdateModules(myProcess);
+            haloMods.UpdateButtons();
+
             memory = new VAMemory(myProcess.ProcessName);
 
         }
 
         internal VAMemory GetMemory()
         {
-            while (myProcess == null || memory == null) 
+            while (myProcess == null || memory == null)
             {
-               
+
                 UpdateProcess();
                 Thread.Sleep(5);
             }
-           
+
 
             return memory;
         }
@@ -61,27 +69,20 @@ namespace HaloPogSwitch.Stuff
         public void UpdateModules(Process process)
         {
             if (process == null) return;
-           
+
+
 
             ProcessModuleCollection mods = process.Modules;
             foreach (ProcessModule m in mods)
             {
-                switch (m.ModuleName)
+
+                foreach (KeyValuePair<ModuleType, ModuleData> item in haloMods.moduals)
                 {
-                    case processName:
-                        modules.baseMod = m;
-                        break;
-                    case modNameReach:
-                        modules.reachMod = m;
-                        break;
-                    case modNameHalo4:
-                        modules.halo4Mod = m;
-                        break;
-                    case modNameHalo2A:
-                       
-                        modules.halo2AMod = m;
-                        Console.WriteLine(modules.halo2AMod.BaseAddress);
-                        break;
+                    if (item.Value.moduleName == m.ModuleName)
+                    {
+                        item.Value.moduleName = m.ModuleName;
+                        item.Value.modual = m;
+                    }
                 }
             }
 
@@ -95,42 +96,93 @@ namespace HaloPogSwitch.Stuff
 
         public ProcessModule GetModuleFromEnun(ModuleType module)
         {
-
-            switch (module)
-            {
-                case ModuleType.baseModule:
-                    return modules.baseMod;
-                case ModuleType.reach:
-                    return modules.reachMod;
-                case ModuleType.halo4:
-                    return modules.halo4Mod;
-                case ModuleType.halo2A:
-                    Console.WriteLine("Getting H2a Mod ");
-                    Console.WriteLine(modules.halo2AMod);
-                    return modules.halo2AMod;
-            }
-
-            return null;
+            return haloMods.GetModuleByType(module).modual;
         }
 
 
-        private const string processName = "MCC-Win64-Shipping";
-        private const string modNameReach = "haloreach.dll";
-        private const string modNameHalo4 = "halo4.dll";
-        private const string modNameHalo2A = "groundhog.dll";
+        //private const string modNameReach = "haloreach.dll";
+        //private const string modNameHalo4 = "halo4.dll";
+        //private const string modNameHalo2A = "groundhog.dll";
 
         public ProcessEditorHandler()
         {
             instance = this;
         }
 
-        public struct HaloModules
+        //public struct HaloModules
+        //{
+        //    public ProcessModule baseMod;
+        //    public ProcessModule reachMod;
+        //    public ProcessModule halo4Mod;
+        //    public ProcessModule halo2AMod;
+        //}
+
+
+        public HaloModules haloMods = new HaloModules();
+
+
+        public class HaloModules
         {
-            public ProcessModule baseMod;
-            public ProcessModule reachMod;
-            public ProcessModule halo4Mod;
-            public ProcessModule halo2AMod;
+            public Dictionary<ModuleType, ModuleData> moduals = new Dictionary<ModuleType, ModuleData>();
+
+            public HaloModules()
+            {
+                AddEntries();
+            }
+
+            public void AddEntries()
+            {
+                moduals.Add(ModuleType.baseModule, new ModuleData("MCC-Win64-Shipping"));
+                moduals.Add(ModuleType.reach, new ModuleData("haloreach.dll"));
+                moduals.Add(ModuleType.halo2A, new ModuleData("modNameHalo2A"));
+                moduals.Add(ModuleType.halo4, new ModuleData("halo4.dll"));
+            }
+
+            public ModuleData GetModuleByType(ModuleType type)
+            {
+                return moduals[type];
+            }
+
+            public void UpdateButtons()
+
+            {
+                foreach (var item in moduals)
+                {
+                    item.Value.UpdateButton();
+                }
+            }
         }
+
+
+        public class ModuleData
+        {
+
+            public ProcessModule modual;
+            public string moduleName;
+
+            public SiticoneButton modButton;
+
+            public void UpdateButton()
+            {
+                if (modButton != null)
+                modButton.Enabled = modual != null;
+            }
+
+            public ModuleData(string modualName)
+            {
+
+                this.moduleName = modualName;
+
+            }
+        }
+
+
+        public void PairModule(SiticoneButton button, ModuleType mod)
+        {
+            haloMods.moduals[mod].modButton = button;
+        }
+
+       
     }
 
 

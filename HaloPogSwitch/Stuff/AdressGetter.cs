@@ -20,21 +20,20 @@ namespace HaloPogSwitch.Stuff
         {
 
             Thread.Sleep(50);
-
             
 
-            var process = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType);
 
-            while (process.BaseAddress == null)
+            var process = ProcessEditorHandler.instance.WaitGetProcess();
+
+            while(ProcessEditorHandler.instance.GetModuleFromEnun(moduleType) == null)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(500);
             }
 
-
-     //       Console.WriteLine("MODTYPE "+ ProcessEditorHandler.instance.GetModuleFromEnun(moduleType));
+     Console.WriteLine("MODTYPE "+ ProcessEditorHandler.instance.GetModuleFromEnun(moduleType));
             
-            IntPtr mod = process.BaseAddress;
-//Console.Write(mod);
+            IntPtr mod = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType).BaseAddress;
+            //Console.Write(mod);
 
 
             return mod + adress;

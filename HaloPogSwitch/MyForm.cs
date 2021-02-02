@@ -25,8 +25,23 @@ namespace HaloPogSwitch
             InitializeComponent();
 
             backgroundWorker1.RunWorkerAsync();
-
+            Application.Idle += HandleApplicationIdle;
         }
+        int pp = 0;
+        void HandleApplicationIdle(object sender, EventArgs e)
+        {
+            pp++;
+
+            if (pp > 5) 
+            {
+                
+                processHandler.UpdateProcess();
+               
+                pp = 0;
+            }
+        
+        }
+
 
         private void FuckingCunt_Load(object sender, EventArgs e)
         {
@@ -73,6 +88,8 @@ namespace HaloPogSwitch
 
 
 
+            processHandler.PairModule(haloreach, ModuleType.reach);
+            processHandler.PairModule(halo2a, ModuleType.halo2A);
 
             //C_HaloReach1.GetFlow(HaloReachMenuType.colour).Controls.Add(new TrainerEnumNestedButtonHolder());
             //CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
@@ -87,20 +104,22 @@ namespace HaloPogSwitch
             //CSVPuller.GetTrainerUpdater<byte>((@"H2A_LShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             //CSVPuller.GetTrainerUpdater<byte>((@"H2A_RShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
+
         }
 
 
-
+        
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             Thread.Sleep(1000);
 
+             
 
-            //halo2a.Enabled = processHandler.GetModuleFromEnun(ModuleType.halo2A) != null;
-            haloreach.Enabled = processHandler.GetModuleFromEnun(ModuleType.reach) != null;
+            //halo2a.Enabled =  processHandler.GetModuleFromEnun(ModuleType.halo2A) != null;
+
             //halo4.Enabled = processHandler.GetModuleFromEnun(ModuleType.halo4) != null;
-           // halo3.Enabled = processHandler.GetModuleFromEnun(ModuleType.reach) != null;
-            processHandler.UpdateProcess();
+            // halo3.Enabled = processHandler.GetModuleFromEnun(ModuleType.reach) != null;
+            
 
         }
 
