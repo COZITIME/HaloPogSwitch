@@ -134,11 +134,11 @@
     <Compile Include="TrainerEnumButton.Designer.cs">
       <DependentUpon>TrainerEnumButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrainerEnumNestedButtonHolder.cs">
+    <Compile Include="TrainerEnumButtonArray.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TrainerEnumNestedButtonHolder.Designer.cs">
-      <DependentUpon>TrainerEnumNestedButtonHolder.cs</DependentUpon>
+    <Compile Include="TrainerEnumButtonArray.Designer.cs">
+      <DependentUpon>TrainerEnumButtonArray.cs</DependentUpon>
     </Compile>
     <Compile Include="TrainerNumeric.cs">
       <SubType>UserControl</SubType>
@@ -219,8 +219,8 @@
     <EmbeddedResource Include="TrainerEnumButton.resx">
       <DependentUpon>TrainerEnumButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrainerEnumNestedButtonHolder.resx">
-      <DependentUpon>TrainerEnumNestedButtonHolder.cs</DependentUpon>
+    <EmbeddedResource Include="TrainerEnumButtonArray.resx">
+      <DependentUpon>TrainerEnumButtonArray.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerNumeric.resx">
       <DependentUpon>TrainerNumeric.cs</DependentUpon>

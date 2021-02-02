@@ -159,7 +159,7 @@ namespace HaloPogSwitch
             }
             else if (isTree)
             {
-                ui = GetTrainerTreeFromFile(file);
+                ui = GetTrainerButtonArrayFromFile(file);
             }
             else
             {
@@ -177,13 +177,11 @@ namespace HaloPogSwitch
         }
 
 
-
-        private static TrainerTreeList GetTrainerTreeFromFile(string file)
+        private static TrainerEnumButtonArray GetTrainerButtonArrayFromFile(string file)
         {
             string titleThing = "";
 
-
-            List<ValueTreeNode<byte>> nodes = new List<ValueTreeNode<byte>>();
+            List<Node> nodes = new List<Node>();
 
 
             using (var reader = new StreamReader(file))
@@ -221,11 +219,13 @@ namespace HaloPogSwitch
                         {
                             if (i == 0)
                             {
-                                var fn = nodes.FirstOrDefault(n => n.Text == nameSplit[0]);
+                                var fn = nodes.FirstOrDefault(n => n.title == nameSplit[0]);
                                 if (fn == null)
                                 {
-                                    nodes.Add(fn = new ValueTreeNode<byte>(nameSplit[0], 0));
+                                    Console.WriteLine(nameSplit[0]);
+                                   nodes.Add(fn = new Node(nameSplit[0], 0));
                                 }
+
                                 if (nameSplit.Length == 1)
                                 {
                                     fn.value = value;
@@ -234,21 +234,27 @@ namespace HaloPogSwitch
                             }
                             else
                             {
-                                ValueTreeNode<byte> pnode = nodes.FirstOrDefault(n => n.Text == nameSplit[i - 1]);
+                                Node pnode = nodes.FirstOrDefault(n => n.title == nameSplit[i - 1]);
                                 if (pnode == null)
                                 {
-                                    pnode = new ValueTreeNode<byte>(nameSplit[i - 1], 0);
+                                    pnode = new Node(nameSplit[i - 1], 0);
+
                                 }
-                                else if (pnode.Nodes.Count == 0)
+                                else if (pnode.nodes.Count == 0)
                                 {
-                                    pnode.Nodes.Add(new ValueTreeNode<byte>("base", pnode.value));
+                                    pnode.nodes.Add(new Node("Base", pnode.value));
                                 }
 
-                                pnode.Nodes.Add(new ValueTreeNode<byte>(nameSplit[i], value));
+                            
+                               if (pnode != null) pnode.nodes.Add(new Node(nameSplit[i], value));
                             }
 
 
                         }
+
+
+
+                    }
 
                     }
 
@@ -256,26 +262,98 @@ namespace HaloPogSwitch
 
                 }
 
-                return new TrainerTreeList(titleThing, nodes.ToArray());
+
+                return new TrainerEnumButtonArray(titleThing, nodes);
             }
-        }
+        
+        //private static TrainerTreeList GetTrainerTreeFromFile(string file)
+        //{
+        //    string titleThing = "";
+
+
+        //    List<ValueTreeNode<byte>> nodes = new List<ValueTreeNode<byte>>();
+
+
+        //    using (var reader = new StreamReader(file))
+        //    {
+        //        int l = 0;
+        //        while (!reader.EndOfStream)
+        //        {
+        //            l++;
+
+        //            string line = reader.ReadLine();
+        //            string[] values = line.Split(',');
+
+
+        //            if (l == 1)
+        //            {
+        //                titleThing = values[1];
+        //            }
+
+
+        //            if (l > 5)
+        //            {
+
+        //                byte value = byte.Parse(values[1], System.Globalization.NumberStyles.HexNumber);
+        //                string name = values[0];
+
+        //                // Animal:Dog:Star
+        //                // Animal:Cat:Yeet
+        //                // Animal:Dog:Base
+
+        //                string[] nameSplit = name.Split(':');
+
+
+
+        //                for (int i = 0; i < nameSplit.Length; i++)
+        //                {
+        //                    if (i == 0)
+        //                    {
+        //                        var fn = nodes.FirstOrDefault(n => n.Text == nameSplit[0]);
+        //                        if (fn == null)
+        //                        {
+        //                            nodes.Add(fn = new ValueTreeNode<byte>(nameSplit[0], 0));
+        //                        }
+        //                        if (nameSplit.Length == 1)
+        //                        {
+        //                            fn.value = value;
+        //                        }
+
+        //                    }
+        //                    else
+        //                    {
+        //                        ValueTreeNode<byte> pnode = nodes.FirstOrDefault(n => n.Text == nameSplit[i - 1]);
+        //                        if (pnode == null)
+        //                        {
+        //                            pnode = new ValueTreeNode<byte>(nameSplit[i - 1], 0);
+        //                        }
+        //                        else if (pnode.Nodes.Count == 0)
+        //                        {
+        //                            pnode.Nodes.Add(new ValueTreeNode<byte>("base", pnode.value));
+        //                        }
+
+        //                        pnode.Nodes.Add(new ValueTreeNode<byte>(nameSplit[i], value));
+        //                    }
+
+
+        //                }
+
+        //            }
+
+
+
+        //        }
+
+        //        return new TrainerTreeList(titleThing, nodes.ToArray());
+        //    }
+        //}
 
         public static ModuleType ModFromString(string stringValue)
         {
             return ProcessEditorHandler.instance.haloMods.GetModTypeViaString(stringValue);
           
 
-            switch (stringValue)
-            {
-                case "haloreach.dll":
-                    return ModuleType.reach;
-                case "halo4.dll":
-                    return ModuleType.halo4;
-                case "groundhog.dll":
-                    return ModuleType.halo2A;
-                default:
-                    return ModuleType.baseModule;
-            }
+           
         }
 
         public static string GetFile(string fileName)

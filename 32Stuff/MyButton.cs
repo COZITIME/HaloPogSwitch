@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace UI32
 {
-    class MyButton : CheckBox
+  public  class MyButton : CheckBox
     {
         public MyButton()
         {
             InitializeComponent();
+          
         }
 
         private void InitializeComponent()
@@ -35,5 +36,23 @@ namespace UI32
             this.ResumeLayout(false);
 
         }
+
+        //public delegate void OnClick()
+
+        //internal void Click(Action<object, object> p)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+
+
+        //internal void Click()
+        //{
+
+        //    OnClick.Invoke;
+        //}
+
+
     }
 }

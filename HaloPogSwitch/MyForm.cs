@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI32;
 
+
 namespace HaloPogSwitch
 {
     public partial class MyForm : Form
@@ -34,7 +35,7 @@ namespace HaloPogSwitch
         {
             pp++;
 
-            if (pp > 100) 
+            if (pp > 1000) 
             {
                
                 processHandler.UpdateProcess();
@@ -43,10 +44,11 @@ namespace HaloPogSwitch
                 if (openCount != prevOpenCount)
                 {
                     prevOpenCount = openCount;
+                    uIUpdate?.Invoke();
                 }
 
                
-                uIUpdate?.Invoke();
+                
                
                 pp = 0;
             }
@@ -141,7 +143,7 @@ namespace HaloPogSwitch
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
+           // backgroundWorker1.RunWorkerAsync();
         }
 
         private void siticoneButton3_Click(object sender, EventArgs e)
@@ -250,6 +252,6 @@ namespace HaloPogSwitch
 
 public interface IHaloUserControls<E> where E : Enum
 {
-    public Control.ControlCollection GetControls(E numnum);
+     Control.ControlCollection GetControls(E numnum);
     
 }

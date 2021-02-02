@@ -34,7 +34,6 @@ namespace HaloPogSwitch
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.siticoneShadowForm1 = new Siticone.UI.WinForms.SiticoneShadowForm(this.components);
             this.siticonePanel1 = new Siticone.UI.WinForms.SiticonePanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Welcome = new Siticone.UI.WinForms.SiticoneButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,7 +67,6 @@ namespace HaloPogSwitch
             // siticonePanel1
             // 
             this.siticonePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.siticonePanel1.Controls.Add(this.label1);
             this.siticonePanel1.Controls.Add(this.Welcome);
             this.siticonePanel1.Controls.Add(this.pictureBox2);
             this.siticonePanel1.Controls.Add(this.label2);
@@ -418,7 +416,6 @@ namespace HaloPogSwitch
         private System.Windows.Forms.PictureBox pictureBox2;
         private Siticone.UI.WinForms.SiticoneButton Welcome;
         private HaloPog.UC_Welcome uC_Welcome1;
-        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -51,7 +51,7 @@ namespace HaloPogSwitch.Stuff
             }
 
 
-            UpdateModules(myProcess);
+             UpdateModules(myProcess);
             haloMods.UpdateButtons();
 
 

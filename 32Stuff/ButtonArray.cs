@@ -7,16 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Linq;
 namespace HaloPogSwitch
 {
     using UI32;
     public partial class ButtonArray : UserControl
     {
-        public ButtonArray(string text )
+        public ButtonArray(string text)
         {
+           
             InitializeComponent();
+            groupBox1.Text = text;
         }
 
+        internal ControlCollection GetControlls()
+        {
+            return flowLayoutPanel1.Controls;
+        }
     }
 }
