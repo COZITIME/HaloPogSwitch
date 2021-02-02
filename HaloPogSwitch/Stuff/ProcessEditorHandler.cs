@@ -15,8 +15,6 @@ namespace HaloPogSwitch.Stuff
 
         public void UpdateProcess()
         {
-            
-  
             while (myProcess == null)
             {
                 
@@ -36,7 +34,6 @@ namespace HaloPogSwitch.Stuff
 
             }
 
-           
 
                 UpdateModules(myProcess);
             memory = new VAMemory(myProcess.ProcessName);

@@ -23,11 +23,17 @@ namespace HaloPogSwitch.Stuff
 
             
 
-            var process = ProcessEditorHandler.instance.WaitGetProcess();
+            var process = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType);
+
+            while (process.BaseAddress == null)
+            {
+                Thread.Sleep(100);
+            }
 
 
-            Console.WriteLine("MODTYPE "+ ProcessEditorHandler.instance.GetModuleFromEnun(moduleType));
-            IntPtr mod = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType).BaseAddress;
+     //       Console.WriteLine("MODTYPE "+ ProcessEditorHandler.instance.GetModuleFromEnun(moduleType));
+            
+            IntPtr mod = process.BaseAddress;
 //Console.Write(mod);
 
 

@@ -23,6 +23,9 @@ namespace HaloPogSwitch
         public MyForm()
         {
             InitializeComponent();
+
+            backgroundWorker1.RunWorkerAsync();
+
         }
 
         private void FuckingCunt_Load(object sender, EventArgs e)
@@ -32,6 +35,7 @@ namespace HaloPogSwitch
             //var helmateEnumUi = CSVPuller.GetTrainerEnumFromFile(@"C:\Users\Magic\source\repos\HaloPogSwitch\Data\Reach_Helm.csv");
 
             processHandler.GetMemory();
+
 
 
             // controls for where we instatiate the uis
@@ -89,7 +93,13 @@ namespace HaloPogSwitch
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.Sleep(50);
+            Thread.Sleep(1000);
+
+
+            //halo2a.Enabled = processHandler.GetModuleFromEnun(ModuleType.halo2A) != null;
+            haloreach.Enabled = processHandler.GetModuleFromEnun(ModuleType.reach) != null;
+            //halo4.Enabled = processHandler.GetModuleFromEnun(ModuleType.halo4) != null;
+           // halo3.Enabled = processHandler.GetModuleFromEnun(ModuleType.reach) != null;
             processHandler.UpdateProcess();
 
         }
