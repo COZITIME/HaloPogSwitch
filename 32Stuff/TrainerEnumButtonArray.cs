@@ -62,9 +62,6 @@ namespace UI32
             onValueChanged.Invoke(value);
 
           
-
-
-
         }
 
         public delegate void OnButtonClick(byte value);

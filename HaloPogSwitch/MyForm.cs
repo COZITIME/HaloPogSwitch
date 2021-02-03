@@ -44,12 +44,12 @@ namespace HaloPogSwitch
                 if (openCount != prevOpenCount)
                 {
                     prevOpenCount = openCount;
-                    uIUpdate?.Invoke();
+                    
                 }
 
-               
-                
-               
+                uIUpdate?.Invoke();
+
+
                 pp = 0;
             }
         
@@ -79,8 +79,8 @@ namespace HaloPogSwitch
             //CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
             // Also a bunch of Trainer Updaers - These use the CVS puller to get automatically created by the CVS files (seen on the google sheets)
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Helmate.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.helmateVisor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Visor.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.helmateVisor).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Helmate.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.helmet).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"Reach_Visor.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.visor).Controls);
             // CSVPuller.GetTrainerUpdater<byte>((@"Reach_Chest.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.chest).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_LeftShoulder.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.shoulder).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_RightShoulder.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.shoulder).Controls);
@@ -188,6 +188,11 @@ namespace HaloPogSwitch
 
         public delegate void ReadUIUpdate();
      public static ReadUIUpdate uIUpdate;
+
+        private void uC_Welcome1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class TrainerUpdater<T>
