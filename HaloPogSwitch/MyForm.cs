@@ -17,7 +17,7 @@ namespace HaloPogSwitch
     public partial class MyForm : Form
     {
 
-
+      public  static System.Windows.Forms.Timer suffleTimer = new System.Windows.Forms.Timer();
 
         public ProcessEditorHandler processHandler = new ProcessEditorHandler();
 
@@ -26,10 +26,16 @@ namespace HaloPogSwitch
         public MyForm()
         {
             InitializeComponent();
+            suffleTimer.Interval = 50;
+          
+            suffleTimer.Start();
 
             backgroundWorker1.RunWorkerAsync();
             Application.Idle += HandleApplicationIdle;
         }
+
+       
+
         int pp = 0;
         void HandleApplicationIdle(object sender, EventArgs e)
         {
@@ -209,8 +215,14 @@ namespace HaloPogSwitch
            
             ui.SetValue(Read());
             Start();
-
+            
             MyForm.uIUpdate += UIUpdate;
+            MyForm.suffleTimer.Tick += Shuffle;
+        }
+
+        private void Shuffle(object sender, EventArgs e)
+        {
+            ui.AttempShuffle();
         }
 
         public void Start()
@@ -221,7 +233,10 @@ namespace HaloPogSwitch
         public void UIUpdate ()
         {
             ui.SetValue(Read());
+            
         }
+
+       
 
         public void Update()
         {

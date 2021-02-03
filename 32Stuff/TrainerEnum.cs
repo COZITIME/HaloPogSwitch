@@ -43,6 +43,11 @@ namespace UI32
 
         public ValueChanged<byte> onValueChanged { get ; set; }
 
+        public void AttempShuffle()
+        {
+            
+        }
+
         public byte GetValue()
         {
             byte val = 0;
@@ -97,7 +102,7 @@ namespace UI32
     {
          T GetValue();
         void SetValue(T value);
-
+        void AttempShuffle();
          ValueChanged<T> onValueChanged { get; set; }
       
     }

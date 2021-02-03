@@ -64,6 +64,18 @@ namespace UI32
           
         }
 
+        public void AttempShuffle()
+        {
+            if (!LoopBox.Checked) return;
+            List<byte> keys = buttons.Keys.ToList();
+            int index = keys.IndexOf(theValue);
+            index++;
+            index %= keys.Count();
+            var newKey = keys[index];
+            SetValue(newKey);
+
+        }
+
         public delegate void OnButtonClick(byte value);
         public OnButtonClick OnButtonClickEvent;
 

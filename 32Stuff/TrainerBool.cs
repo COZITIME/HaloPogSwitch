@@ -47,6 +47,11 @@ namespace UI32
         {
             onValueChanged.Invoke(CheckBox_Main.Checked);
         }
+
+        public void AttempShuffle()
+        {
+         
+        }
     }
 
 
