@@ -88,11 +88,6 @@ namespace UI32
             
         }
 
-        public void AttempShuffle()
-        {
-            
-        }
-
         public struct ColourData<T>
         {
             public Color colour;

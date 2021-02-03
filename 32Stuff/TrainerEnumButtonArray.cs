@@ -62,17 +62,8 @@ namespace UI32
             onValueChanged.Invoke(value);
 
           
-        }
 
-        public void AttempShuffle()
-        {
-            if (!LoopBox.Checked) return;
-            List<byte> keys = buttons.Keys.ToList();
-            int index = keys.IndexOf(theValue);
-            index++;
-            index %= keys.Count();
-            var newKey = keys[index];
-            SetValue(newKey);
+
 
         }
 
@@ -143,8 +134,7 @@ namespace UI32
             {
                 MyButton butt = new MyButton();
                 butt.Text = title;
-                butt.Margin = new Padding(2, 0, 2, 0);
-                
+
                 Console.WriteLine("Adding New Button: "+ title  + " v: " + value );
 
                 collection.Add(butt);

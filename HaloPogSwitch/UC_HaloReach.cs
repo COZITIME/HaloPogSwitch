@@ -21,9 +21,7 @@ namespace HaloPogSwitch
         {
             switch (type)
             {
-                case HaloReachMenuType.visor:
-                    return FlowLayout_Visor;
-                case HaloReachMenuType.helmet:
+                case HaloReachMenuType.helmateVisor:
                     return FlowLayout_Helmet;
                 case HaloReachMenuType.chest:
                     return FlowLayout_Chest;
@@ -52,7 +50,6 @@ namespace HaloPogSwitch
                 case HaloReachMenuType.firefightvoice:
                     return FlowLayout_FirefightVoice;
                 default:
-                
                     return null;
             }
         }
@@ -77,7 +74,7 @@ namespace HaloPogSwitch
 
     public enum HaloReachMenuType
     {
-        visor,
+        helmateVisor,
         shoulder,
         chest,
         wrist,
@@ -91,7 +88,7 @@ namespace HaloPogSwitch
         gender,
         serviceid,
         firefightvoice,
-        helmet,
+
     }
 
 }

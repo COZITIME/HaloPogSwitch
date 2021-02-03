@@ -63,10 +63,5 @@ namespace UI32
         {
            // Console.WriteLine(numericUpDown1.Value);
         }
-
-        public void AttempShuffle()
-        {
-       
-        }
     }
 }

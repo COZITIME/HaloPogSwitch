@@ -86,11 +86,6 @@ namespace UI32
                 
             
         }
-
-        public void AttempShuffle()
-        {
-            
-        }
     }
 
 

@@ -17,14 +17,10 @@ namespace UI32
         private byte value;
         private Dictionary<byte,MyButton> buttons;
 
-     
-
         public TrainerEnumButton(string title, params ValueStringPair[] values)
         {
             InitializeComponent();
             Label_title.Text = title;
-
-          
 
             buttons = new Dictionary<byte, MyButton>();
 
@@ -44,11 +40,6 @@ namespace UI32
 
 
             }
-        }
-
-        private void ShuffleTick(object sender, EventArgs e)
-        {
-            
         }
 
         private void OnButtonPress(object sender, EventArgs eventArgs, MyButton butt, byte value)
@@ -85,9 +76,6 @@ namespace UI32
            
         }
 
-        public void AttempShuffle()
-        {
-         
-        }
+      
     }
 }

@@ -17,7 +17,7 @@ namespace HaloPogSwitch
         {
            
             InitializeComponent();
-            label1.Text = text;
+            groupBox1.Text = text;
         }
 
         internal ControlCollection GetControlls()

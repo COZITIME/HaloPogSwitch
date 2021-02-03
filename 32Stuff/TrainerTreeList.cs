@@ -28,11 +28,6 @@ namespace UI32
 
         public ValueChanged<byte> onValueChanged { get; set; }
 
-        public void AttempShuffle()
-        {
-          
-        }
-
         public byte GetValue()
         {
             return (treeView1.SelectedNode as ValueTreeNode<byte>).value;
