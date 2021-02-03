@@ -143,7 +143,8 @@ namespace UI32
             {
                 MyButton butt = new MyButton();
                 butt.Text = title;
-
+                butt.Margin = new Padding(2, 0, 2, 0);
+                
                 Console.WriteLine("Adding New Button: "+ title  + " v: " + value );
 
                 collection.Add(butt);

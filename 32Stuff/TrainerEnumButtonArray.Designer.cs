@@ -42,10 +42,10 @@ namespace UI32
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 100, 0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(740, 9999999);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 109);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
@@ -90,7 +90,6 @@ namespace UI32
             this.LoopBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.LoopBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.LoopBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoopBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoopBox.ForeColor = System.Drawing.Color.White;
             this.LoopBox.Location = new System.Drawing.Point(196, 0);
             this.LoopBox.Margin = new System.Windows.Forms.Padding(0);
