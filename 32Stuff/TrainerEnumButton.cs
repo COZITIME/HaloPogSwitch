@@ -11,18 +11,18 @@ using System.Windows.Forms;
 namespace UI32
 {
 
-    public partial class TrainerEnumButton : UserControl, TrainerUI<byte>
+    public partial class TrainerEnumButton : UserControl, ITrainerUI<byte>
     {
 
         private byte value;
-        private Dictionary<byte,MyButton> buttons;
+        private  SortedList<byte,MyButton> buttons;
 
         public TrainerEnumButton(string title, params ValueStringPair[] values)
         {
             InitializeComponent();
             Label_title.Text = title;
 
-            buttons = new Dictionary<byte, MyButton>();
+            buttons = new SortedList <byte, MyButton>();
 
             for (int i = 0; i < values.Length; i++)
             {
@@ -58,8 +58,11 @@ namespace UI32
             foreach (var item in buttons)
             {
                 item.Value.Checked = (value == item.Key);
+                
             }
         }
+
+        
 
         public ValueChanged<byte> onValueChanged { get ; set ; }
 
@@ -76,6 +79,14 @@ namespace UI32
            
         }
 
-      
+        public void AttemptShuffle()
+        {
+          int index =  buttons.IndexOfKey(value) + 1;
+            index %= buttons.Count();
+
+            byte newValue = buttons.Keys[index];
+
+            SetValue(newValue);
+        }
     }
 }

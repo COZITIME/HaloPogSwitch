@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace UI32
 {
-    public partial class TrainerColourPicker : UserControl, TrainerUI<byte>
+    public partial class TrainerColourPicker : UserControl, ITrainerUI<byte>
     {
 
         public int butSize = 25;
         public List<ButtonColourData<byte>> buttons = new List<ButtonColourData<byte>>(); 
+
         public struct ButtonColourData<T>
         {
             public CheckBox button;
@@ -80,12 +81,23 @@ namespace UI32
             return current.value;
         }
 
+
+        ButtonColourData<byte> butt;
         public void SetValue(byte value)
         {
-            var butt = buttons.FirstOrDefault(b => b.colourData.value == value);
+            butt = buttons.FirstOrDefault(b => b.colourData.value == value);
             SetSelected();
 
             
+        }
+
+        public void AttemptShuffle()
+        {
+            int index = buttons.IndexOf(butt);
+            index++;
+            index %= buttons.Count();
+            SetValue(buttons[index].colourData.value);
+
         }
 
         public struct ColourData<T>

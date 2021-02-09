@@ -13,7 +13,7 @@ namespace UI32
  
 
 
-    public partial class TrainerBool : UserControl, TrainerUI<bool>
+    public partial class TrainerBool : UserControl, ITrainerUI<bool>
     {
       
 
@@ -46,6 +46,11 @@ namespace UI32
         private void CheckBox_Main_CheckedChanged_1(object sender, EventArgs e)
         {
             onValueChanged.Invoke(CheckBox_Main.Checked);
+        }
+
+        public void AttemptShuffle()
+        {
+            SetValue(!CheckBox_Main.Checked);
         }
     }
 

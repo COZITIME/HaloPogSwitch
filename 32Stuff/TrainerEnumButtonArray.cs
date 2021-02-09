@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace UI32
 {
-    public partial class TrainerEnumButtonArray : UserControl, TrainerUI<byte>
+    public partial class TrainerEnumButtonArray : UserControl, ITrainerUI<byte>
     {
 
-          public Dictionary<byte, MyButton> buttons = new Dictionary<byte, MyButton>();
+          public SortedList<byte, MyButton> buttons = new SortedList<byte, MyButton>();
 
         public byte theValue;
 
@@ -67,6 +67,16 @@ namespace UI32
 
         }
 
+        public void AttemptShuffle()
+        {
+            int index =buttons.IndexOfKey(theValue) + 1;
+            index %= buttons.Count();
+
+            theValue = buttons.Keys[index];
+            SetValue(theValue);
+            onValueChanged.Invoke(theValue);
+        }
+
         public delegate void OnButtonClick(byte value);
         public OnButtonClick OnButtonClickEvent;
 
@@ -83,8 +93,8 @@ namespace UI32
         public TrainerEnumButtonArray.OnButtonClick clickCaller;
         public Control.ControlCollection collection;
 
-        public Dictionary<byte, MyButton> buttons;
-        public void SetUpNodeData (Control.ControlCollection collection, TrainerEnumButtonArray.OnButtonClick caller,  Dictionary<byte, MyButton> buttons)
+        public SortedList<byte, MyButton> buttons;
+        public void SetUpNodeData (Control.ControlCollection collection, TrainerEnumButtonArray.OnButtonClick caller, SortedList<byte, MyButton> buttons)
         {
            
             this.collection = collection;

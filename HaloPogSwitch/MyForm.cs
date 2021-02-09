@@ -17,7 +17,7 @@ namespace HaloPogSwitch
     public partial class MyForm : Form
     {
 
-
+        public static System.Windows.Forms.Timer shuffleTimer = new System.Windows.Forms.Timer();
 
         public ProcessEditorHandler processHandler = new ProcessEditorHandler();
 
@@ -29,6 +29,9 @@ namespace HaloPogSwitch
 
             backgroundWorker1.RunWorkerAsync();
             Application.Idle += HandleApplicationIdle;
+
+            shuffleTimer.Interval = 1000;
+            shuffleTimer.Start();
         }
         int pp = 0;
         void HandleApplicationIdle(object sender, EventArgs e)
@@ -193,9 +196,9 @@ namespace HaloPogSwitch
     public class TrainerUpdater<T>
     {
         public AdressSetter<T> adressSetter;
-        public UI32.TrainerUI<T> ui;
+        public UI32.ITrainerUI<T> ui;
 
-        public TrainerUpdater(AdressSetter<T> adressSetter, TrainerUI<T> ui, Control.ControlCollection controls)
+        public TrainerUpdater(AdressSetter<T> adressSetter, ITrainerUI<T> ui, Control.ControlCollection controls)
         {
             this.adressSetter = adressSetter;
             this.ui = ui;
@@ -206,6 +209,12 @@ namespace HaloPogSwitch
             Start();
 
             MyForm.uIUpdate += UIUpdate;
+            MyForm.shuffleTimer.Tick += ShuffleTick;
+        }
+
+        private void ShuffleTick(object sender, EventArgs e)
+        {
+            this.ui.AttemptShuffle();
         }
 
         public void Start()
@@ -232,7 +241,7 @@ namespace HaloPogSwitch
             Update();
         }
 
-        public TrainerUI<T> GetUI()
+        public ITrainerUI<T> GetUI()
         {
             return ui;
         }
@@ -246,6 +255,8 @@ namespace HaloPogSwitch
          //   
             return adressSetter.ReadMemory();
         }
+
+
     }
 }
 

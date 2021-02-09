@@ -12,8 +12,11 @@ using System.Windows.Forms;
 
 namespace UI32
 {
-    public partial class TrainerEnum : UserControl , TrainerUI<byte>
+    public partial class TrainerEnum : UserControl , ITrainerUI<byte>
     {
+
+        
+
         public int currentIndex = -1;
 
         ValueStringPair[] vals;
@@ -42,6 +45,11 @@ namespace UI32
         }
 
         public ValueChanged<byte> onValueChanged { get ; set; }
+
+        public void AttemptShuffle()
+        {
+            throw new NotImplementedException();
+        }
 
         public byte GetValue()
         {
@@ -93,10 +101,12 @@ namespace UI32
 
 
 
-    public interface TrainerUI<T>
+    public interface ITrainerUI<T>
     {
          T GetValue();
         void SetValue(T value);
+
+        void AttemptShuffle();
 
          ValueChanged<T> onValueChanged { get; set; }
       

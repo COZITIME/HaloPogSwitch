@@ -151,7 +151,7 @@ namespace HaloPogSwitch
 
             }
 
-            TrainerUI<byte> ui;
+            ITrainerUI<byte> ui;
 
             if (isColour)
             {

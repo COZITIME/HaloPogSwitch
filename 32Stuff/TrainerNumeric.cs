@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace UI32
 {
-    public partial class TrainerNumeric : UserControl, TrainerUI<short>
+    public partial class TrainerNumeric : UserControl, ITrainerUI<short>
         {
 
         short val;
@@ -62,6 +62,11 @@ namespace UI32
         private void numericUpDown1_VisibleChanged(object sender, EventArgs e)
         {
            // Console.WriteLine(numericUpDown1.Value);
+        }
+
+        public void AttemptShuffle()
+        {
+            
         }
     }
 }

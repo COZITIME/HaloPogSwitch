@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI32
 {
-    public partial class TrainerTreeList : UserControl, TrainerUI<byte> 
+    public partial class TrainerTreeList : UserControl, ITrainerUI<byte> 
     {
 
         List<ValueTreeNode<byte>> allNodes = new List<ValueTreeNode<byte>>();
@@ -27,6 +27,11 @@ namespace UI32
         }
 
         public ValueChanged<byte> onValueChanged { get; set; }
+
+        public void AttemptShuffle()
+        {
+            throw new NotImplementedException();
+        }
 
         public byte GetValue()
         {
