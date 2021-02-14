@@ -1,4 +1,4 @@
-,Helmets
+Setting Name,Helmets
 Module,halo4.dll
 Adress,0x2D64AEE
 Values,
@@ -8,5 +8,3 @@ FLOOD,1C
 MASTER CHIEF,52
 RICOCHET,56
 NO HELMET,57
-,
-,:)

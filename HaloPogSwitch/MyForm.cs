@@ -139,30 +139,31 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_LShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_RShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
+
             ////thingys that i added
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Helm.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
-
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H4_L_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H4_R_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor)); 
+            CSVPuller.GetTrainerUpdater<byte>((@"H4_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
-            
+
 
             CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
             CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
+
         }
 
 
-        
+
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
           
