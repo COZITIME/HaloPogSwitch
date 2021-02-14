@@ -1,0 +1,9 @@
+Setting Name,Elite Legs
+Module,groundhog.dll
+Adress,0x19BA31C
+Values,
+Value Name,Value
+COMBAT,3
+OUTRIDER,4
+INVADER,5
+NAKED,7
