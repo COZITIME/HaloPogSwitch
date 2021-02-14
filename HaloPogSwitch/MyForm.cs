@@ -159,9 +159,9 @@ namespace HaloPogSwitch
             new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D64B04), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo41.GetHalo4Flow(Halo4MenuType.serviceid).Controls);
             new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D64928), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo41.GetHalo4Flow(Halo4MenuType.gender).Controls);
 
-
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
+      
             CSVPuller.GetTrainerUpdater<byte>((@"H4_L_Shoulder.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.shoulder).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H4_R_Shoulder.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.shoulder).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Chest.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.chest).Controls);
