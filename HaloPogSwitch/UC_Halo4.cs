@@ -50,7 +50,9 @@ namespace HaloPogSwitch
             chest,
             forearms,
             legs,
+
             color,
+
             gender,
             serviceid,
 
