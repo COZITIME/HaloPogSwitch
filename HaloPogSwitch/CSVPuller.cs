@@ -43,7 +43,7 @@ namespace HaloPogSwitch
 
                     if (l > 5)
                     {
-                        byte value = byte.Parse(values[1], System.Globalization.NumberStyles.HexNumber);
+                        byte value = byte.Parse(values[1], NumberStyles.HexNumber);
                         string name = values[0];
                         diffrentValues.Add(new ValueStringPair(value, name));
                     }

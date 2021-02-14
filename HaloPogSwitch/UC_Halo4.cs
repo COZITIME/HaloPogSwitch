@@ -32,35 +32,34 @@ namespace HaloPogSwitch
                     return FlowLayout_Forearms;
                 case Halo4MenuType.legs:
                     return FlowLayout_Leg;
-
                 case Halo4MenuType.serviceid:
                     return FlowLayout_ServiceID;
                 case Halo4MenuType.color:
                     return FlowLayout_Color;
-
                 case Halo4MenuType.gender:
                     return FlowLayout_Gender;
-
                 default:
                     return null;
             }
         }
 
-        public enum Halo4MenuType
-        {
-            helmateVisor,
-            shoulder,
-            chest,
-            forearms,
-            legs,
-
-            color,
-
-            gender,
-            serviceid,
 
 
-        }
+    }
+
+    public enum Halo4MenuType
+    {
+        helmateVisor,
+        shoulder,
+        chest,
+        forearms,
+        legs,
+
+        color,
+
+        gender,
+        serviceid,
+
 
     }
 }
