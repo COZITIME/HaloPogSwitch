@@ -80,7 +80,7 @@ namespace HaloPogSwitch
             this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneLabel1.ForeColor = System.Drawing.Color.White;
             this.siticoneLabel1.Location = new System.Drawing.Point(0, 0);
-            this.siticoneLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticoneLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.siticoneLabel1.Name = "siticoneLabel1";
             this.siticoneLabel1.Size = new System.Drawing.Size(69, 34);
             this.siticoneLabel1.TabIndex = 1;
@@ -249,11 +249,11 @@ namespace HaloPogSwitch
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Legs";
             // 
-            // FlowLayout_Knee
+            // FlowLayout_Leg
             // 
             this.FlowLayout_Leg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowLayout_Leg.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_Leg.Name = "FlowLayout_Knee";
+            this.FlowLayout_Leg.Name = "FlowLayout_Leg";
             this.FlowLayout_Leg.Size = new System.Drawing.Size(792, 501);
             this.FlowLayout_Leg.TabIndex = 2;
             // 
@@ -270,11 +270,11 @@ namespace HaloPogSwitch
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Forearms";
             // 
-            // FlowLayout_Wrist
+            // FlowLayout_Forearms
             // 
             this.FlowLayout_Forearms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowLayout_Forearms.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_Forearms.Name = "FlowLayout_Wrist";
+            this.FlowLayout_Forearms.Name = "FlowLayout_Forearms";
             this.FlowLayout_Forearms.Size = new System.Drawing.Size(792, 501);
             this.FlowLayout_Forearms.TabIndex = 2;
             // 
@@ -483,7 +483,7 @@ namespace HaloPogSwitch
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.Controls.Add(this.htTabControl2);
             this.Controls.Add(this.siticoneLabel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Halo4";
             this.Size = new System.Drawing.Size(968, 681);
             this.htTabControl2.ResumeLayout(false);

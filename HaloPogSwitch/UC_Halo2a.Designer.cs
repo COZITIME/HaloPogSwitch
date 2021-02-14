@@ -44,16 +44,10 @@ namespace HaloPogSwitch
             this.FlowLayout_Knee = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Wrist = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.FlowLayout_Utility = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.FlowLayout_FirefightVoice = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.htTabControl3 = new HTAlt.WinForms.HTTabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.FlowLayout_EliteArmor = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.FlowLayout_EliteEffects = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.htTabControl4 = new HTAlt.WinForms.HTTabControl();
             this.tabPage18 = new System.Windows.Forms.TabPage();
@@ -76,12 +70,9 @@ namespace HaloPogSwitch
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.tabPage10.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.htTabControl3.SuspendLayout();
             this.tabPage16.SuspendLayout();
-            this.tabPage17.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.htTabControl4.SuspendLayout();
             this.tabPage18.SuspendLayout();
@@ -174,8 +165,6 @@ namespace HaloPogSwitch
             this.htTabControl1.Controls.Add(this.tabPage3);
             this.htTabControl1.Controls.Add(this.tabPage4);
             this.htTabControl1.Controls.Add(this.tabPage6);
-            this.htTabControl1.Controls.Add(this.tabPage7);
-            this.htTabControl1.Controls.Add(this.tabPage10);
             this.htTabControl1.DisableClose = true;
             this.htTabControl1.DisableDragging = true;
             this.htTabControl1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -281,7 +270,7 @@ namespace HaloPogSwitch
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(796, 505);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Knee Guards";
+            this.tabPage4.Text = "Legs";
             // 
             // FlowLayout_Knee
             // 
@@ -302,7 +291,7 @@ namespace HaloPogSwitch
             this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage6.Size = new System.Drawing.Size(796, 505);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Wrists";
+            this.tabPage6.Text = "Forearms";
             // 
             // FlowLayout_Wrist
             // 
@@ -311,51 +300,6 @@ namespace HaloPogSwitch
             this.FlowLayout_Wrist.Name = "FlowLayout_Wrist";
             this.FlowLayout_Wrist.Size = new System.Drawing.Size(792, 501);
             this.FlowLayout_Wrist.TabIndex = 2;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.tabPage7.Controls.Add(this.FlowLayout_Utility);
-            this.tabPage7.ForeColor = System.Drawing.Color.White;
-            this.tabPage7.Location = new System.Drawing.Point(4, 29);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage7.Size = new System.Drawing.Size(796, 505);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Utilities";
-            // 
-            // FlowLayout_Utility
-            // 
-            this.FlowLayout_Utility.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowLayout_Utility.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_Utility.Name = "FlowLayout_Utility";
-            this.FlowLayout_Utility.Size = new System.Drawing.Size(792, 501);
-            this.FlowLayout_Utility.TabIndex = 2;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.tabPage10.Controls.Add(this.FlowLayout_FirefightVoice);
-            this.tabPage10.ForeColor = System.Drawing.Color.White;
-            this.tabPage10.Location = new System.Drawing.Point(4, 29);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage10.Size = new System.Drawing.Size(796, 505);
-            this.tabPage10.TabIndex = 9;
-            this.tabPage10.Text = "Firefight Voices";
-            // 
-            // FlowLayout_FirefightVoice
-            // 
-            this.FlowLayout_FirefightVoice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowLayout_FirefightVoice.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlowLayout_FirefightVoice.ForeColor = System.Drawing.Color.White;
-            this.FlowLayout_FirefightVoice.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_FirefightVoice.Name = "FlowLayout_FirefightVoice";
-            this.FlowLayout_FirefightVoice.Size = new System.Drawing.Size(792, 501);
-            this.FlowLayout_FirefightVoice.TabIndex = 0;
-            this.FlowLayout_FirefightVoice.WrapContents = false;
             // 
             // tabPage12
             // 
@@ -376,7 +320,6 @@ namespace HaloPogSwitch
             this.htTabControl3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.htTabControl3.BorderTabLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.htTabControl3.Controls.Add(this.tabPage16);
-            this.htTabControl3.Controls.Add(this.tabPage17);
             this.htTabControl3.DisableClose = true;
             this.htTabControl3.DisableDragging = true;
             this.htTabControl3.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -423,29 +366,6 @@ namespace HaloPogSwitch
             this.FlowLayout_EliteArmor.Size = new System.Drawing.Size(792, 499);
             this.FlowLayout_EliteArmor.TabIndex = 0;
             this.FlowLayout_EliteArmor.WrapContents = false;
-            // 
-            // tabPage17
-            // 
-            this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.tabPage17.Controls.Add(this.FlowLayout_EliteEffects);
-            this.tabPage17.ForeColor = System.Drawing.Color.White;
-            this.tabPage17.Location = new System.Drawing.Point(4, 29);
-            this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage17.Size = new System.Drawing.Size(796, 503);
-            this.tabPage17.TabIndex = 0;
-            this.tabPage17.Text = "Elite Effects";
-            // 
-            // FlowLayout_EliteEffects
-            // 
-            this.FlowLayout_EliteEffects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowLayout_EliteEffects.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlowLayout_EliteEffects.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_EliteEffects.Name = "FlowLayout_EliteEffects";
-            this.FlowLayout_EliteEffects.Size = new System.Drawing.Size(792, 499);
-            this.FlowLayout_EliteEffects.TabIndex = 0;
-            this.FlowLayout_EliteEffects.WrapContents = false;
             // 
             // tabPage13
             // 
@@ -690,12 +610,9 @@ namespace HaloPogSwitch
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage10.ResumeLayout(false);
             this.tabPage12.ResumeLayout(false);
             this.htTabControl3.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
-            this.tabPage17.ResumeLayout(false);
             this.tabPage13.ResumeLayout(false);
             this.htTabControl4.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
@@ -728,16 +645,10 @@ namespace HaloPogSwitch
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_Knee;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_Wrist;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayout_Utility;
-        private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayout_FirefightVoice;
         private System.Windows.Forms.TabPage tabPage12;
         private HTAlt.WinForms.HTTabControl htTabControl3;
         private System.Windows.Forms.TabPage tabPage16;
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_EliteArmor;
-        private System.Windows.Forms.TabPage tabPage17;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayout_EliteEffects;
         private System.Windows.Forms.TabPage tabPage13;
         private HTAlt.WinForms.HTTabControl htTabControl4;
         private System.Windows.Forms.TabPage tabPage18;
