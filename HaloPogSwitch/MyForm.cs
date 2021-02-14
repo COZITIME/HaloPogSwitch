@@ -146,18 +146,18 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
 
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_L_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_R_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor)); 
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo41.GetReachFlow(Halo4MenuType.helmateVisor).Controls);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_L_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_R_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor)); 
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
             
 
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
         }
 

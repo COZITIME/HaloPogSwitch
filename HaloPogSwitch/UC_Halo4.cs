@@ -43,21 +43,23 @@ namespace HaloPogSwitch
             }
         }
 
-        public enum Halo4MenuType
-        {
-            helmateVisor,
-            shoulder,
-            chest,
-            forearms,
-            legs,
-
-            color,
-
-            gender,
-            serviceid,
 
 
-        }
+    }
+
+    public enum Halo4MenuType
+    {
+        helmateVisor,
+        shoulder,
+        chest,
+        forearms,
+        legs,
+
+        color,
+
+        gender,
+        serviceid,
+
 
     }
 }
