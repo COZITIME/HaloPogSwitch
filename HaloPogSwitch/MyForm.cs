@@ -49,25 +49,40 @@ namespace HaloPogSwitch
                     prevOpenCount = openCount;
                     uIUpdate?.Invoke();
                 }
-
-               
-                
                
                 pp = 0;
             }
         
         }
 
+        
+
+        string[] strings = new string[10];
+        
+        public void DoStuff()  
+        {
+
+
+            for (int i = 0; i < strings.Length; i++)
+            {
+                
+                string value = strings[i];
+            }
+
+          
+            
+        }
+        
+      
 
         private void FuckingCunt_Load(object sender, EventArgs e)
         {
+
+            DoStuff();
+
             siticoneShadowForm1.SetShadowForm(this);
-
             //var helmateEnumUi = CSVPuller.GetTrainerEnumFromFile(@"C:\Users\Magic\source\repos\HaloPogSwitch\Data\Reach_Helm.csv");
-
             processHandler.GetMemory();
-
-
 
             // controls for where we instatiate the uis
 

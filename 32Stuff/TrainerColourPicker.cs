@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI32
 {
-    public partial class TrainerColourPicker : UserControl, ITrainerUI<byte>
+    public partial class tableLayoutPanel1 : UserControl, ITrainerUI<byte>
     {
 
         public int butSize = 25;
@@ -29,11 +29,11 @@ namespace UI32
             }
         }
 
-        public TrainerColourPicker(string name, ColourData<byte>[] colours)
+        public tableLayoutPanel1(string name, ColourData<byte>[] colours)
         {
             InitializeComponent();
 
-            label1.Text = name;
+            label2.Text = name;
            
 
 
@@ -44,9 +44,11 @@ namespace UI32
                 butt.BackColor = cdata.colour;
 
                 butt.Width = butt.Height = butSize;
+                butt.FlatAppearance.BorderSize = 10;
+                
 
                 buttons.Add(new ButtonColourData<byte>(butt, cdata));
-
+                
                 butt.Click += new EventHandler((sender, eventArgs) => OnButtonClick(sender, eventArgs, butt, cdata));
                 flowLayoutPanel1.Controls.Add(butt);
             }
@@ -85,6 +87,7 @@ namespace UI32
         ButtonColourData<byte> butt;
         public void SetValue(byte value)
         {
+            current.value = value;
             butt = buttons.FirstOrDefault(b => b.colourData.value == value);
             SetSelected();
 
@@ -93,11 +96,16 @@ namespace UI32
 
         public void AttemptShuffle()
         {
+            if (!LoopBox.Checked) return;
+
             int index = buttons.IndexOf(butt);
             index++;
             index %= buttons.Count();
-            SetValue(buttons[index].colourData.value);
+            var value = buttons[index].colourData.value;
 
+            SetValue(value);
+            SetSelected();
+            onValueChanged.Invoke(value);
         }
 
         public struct ColourData<T>

@@ -61,7 +61,7 @@ namespace UI32
 
         private void numericUpDown1_VisibleChanged(object sender, EventArgs e)
         {
-           // Console.WriteLine(numericUpDown1.Value);
+           
         }
 
         public void AttemptShuffle()

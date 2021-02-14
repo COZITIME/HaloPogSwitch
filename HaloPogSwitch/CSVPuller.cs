@@ -8,7 +8,7 @@ using UI32;
 using System.Windows.Forms;
 using HaloPogSwitch.Stuff;
 using System.Reflection;
-using static UI32.TrainerColourPicker;
+using static UI32.tableLayoutPanel1;
 using System.Drawing;
 using System.Globalization;
 
@@ -58,7 +58,7 @@ namespace HaloPogSwitch
         }
 
 
-        public static UI32.TrainerColourPicker GetTrainerColourButtonsFromFile(string file)
+        public static UI32.tableLayoutPanel1 GetTrainerColourButtonsFromFile(string file)
         {
 
             string titleThing = "";
@@ -103,7 +103,7 @@ namespace HaloPogSwitch
 
                 }
 
-                return new TrainerColourPicker(titleThing, colours.ToArray());
+                return new tableLayoutPanel1(titleThing, colours.ToArray());
             }
 
         }
@@ -222,7 +222,7 @@ namespace HaloPogSwitch
                                 var fn = nodes.FirstOrDefault(n => n.title == nameSplit[0]);
                                 if (fn == null)
                                 {
-                                    Console.WriteLine(nameSplit[0]);
+                               
                                    nodes.Add(fn = new Node(nameSplit[0], 0));
                                 }
 

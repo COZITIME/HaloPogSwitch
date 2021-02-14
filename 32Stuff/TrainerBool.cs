@@ -50,7 +50,7 @@ namespace UI32
 
         public void AttemptShuffle()
         {
-            SetValue(!CheckBox_Main.Checked);
+           // SetValue(!CheckBox_Main.Checked);
         }
     }
 

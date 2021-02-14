@@ -34,7 +34,7 @@ namespace HaloPogSwitch.Stuff
      
             
             IntPtr mod = ProcessEditorHandler.instance.GetModuleFromEnun(moduleType).BaseAddress;
-            //Console.Write(mod);
+           
 
 
             return mod + adress;

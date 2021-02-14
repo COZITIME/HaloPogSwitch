@@ -69,6 +69,8 @@ namespace UI32
 
         public void AttemptShuffle()
         {
+            if (!LoopBox.Checked) return;
+
             int index =buttons.IndexOfKey(theValue) + 1;
             index %= buttons.Count();
 
@@ -133,7 +135,6 @@ namespace UI32
                 ButtonArray buttonArray = new ButtonArray(title);
                 collection.Add(buttonArray);
 
-                Console.WriteLine("Adding Button Array: " + title);
 
                 foreach (var item in nodes)
                 {
@@ -145,7 +146,7 @@ namespace UI32
                 MyButton butt = new MyButton();
                 butt.Text = title;
 
-                Console.WriteLine("Adding New Button: "+ title  + " v: " + value );
+             
 
                 collection.Add(butt);
 

@@ -32,7 +32,7 @@ namespace UI32
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.LoopBox = new UI32.MyButton();
+            this.LoopBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,25 +81,14 @@ namespace UI32
             // 
             // LoopBox
             // 
-            this.LoopBox.Appearance = System.Windows.Forms.Appearance.Button;
-            this.LoopBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.LoopBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LoopBox.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.LoopBox.FlatAppearance.BorderSize = 2;
-            this.LoopBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.LoopBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.LoopBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.LoopBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoopBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoopBox.ForeColor = System.Drawing.Color.White;
-            this.LoopBox.Location = new System.Drawing.Point(196, 0);
-            this.LoopBox.Margin = new System.Windows.Forms.Padding(0);
+            this.LoopBox.AutoSize = true;
+            this.LoopBox.Location = new System.Drawing.Point(196, 3);
+            this.LoopBox.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.LoopBox.Name = "LoopBox";
-            this.LoopBox.Size = new System.Drawing.Size(37, 20);
-            this.LoopBox.TabIndex = 0;
+            this.LoopBox.Size = new System.Drawing.Size(50, 17);
+            this.LoopBox.TabIndex = 4;
             this.LoopBox.Text = "Loop";
-            this.LoopBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LoopBox.UseVisualStyleBackColor = false;
+            this.LoopBox.UseVisualStyleBackColor = true;
             // 
             // TrainerEnumButtonArray
             // 
@@ -122,7 +111,7 @@ namespace UI32
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Label label1;
-        private MyButton LoopBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.CheckBox LoopBox;
     }
 }

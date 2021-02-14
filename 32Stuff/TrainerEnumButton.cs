@@ -20,7 +20,7 @@ namespace UI32
         public TrainerEnumButton(string title, params ValueStringPair[] values)
         {
             InitializeComponent();
-            Label_title.Text = title;
+            label1.Text = title;
 
             buttons = new SortedList <byte, MyButton>();
 
@@ -81,7 +81,9 @@ namespace UI32
 
         public void AttemptShuffle()
         {
-          int index =  buttons.IndexOfKey(value) + 1;
+            if (!LoopBox.Checked) return;
+
+            int index =  buttons.IndexOfKey(value) + 1;
             index %= buttons.Count();
 
             byte newValue = buttons.Keys[index];

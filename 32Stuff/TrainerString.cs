@@ -89,10 +89,16 @@ namespace UI32
 
         public void AttemptShuffle()
         {
+            if (!LoopBox.Checked) return;
             string rand = RandomStringHelper.RandomString(4);
             SetValue(rand);
             onValueChanged.Invoke(rand);
             // throw new NotImplementedException();
+        }
+
+        private void label_main_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
