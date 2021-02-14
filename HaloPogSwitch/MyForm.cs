@@ -127,51 +127,38 @@ namespace HaloPogSwitch
             //  processHandler.PairModule(halo2a, ModuleType.halo2A);
 
             //C_HaloReach1.GetFlow(HaloReachMenuType.colour).Controls.Add(new TrainerEnumNestedButtonHolder());
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourPrimary.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.color).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourSecondary.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.color).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_ColourSecondary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
             //// Halo 2A
-
-            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BA32C), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo2a1.GetHalo2AFlow(H2ATab.serviceid).Controls);
-            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BA30C)), new TrainerBool("Species", "Elite Biped"), uC_Halo2a1.GetHalo2AFlow(H2ATab.species).Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BA148), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo2a1.GetHalo2AFlow(H2ATab.gender).Controls);
-
-
-
-
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Helmates.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.helmateVisor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Visors.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.helmateVisor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Chest.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.chest).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Arms.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.wrist).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Legs.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.knees).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_LShoulder.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.shoulder).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_RShoulder.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.shoulder).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Helmates.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Visors.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_LShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_RShoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
 
             ////thingys that i added
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Helm.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Chest.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Arms.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Legs.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
-
-            //// halo 4
-
-            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D64B04), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo41.GetHalo4Flow(Halo4MenuType.serviceid).Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D64928), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo41.GetHalo4Flow(Halo4MenuType.gender).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Helm.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
 
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_L_Shoulder.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.shoulder).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_R_Shoulder.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.shoulder).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Chest.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.chest).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Arms.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.forearms).Controls); 
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_Legs.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.legs).Controls);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo41.GetReachFlow(Halo4MenuType.helmateVisor).Controls);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_L_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_R_Shoulder.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Chest.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Arms.csv"), uC_Halo2a1.GetControls(H2ATab.visor)); 
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_Legs.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
 
 
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo2a1.GetControls(H2ATab.visor));
 
 
         }
