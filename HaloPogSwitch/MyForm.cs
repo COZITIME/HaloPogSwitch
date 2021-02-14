@@ -120,7 +120,7 @@ namespace HaloPogSwitch
 
             processHandler.PairModule(haloreach, ModuleType.reach);
             processHandler.PairModule(halo2a, ModuleType.halo2A);
-            processHandler.PairModule(halo3, ModuleType.halo3);
+       //     processHandler.PairModule(halo3, ModuleType.halo3);
             processHandler.PairModule(halo4, ModuleType.halo4);
 
 
@@ -215,7 +215,7 @@ namespace HaloPogSwitch
 
         private void halo3_CheckedChanged(object sender, EventArgs e)
         {
-            if (halo3.Checked) uC_Halo31.BringToFront();
+         //   if (halo3.Checked) uC_Halo31.BringToFront();
         }
 
         private void halo2a_CheckedChanged(object sender, EventArgs e)
