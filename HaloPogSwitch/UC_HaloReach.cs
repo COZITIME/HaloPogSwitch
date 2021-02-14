@@ -17,7 +17,7 @@ namespace HaloPogSwitch
             InitializeComponent();
         }
 
-        public FlowLayoutPanel GetFlow (HaloReachMenuType type )
+        public FlowLayoutPanel GetReachFlow (HaloReachMenuType type )
         {
             switch (type)
             {
