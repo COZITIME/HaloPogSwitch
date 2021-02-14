@@ -163,8 +163,8 @@ namespace HaloPogSwitch
             this.htTabControl1.Controls.Add(this.tabPage1);
             this.htTabControl1.Controls.Add(this.tabPage2);
             this.htTabControl1.Controls.Add(this.tabPage3);
-            this.htTabControl1.Controls.Add(this.tabPage4);
             this.htTabControl1.Controls.Add(this.tabPage6);
+            this.htTabControl1.Controls.Add(this.tabPage4);
             this.htTabControl1.DisableClose = true;
             this.htTabControl1.DisableDragging = true;
             this.htTabControl1.Font = new System.Drawing.Font("Segoe UI", 9F);

@@ -31,8 +31,6 @@ namespace HaloPogSwitch
         {
             this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.htTabControl1 = new HTAlt.WinForms.HTTabControl();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.FlowLayout_ArmorEffects = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Helmet = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -45,16 +43,18 @@ namespace HaloPogSwitch
             this.FlowLayout_Wrist = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Utility = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.FlowLayout_ArmorEffects = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.FlowLayout_FirefightVoice = new System.Windows.Forms.FlowLayoutPanel();
             this.htTabControl2 = new HTAlt.WinForms.HTTabControl();
-            this.tabPage22 = new System.Windows.Forms.TabPage();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.htTabControl3 = new HTAlt.WinForms.HTTabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.FlowLayout_EliteArmor = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.FlowLayout_EliteEffects = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage22 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.htTabControl4 = new HTAlt.WinForms.HTTabControl();
             this.tabPage18 = new System.Windows.Forms.TabPage();
@@ -70,20 +70,20 @@ namespace HaloPogSwitch
             this.tabPage21 = new System.Windows.Forms.TabPage();
             this.FlowLayout_ServiceID = new System.Windows.Forms.FlowLayoutPanel();
             this.htTabControl1.SuspendLayout();
-            this.tabPage9.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.htTabControl2.SuspendLayout();
-            this.tabPage22.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.htTabControl3.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
+            this.tabPage22.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.htTabControl4.SuspendLayout();
             this.tabPage18.SuspendLayout();
@@ -102,7 +102,7 @@ namespace HaloPogSwitch
             this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneLabel1.ForeColor = System.Drawing.Color.White;
             this.siticoneLabel1.Location = new System.Drawing.Point(0, 0);
-            this.siticoneLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticoneLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.siticoneLabel1.Name = "siticoneLabel1";
             this.siticoneLabel1.Size = new System.Drawing.Size(122, 34);
             this.siticoneLabel1.TabIndex = 0;
@@ -129,7 +129,7 @@ namespace HaloPogSwitch
             this.htTabControl1.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.htTabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.htTabControl1.Location = new System.Drawing.Point(-4, 3);
-            this.htTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.htTabControl1.Multiline = true;
             this.htTabControl1.Name = "htTabControl1";
             this.htTabControl1.Padding = new System.Drawing.Point(8, 5);
@@ -145,38 +145,15 @@ namespace HaloPogSwitch
             this.htTabControl1.UpDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.htTabControl1.UpDownTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             // 
-            // tabPage9
-            // 
-            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.tabPage9.Controls.Add(this.FlowLayout_ArmorEffects);
-            this.tabPage9.ForeColor = System.Drawing.Color.White;
-            this.tabPage9.Location = new System.Drawing.Point(4, 29);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage9.Size = new System.Drawing.Size(796, 505);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "Armor Effects";
-            // 
-            // FlowLayout_ArmorEffects
-            // 
-            this.FlowLayout_ArmorEffects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowLayout_ArmorEffects.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlowLayout_ArmorEffects.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_ArmorEffects.Name = "FlowLayout_ArmorEffects";
-            this.FlowLayout_ArmorEffects.Size = new System.Drawing.Size(792, 501);
-            this.FlowLayout_ArmorEffects.TabIndex = 0;
-            this.FlowLayout_ArmorEffects.WrapContents = false;
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.tabPage1.Controls.Add(this.FlowLayout_Helmet);
             this.tabPage1.ForeColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(796, 505);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Helmets";
@@ -199,9 +176,9 @@ namespace HaloPogSwitch
             this.tabPage2.Controls.Add(this.FlowLayout_Shoulder);
             this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(796, 505);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Shoulders";
@@ -222,9 +199,9 @@ namespace HaloPogSwitch
             this.tabPage3.Controls.Add(this.FlowLayout_Chest);
             this.tabPage3.ForeColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(796, 505);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Chests";
@@ -244,9 +221,9 @@ namespace HaloPogSwitch
             this.tabPage4.Controls.Add(this.FlowLayout_Knee);
             this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(796, 505);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Knee Guards";
@@ -265,9 +242,9 @@ namespace HaloPogSwitch
             this.tabPage6.Controls.Add(this.FlowLayout_Wrist);
             this.tabPage6.ForeColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage6.Size = new System.Drawing.Size(796, 505);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Wrists";
@@ -286,9 +263,9 @@ namespace HaloPogSwitch
             this.tabPage7.Controls.Add(this.FlowLayout_Utility);
             this.tabPage7.ForeColor = System.Drawing.Color.White;
             this.tabPage7.Location = new System.Drawing.Point(4, 29);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage7.Size = new System.Drawing.Size(796, 505);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Utilities";
@@ -301,15 +278,38 @@ namespace HaloPogSwitch
             this.FlowLayout_Utility.Size = new System.Drawing.Size(792, 501);
             this.FlowLayout_Utility.TabIndex = 2;
             // 
+            // tabPage9
+            // 
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage9.Controls.Add(this.FlowLayout_ArmorEffects);
+            this.tabPage9.ForeColor = System.Drawing.Color.White;
+            this.tabPage9.Location = new System.Drawing.Point(4, 29);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Size = new System.Drawing.Size(796, 505);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Armor Effects";
+            // 
+            // FlowLayout_ArmorEffects
+            // 
+            this.FlowLayout_ArmorEffects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowLayout_ArmorEffects.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FlowLayout_ArmorEffects.Location = new System.Drawing.Point(2, 2);
+            this.FlowLayout_ArmorEffects.Name = "FlowLayout_ArmorEffects";
+            this.FlowLayout_ArmorEffects.Size = new System.Drawing.Size(792, 501);
+            this.FlowLayout_ArmorEffects.TabIndex = 0;
+            this.FlowLayout_ArmorEffects.WrapContents = false;
+            // 
             // tabPage10
             // 
             this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.tabPage10.Controls.Add(this.FlowLayout_FirefightVoice);
             this.tabPage10.ForeColor = System.Drawing.Color.White;
             this.tabPage10.Location = new System.Drawing.Point(4, 29);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage10.Size = new System.Drawing.Size(796, 505);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Firefight Voices";
@@ -330,8 +330,8 @@ namespace HaloPogSwitch
             this.htTabControl2.AllowDrop = true;
             this.htTabControl2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.htTabControl2.BorderTabLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.htTabControl2.Controls.Add(this.tabPage12);
             this.htTabControl2.Controls.Add(this.tabPage22);
+            this.htTabControl2.Controls.Add(this.tabPage12);
             this.htTabControl2.Controls.Add(this.tabPage13);
             this.htTabControl2.Controls.Add(this.tabPage14);
             this.htTabControl2.Controls.Add(this.tabPage15);
@@ -343,7 +343,7 @@ namespace HaloPogSwitch
             this.htTabControl2.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.htTabControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.htTabControl2.Location = new System.Drawing.Point(0, 38);
-            this.htTabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htTabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.htTabControl2.Multiline = true;
             this.htTabControl2.Name = "htTabControl2";
             this.htTabControl2.Padding = new System.Drawing.Point(8, 5);
@@ -359,28 +359,15 @@ namespace HaloPogSwitch
             this.htTabControl2.UpDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.htTabControl2.UpDownTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             // 
-            // tabPage22
-            // 
-            this.tabPage22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.tabPage22.Controls.Add(this.htTabControl1);
-            this.tabPage22.ForeColor = System.Drawing.Color.White;
-            this.tabPage22.Location = new System.Drawing.Point(4, 29);
-            this.tabPage22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage22.Size = new System.Drawing.Size(795, 533);
-            this.tabPage22.TabIndex = 4;
-            this.tabPage22.Text = "Spartan Armor";
-            // 
             // tabPage12
             // 
             this.tabPage12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.tabPage12.Controls.Add(this.htTabControl3);
             this.tabPage12.ForeColor = System.Drawing.Color.White;
             this.tabPage12.Location = new System.Drawing.Point(4, 29);
-            this.tabPage12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage12.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage12.Size = new System.Drawing.Size(795, 533);
             this.tabPage12.TabIndex = 5;
             this.tabPage12.Text = "Elite Armor";
@@ -400,7 +387,7 @@ namespace HaloPogSwitch
             this.htTabControl3.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.htTabControl3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.htTabControl3.Location = new System.Drawing.Point(-4, 3);
-            this.htTabControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htTabControl3.Margin = new System.Windows.Forms.Padding(2);
             this.htTabControl3.Multiline = true;
             this.htTabControl3.Name = "htTabControl3";
             this.htTabControl3.Padding = new System.Drawing.Point(8, 5);
@@ -422,9 +409,9 @@ namespace HaloPogSwitch
             this.tabPage16.Controls.Add(this.FlowLayout_EliteArmor);
             this.tabPage16.ForeColor = System.Drawing.Color.White;
             this.tabPage16.Location = new System.Drawing.Point(4, 29);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage16.Size = new System.Drawing.Size(796, 503);
             this.tabPage16.TabIndex = 8;
             this.tabPage16.Text = "Armor";
@@ -445,9 +432,9 @@ namespace HaloPogSwitch
             this.tabPage17.Controls.Add(this.FlowLayout_EliteEffects);
             this.tabPage17.ForeColor = System.Drawing.Color.White;
             this.tabPage17.Location = new System.Drawing.Point(4, 29);
-            this.tabPage17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage17.Size = new System.Drawing.Size(796, 503);
             this.tabPage17.TabIndex = 0;
             this.tabPage17.Text = "Elite Effects";
@@ -462,15 +449,28 @@ namespace HaloPogSwitch
             this.FlowLayout_EliteEffects.TabIndex = 0;
             this.FlowLayout_EliteEffects.WrapContents = false;
             // 
+            // tabPage22
+            // 
+            this.tabPage22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage22.Controls.Add(this.htTabControl1);
+            this.tabPage22.ForeColor = System.Drawing.Color.White;
+            this.tabPage22.Location = new System.Drawing.Point(4, 29);
+            this.tabPage22.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage22.Size = new System.Drawing.Size(795, 533);
+            this.tabPage22.TabIndex = 4;
+            this.tabPage22.Text = "Spartan Armor";
+            // 
             // tabPage13
             // 
             this.tabPage13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.tabPage13.Controls.Add(this.htTabControl4);
             this.tabPage13.ForeColor = System.Drawing.Color.White;
             this.tabPage13.Location = new System.Drawing.Point(4, 29);
-            this.tabPage13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage13.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage13.Size = new System.Drawing.Size(795, 533);
             this.tabPage13.TabIndex = 6;
             this.tabPage13.Text = "Body Type";
@@ -490,7 +490,7 @@ namespace HaloPogSwitch
             this.htTabControl4.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.htTabControl4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.htTabControl4.Location = new System.Drawing.Point(-4, 3);
-            this.htTabControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htTabControl4.Margin = new System.Windows.Forms.Padding(2);
             this.htTabControl4.Multiline = true;
             this.htTabControl4.Name = "htTabControl4";
             this.htTabControl4.Padding = new System.Drawing.Point(8, 5);
@@ -512,9 +512,9 @@ namespace HaloPogSwitch
             this.tabPage18.Controls.Add(this.FlowLayout_Species);
             this.tabPage18.ForeColor = System.Drawing.Color.White;
             this.tabPage18.Location = new System.Drawing.Point(4, 29);
-            this.tabPage18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage18.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage18.Size = new System.Drawing.Size(796, 503);
             this.tabPage18.TabIndex = 8;
             this.tabPage18.Text = "Species";
@@ -535,9 +535,9 @@ namespace HaloPogSwitch
             this.tabPage19.Controls.Add(this.FlowLayout_Gender);
             this.tabPage19.ForeColor = System.Drawing.Color.White;
             this.tabPage19.Location = new System.Drawing.Point(4, 29);
-            this.tabPage19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage19.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage19.Name = "tabPage19";
-            this.tabPage19.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage19.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage19.Size = new System.Drawing.Size(796, 503);
             this.tabPage19.TabIndex = 0;
             this.tabPage19.Text = "Gender";
@@ -558,9 +558,9 @@ namespace HaloPogSwitch
             this.tabPage14.Controls.Add(this.htTabControl5);
             this.tabPage14.ForeColor = System.Drawing.Color.White;
             this.tabPage14.Location = new System.Drawing.Point(4, 29);
-            this.tabPage14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage14.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage14.Size = new System.Drawing.Size(795, 533);
             this.tabPage14.TabIndex = 7;
             this.tabPage14.Text = "Colors";
@@ -579,7 +579,7 @@ namespace HaloPogSwitch
             this.htTabControl5.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.htTabControl5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.htTabControl5.Location = new System.Drawing.Point(-4, 3);
-            this.htTabControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htTabControl5.Margin = new System.Windows.Forms.Padding(2);
             this.htTabControl5.Multiline = true;
             this.htTabControl5.Name = "htTabControl5";
             this.htTabControl5.Padding = new System.Drawing.Point(8, 5);
@@ -601,9 +601,9 @@ namespace HaloPogSwitch
             this.tabPage20.Controls.Add(this.FlowLayout_Color);
             this.tabPage20.ForeColor = System.Drawing.Color.White;
             this.tabPage20.Location = new System.Drawing.Point(4, 29);
-            this.tabPage20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage20.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage20.Name = "tabPage20";
-            this.tabPage20.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage20.Size = new System.Drawing.Size(796, 503);
             this.tabPage20.TabIndex = 8;
             this.tabPage20.Text = "Color";
@@ -624,9 +624,9 @@ namespace HaloPogSwitch
             this.tabPage15.Controls.Add(this.htTabControl6);
             this.tabPage15.ForeColor = System.Drawing.Color.White;
             this.tabPage15.Location = new System.Drawing.Point(4, 29);
-            this.tabPage15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage15.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage15.Size = new System.Drawing.Size(795, 533);
             this.tabPage15.TabIndex = 8;
             this.tabPage15.Text = "Service ID";
@@ -645,7 +645,7 @@ namespace HaloPogSwitch
             this.htTabControl6.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.htTabControl6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.htTabControl6.Location = new System.Drawing.Point(-4, 3);
-            this.htTabControl6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htTabControl6.Margin = new System.Windows.Forms.Padding(2);
             this.htTabControl6.Multiline = true;
             this.htTabControl6.Name = "htTabControl6";
             this.htTabControl6.Padding = new System.Drawing.Point(8, 5);
@@ -667,9 +667,9 @@ namespace HaloPogSwitch
             this.tabPage21.Controls.Add(this.FlowLayout_ServiceID);
             this.tabPage21.ForeColor = System.Drawing.Color.White;
             this.tabPage21.Location = new System.Drawing.Point(4, 29);
-            this.tabPage21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage21.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage21.Size = new System.Drawing.Size(796, 503);
             this.tabPage21.TabIndex = 8;
             this.tabPage21.Text = "Service Tag";
@@ -691,25 +691,25 @@ namespace HaloPogSwitch
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.Controls.Add(this.htTabControl2);
             this.Controls.Add(this.siticoneLabel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_HaloReach";
             this.Size = new System.Drawing.Size(968, 681);
             this.Load += new System.EventHandler(this.UC_HaloReach_Load_1);
             this.htTabControl1.ResumeLayout(false);
-            this.tabPage9.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.htTabControl2.ResumeLayout(false);
-            this.tabPage22.ResumeLayout(false);
             this.tabPage12.ResumeLayout(false);
             this.htTabControl3.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
             this.tabPage17.ResumeLayout(false);
+            this.tabPage22.ResumeLayout(false);
             this.tabPage13.ResumeLayout(false);
             this.htTabControl4.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
