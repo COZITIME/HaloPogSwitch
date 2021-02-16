@@ -248,6 +248,10 @@
     <None Include="Data\H4_Visors.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Data\H4L_Ability.csv" />
+    <None Include="Data\H4L_Grenade.csv" />
+    <None Include="Data\H4L_Mods.csv" />
+    <None Include="Data\H4L_Weapons.csv" />
     <None Include="Data\Reach_ArmorEffect.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

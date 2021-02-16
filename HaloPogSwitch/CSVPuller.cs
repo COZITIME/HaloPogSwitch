@@ -108,7 +108,7 @@ namespace HaloPogSwitch
 
         }
 
-        internal static TrainerUpdater<byte> GetTrainerUpdater<T>(string fileName, Control.ControlCollection Controls)
+        internal static TrainerUpdater<byte> GetTrainerUpdater<T>(string fileName, Control.ControlCollection Controls, long Taddress  = 0)
         {
             string file = GetFile(fileName);
           
@@ -134,14 +134,19 @@ namespace HaloPogSwitch
 
                     if (l == 3)
                     {
-                        address = Convert.ToInt32(values[1], 16);
+                        if (Taddress == 0)
+                        {
+                            address = Convert.ToInt32(values[1], 16);
+                        }
+                        else
+                        {
+                            address = Taddress;
+                        }
                     }
 
                     if (l == 2)
                     {
-
-                        moduleType = ModFromString(values[1]);
-
+                         moduleType = ModFromString(values[1]);
                     }
 
                     if (l > 5 && values[0].Contains(':')) isTree = true;
