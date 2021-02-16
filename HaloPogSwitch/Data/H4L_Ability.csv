@@ -1,0 +1,17 @@
+Setting Name,Armor Abilities
+Module,halo4.dll
+Adress,0x0000000
+Values,
+Value Name,Value
+jetpack,1
+camo,4
+hologram,7
+hardlight shield,0c
+teleport,0d
+autoturret,0e
+promethean vision,11
+thruster pack,12
+hacker,13
+regen field,14
+none,15
+flood thrusters,16
