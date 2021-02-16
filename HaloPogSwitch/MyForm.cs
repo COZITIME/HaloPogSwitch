@@ -175,11 +175,11 @@ namespace HaloPogSwitch
 
 
             //// loadouts
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D65434);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D65450);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D6546C);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D65488);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D654A4);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D65434);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D65450);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D6546C);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D65488);
+            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls, 0x2D654A4);
 
         }
 
