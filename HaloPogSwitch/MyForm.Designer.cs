@@ -38,6 +38,7 @@ namespace HaloPogSwitch
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.h4loadouts = new Siticone.UI.WinForms.SiticoneButton();
             this.halo2a = new Siticone.UI.WinForms.SiticoneButton();
             this.halo4 = new Siticone.UI.WinForms.SiticoneButton();
             this.haloreach = new Siticone.UI.WinForms.SiticoneButton();
@@ -70,13 +71,14 @@ namespace HaloPogSwitch
             this.siticonePanel1.Controls.Add(this.pictureBox2);
             this.siticonePanel1.Controls.Add(this.label2);
             this.siticonePanel1.Controls.Add(this.pictureBox1);
+            this.siticonePanel1.Controls.Add(this.h4loadouts);
             this.siticonePanel1.Controls.Add(this.halo2a);
             this.siticonePanel1.Controls.Add(this.halo4);
             this.siticonePanel1.Controls.Add(this.haloreach);
             this.siticonePanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.siticonePanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.siticonePanel1.Location = new System.Drawing.Point(0, 0);
-            this.siticonePanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticonePanel1.Margin = new System.Windows.Forms.Padding(2);
             this.siticonePanel1.Name = "siticonePanel1";
             this.siticonePanel1.ShadowDecoration.Depth = 5;
             this.siticonePanel1.ShadowDecoration.Enabled = true;
@@ -101,7 +103,7 @@ namespace HaloPogSwitch
             this.Welcome.HoveredState.Parent = this.Welcome;
             this.Welcome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Welcome.Location = new System.Drawing.Point(0, 56);
-            this.Welcome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Welcome.Margin = new System.Windows.Forms.Padding(2);
             this.Welcome.Name = "Welcome";
             this.Welcome.PressedDepth = 0;
             this.Welcome.ShadowDecoration.Parent = this.Welcome;
@@ -116,7 +118,7 @@ namespace HaloPogSwitch
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(17, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,12 +142,38 @@ namespace HaloPogSwitch
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 301);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(154, 318);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // h4loadouts
+            // 
+            this.h4loadouts.Animated = false;
+            this.h4loadouts.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.h4loadouts.CheckedState.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.h4loadouts.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.h4loadouts.CheckedState.Parent = this.h4loadouts;
+            this.h4loadouts.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.h4loadouts.CustomImages.Parent = this.h4loadouts;
+            this.h4loadouts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.h4loadouts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.h4loadouts.ForeColor = System.Drawing.Color.White;
+            this.h4loadouts.HoveredState.Parent = this.h4loadouts;
+            this.h4loadouts.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.h4loadouts.Location = new System.Drawing.Point(0, 188);
+            this.h4loadouts.Margin = new System.Windows.Forms.Padding(2);
+            this.h4loadouts.Name = "h4loadouts";
+            this.h4loadouts.PressedDepth = 0;
+            this.h4loadouts.ShadowDecoration.Parent = this.h4loadouts;
+            this.h4loadouts.Size = new System.Drawing.Size(154, 32);
+            this.h4loadouts.TabIndex = 9;
+            this.h4loadouts.Text = "Loadouts";
+            this.h4loadouts.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.h4loadouts.TextOffset = new System.Drawing.Point(15, 0);
+            this.h4loadouts.CheckedChanged += new System.EventHandler(this.halo3_CheckedChanged);
             // 
             // halo2a
             // 
@@ -162,7 +190,7 @@ namespace HaloPogSwitch
             this.halo2a.HoveredState.Parent = this.halo2a;
             this.halo2a.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.halo2a.Location = new System.Drawing.Point(0, 152);
-            this.halo2a.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.halo2a.Margin = new System.Windows.Forms.Padding(2);
             this.halo2a.Name = "halo2a";
             this.halo2a.PressedDepth = 0;
             this.halo2a.ShadowDecoration.Parent = this.halo2a;
@@ -189,7 +217,7 @@ namespace HaloPogSwitch
             this.halo4.HoveredState.Parent = this.halo4;
             this.halo4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.halo4.Location = new System.Drawing.Point(0, 120);
-            this.halo4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.halo4.Margin = new System.Windows.Forms.Padding(2);
             this.halo4.Name = "halo4";
             this.halo4.PressedDepth = 0;
             this.halo4.ShadowDecoration.Parent = this.halo4;
@@ -215,7 +243,7 @@ namespace HaloPogSwitch
             this.haloreach.HoveredState.Parent = this.haloreach;
             this.haloreach.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.haloreach.Location = new System.Drawing.Point(0, 88);
-            this.haloreach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.haloreach.Margin = new System.Windows.Forms.Padding(2);
             this.haloreach.Name = "haloreach";
             this.haloreach.PressedDepth = 0;
             this.haloreach.ShadowDecoration.Parent = this.haloreach;
@@ -233,7 +261,7 @@ namespace HaloPogSwitch
             this.siticonePanel2.Controls.Add(this.siticoneControlBox2);
             this.siticonePanel2.Controls.Add(this.siticoneControlBox1);
             this.siticonePanel2.Location = new System.Drawing.Point(159, 0);
-            this.siticonePanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticonePanel2.Margin = new System.Windows.Forms.Padding(2);
             this.siticonePanel2.Name = "siticonePanel2";
             this.siticonePanel2.ShadowDecoration.Parent = this.siticonePanel2;
             this.siticonePanel2.Size = new System.Drawing.Size(805, 32);
@@ -247,7 +275,7 @@ namespace HaloPogSwitch
             this.siticoneControlBox2.HoveredState.Parent = this.siticoneControlBox2;
             this.siticoneControlBox2.IconColor = System.Drawing.Color.White;
             this.siticoneControlBox2.Location = new System.Drawing.Point(739, 0);
-            this.siticoneControlBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticoneControlBox2.Margin = new System.Windows.Forms.Padding(2);
             this.siticoneControlBox2.Name = "siticoneControlBox2";
             this.siticoneControlBox2.ShadowDecoration.Parent = this.siticoneControlBox2;
             this.siticoneControlBox2.Size = new System.Drawing.Size(34, 24);
@@ -262,7 +290,7 @@ namespace HaloPogSwitch
             this.siticoneControlBox1.HoveredState.Parent = this.siticoneControlBox1;
             this.siticoneControlBox1.IconColor = System.Drawing.Color.White;
             this.siticoneControlBox1.Location = new System.Drawing.Point(770, 0);
-            this.siticoneControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticoneControlBox1.Margin = new System.Windows.Forms.Padding(2);
             this.siticoneControlBox1.Name = "siticoneControlBox1";
             this.siticoneControlBox1.ShadowDecoration.Parent = this.siticoneControlBox1;
             this.siticoneControlBox1.Size = new System.Drawing.Size(34, 24);
@@ -283,7 +311,7 @@ namespace HaloPogSwitch
             this.siticonePanel3.Controls.Add(this.uC_Halo41);
             this.siticonePanel3.Controls.Add(this.uC_Halo2a1);
             this.siticonePanel3.Location = new System.Drawing.Point(159, 37);
-            this.siticonePanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siticonePanel3.Margin = new System.Windows.Forms.Padding(2);
             this.siticonePanel3.Name = "siticonePanel3";
             this.siticonePanel3.ShadowDecoration.Parent = this.siticonePanel3;
             this.siticonePanel3.Size = new System.Drawing.Size(805, 604);
@@ -336,7 +364,7 @@ namespace HaloPogSwitch
             this.uC_Halo2a1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.uC_Halo2a1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uC_Halo2a1.Location = new System.Drawing.Point(0, 0);
-            this.uC_Halo2a1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uC_Halo2a1.Margin = new System.Windows.Forms.Padding(2);
             this.uC_Halo2a1.Name = "uC_Halo2a1";
             this.uC_Halo2a1.Size = new System.Drawing.Size(805, 604);
             this.uC_Halo2a1.TabIndex = 5;
@@ -386,6 +414,7 @@ namespace HaloPogSwitch
         private System.Windows.Forms.PictureBox pictureBox2;
         private Siticone.UI.WinForms.SiticoneButton Welcome;
         private HaloPog.UC_Welcome uC_Welcome1;
+        private Siticone.UI.WinForms.SiticoneButton h4loadouts;
     }
 }
 
