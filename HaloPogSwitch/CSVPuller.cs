@@ -373,6 +373,7 @@ namespace HaloPogSwitch
             LoadOut.LoudoutUIData UIData = new LoadOut.LoudoutUIData(GetWeaponData(), GetByteNames(@"H4L_Ability.csv"), GetByteNames(@"H4L_Mods.csv"), GetByteNames(@"H4L_Grenade.csv"));
             controls.Add(new LoadOut(UIData));
            
+          //  TrainerUpdater<LoadoutData> trainerUpdater = new TrainerUpdater<LoadoutData>(new LoadoutAdressSetter())
         }
 
         public static SortedList<byte, string> GetByteNames(string fileName)
@@ -400,7 +401,7 @@ namespace HaloPogSwitch
                         string name = values[0];
 
                         dict.Add(b, name);
-
+        
 
                     }
                 }

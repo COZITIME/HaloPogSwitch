@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using UI32;
 
 namespace HaloPogSwitch.Stuff
 {
@@ -34,6 +35,23 @@ namespace HaloPogSwitch.Stuff
         }
     }
 
+    public class LoadoutAdressSetter : AdressSetter<LoadoutData>
+    {
+        public LoadoutAdressSetter(AdressGetter getter) : base(getter)
+        {
+
+        }
+
+        public override LoadoutData ReadMemory()
+        {
+            return new LoadoutData("new", 1,1,1,1,1,1,1);
+        }
+
+        public override void WriteMemory(LoadoutData value)
+        {
+           
+        }
+    }
 
     public class ByteAdressSetter : AdressSetter<byte>
     {

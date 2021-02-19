@@ -57,7 +57,7 @@ namespace UI32
             this.WeaponPrimary.Name = "WeaponPrimary";
             this.WeaponPrimary.Size = new System.Drawing.Size(121, 21);
             this.WeaponPrimary.TabIndex = 0;
-            this.WeaponPrimary.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.WeaponPrimary.SelectedIndexChanged += new System.EventHandler(this.PrimaryChange);
             // 
             // SkinPrimaryWeapon
             // 
@@ -94,7 +94,7 @@ namespace UI32
             this.WeaponSecondary.Name = "WeaponSecondary";
             this.WeaponSecondary.Size = new System.Drawing.Size(121, 21);
             this.WeaponSecondary.TabIndex = 0;
-            this.WeaponSecondary.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.WeaponSecondary.SelectedIndexChanged += new System.EventHandler(this.SecondaryChange);
             // 
             // SkinSecondaryWeapon
             // 
