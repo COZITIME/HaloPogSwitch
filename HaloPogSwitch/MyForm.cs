@@ -209,6 +209,8 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod5).Controls, 0x2D654A0);
             CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod5).Controls, 0x2D654A4);
 
+            CSVPuller.GetLoadoutTrainerUpdater(uC_Halo41.GetHalo4Flow(Halo4MenuType.serviceid).Controls, 0x2D654A4);
+
         }
 
 

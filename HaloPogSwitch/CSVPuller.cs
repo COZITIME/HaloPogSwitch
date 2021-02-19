@@ -47,10 +47,10 @@ namespace HaloPogSwitch
                         string name = values[0];
                         diffrentValues.Add(new ValueStringPair(value, name));
                     }
-                    
+
                 }
 
-             
+
 
                 return new TrainerEnumButton(titleThing, diffrentValues.ToArray());
             }
@@ -99,7 +99,7 @@ namespace HaloPogSwitch
 
                     }
 
-                   
+
 
                 }
 
@@ -108,10 +108,10 @@ namespace HaloPogSwitch
 
         }
 
-        internal static TrainerUpdater<byte> GetTrainerUpdater<T>(string fileName, Control.ControlCollection Controls, long Taddress  = 0)
+        internal static TrainerUpdater<byte> GetTrainerUpdater<T>(string fileName, Control.ControlCollection Controls, long Taddress = 0)
         {
             string file = GetFile(fileName);
-          
+
 
             bool isTree = false;
             bool isColour = false;
@@ -146,7 +146,7 @@ namespace HaloPogSwitch
 
                     if (l == 2)
                     {
-                         moduleType = ModFromString(values[1]);
+                        moduleType = ModFromString(values[1]);
                     }
 
                     if (l > 5 && values[0].Contains(':')) isTree = true;
@@ -172,9 +172,9 @@ namespace HaloPogSwitch
             }
 
 
-           
 
-            var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(moduleType, (int) address)), ui, Controls);
+
+            var t = new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(moduleType, (int)address)), ui, Controls);
 
             return t;
 
@@ -227,8 +227,8 @@ namespace HaloPogSwitch
                                 var fn = nodes.FirstOrDefault(n => n.title == nameSplit[0]);
                                 if (fn == null)
                                 {
-                               
-                                   nodes.Add(fn = new Node(nameSplit[0], 0));
+
+                                    nodes.Add(fn = new Node(nameSplit[0], 0));
                                 }
 
                                 if (nameSplit.Length == 1)
@@ -250,8 +250,8 @@ namespace HaloPogSwitch
                                     pnode.nodes.Add(new Node("Base", pnode.value));
                                 }
 
-                            
-                               if (pnode != null) pnode.nodes.Add(new Node(nameSplit[i], value));
+
+                                if (pnode != null) pnode.nodes.Add(new Node(nameSplit[i], value));
                             }
 
 
@@ -261,16 +261,16 @@ namespace HaloPogSwitch
 
                     }
 
-                    }
-
-
-
                 }
 
 
-                return new TrainerEnumButtonArray(titleThing, nodes);
+
             }
-        
+
+
+            return new TrainerEnumButtonArray(titleThing, nodes);
+        }
+
         //private static TrainerTreeList GetTrainerTreeFromFile(string file)
         //{
         //    string titleThing = "";
@@ -356,9 +356,9 @@ namespace HaloPogSwitch
         public static ModuleType ModFromString(string stringValue)
         {
             return ProcessEditorHandler.instance.haloMods.GetModTypeViaString(stringValue);
-          
 
-           
+
+
         }
 
         public static string GetFile(string fileName)
@@ -366,17 +366,100 @@ namespace HaloPogSwitch
 
             return Path.Combine(System.IO.Directory.GetCurrentDirectory(), @"Data\", fileName);
         }
-    }
 
-
-    static class ExtensionMethods
-    {
-        public static Color ToColor(this uint argb)
+        internal static void GetLoadoutTrainerUpdater(Control.ControlCollection controls, int loadOutOffset)
         {
-            return Color.FromArgb((byte)((argb & -16777216) >> 0x18),
-                                  (byte)((argb & 0xff0000) >> 0x10),
-                                  (byte)((argb & 0xff00) >> 8),
-                                  (byte)(argb & 0xff));
+
+            LoadOut.LoudoutUIData UIData = new LoadOut.LoudoutUIData(GetWeaponData(), GetByteNames(@"H4L_Ability.csv"), GetByteNames(@"H4L_Mods.csv"), GetByteNames(@"H4L_Grenade.csv"));
+            controls.Add(new LoadOut(UIData));
+           
         }
+
+        public static SortedList<byte, string> GetByteNames(string fileName)
+        {
+            string file = GetFile(fileName);
+            SortedList<byte, string> dict = new SortedList<byte, string>();
+
+
+
+            using (var reader = new StreamReader(file))
+            {
+                int Line = 0;
+              
+
+                while (!reader.EndOfStream)
+                {
+                    Line++;
+                    string[] values = reader.ReadLine().Split(',');
+
+                    if (Line > 6)
+                    {
+
+                        Console.WriteLine(values[0] + ": " + values[1]);
+                        byte b = Convert.ToByte(values[1], 16);
+                        string name = values[0];
+
+                        dict.Add(b, name);
+
+
+                    }
+                }
+                
+            }
+
+            return dict;
+        }
+
+        public static LoadOut.WeaponUiData GetWeaponData()
+        {
+            LoadOut.WeaponUiData weaponData = new LoadOut.WeaponUiData();
+            weaponData.weapons = new SortedList<byte, LoadOut.WeaponUiData.WeaponSkinUiData>();
+            string file = GetFile(@"H4L_Weapons.csv");
+
+            using (var reader = new StreamReader(file))
+            {
+                int Line = 0;
+                
+
+                while (!reader.EndOfStream)
+                {
+                    Line++;
+                    string[] values = reader.ReadLine().Split(',');
+                    if (Line > 5)
+                    {
+                        Console.WriteLine(values[0] + ": " + values[1]);
+
+                        LoadOut.WeaponUiData.WeaponSkinUiData weaponSkinData = new LoadOut.WeaponUiData.WeaponSkinUiData();
+                        byte b = Convert.ToByte(values[1], 16);
+                        
+
+                        weaponSkinData.weaponName = values[0];
+                        weaponSkinData.skins = new SortedList<byte, string>();
+
+                        weaponSkinData.skins.Add(0, "base");
+
+                        byte sb = 1;
+                        for (int i = 2; i < values.Length; i++)
+                        {
+                            sb++;
+                            weaponSkinData.skins.Add(sb, values[i]);
+                        }
+
+                        Console.WriteLine(weaponSkinData.weaponName);
+                        weaponData.weapons.Add(b, weaponSkinData);
+
+                    }
+                }
+
+            }
+
+            return weaponData;
+        }
+
+
     }
+
+   
+
+
 }
