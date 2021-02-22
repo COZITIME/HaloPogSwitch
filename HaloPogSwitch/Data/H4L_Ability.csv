@@ -3,15 +3,15 @@ Module,halo4.dll
 Adress,0x0000000
 Values,
 Value Name,Value
-jetpack,1
-camo,4
-hologram,7
-hardlight shield,0c
-teleport,0d
-autoturret,0e
-promethean vision,11
-thruster pack,12
-hacker,13
-regen field,14
-none,15
-flood thrusters,16
+Jet Pack,1
+Active Camo,4
+Hologram,7
+Hardlight Shield,0c
+Teleport,0d
+Autosentry,0e
+Promethean Vision,11
+Thruster Pack,12
+Hacker,13
+Regeneration Field,14
+None,15
+Flood Thrusters,16

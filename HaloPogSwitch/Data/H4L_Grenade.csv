@@ -3,6 +3,6 @@ Module,halo4.dll
 Adress,0x0000000
 Values,
 Value Name,Value
-frag grenades,0
-sticky grenades,1
-pulse grenades,2
+Frag Grenade,0
+Plasma Grenade,1
+Pulse Grenades,2

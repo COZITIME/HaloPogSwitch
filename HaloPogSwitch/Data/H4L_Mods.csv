@@ -4,28 +4,28 @@ Adress,0x0000000
 Values,
 Value Name,Value
 sensor,0
-mobility,1
-grenadier,2
-dexterity,3
-ordnance priority,4
-awareness,5
-shielding,6
-aa efficiency,7
-resupply,8
-firepower,9
+Mobility,1
+Grenadier,2
+Dexterity,3
+Ordnance Priority,4
+Awareness,5
+Shielding,6
+AA Efficiency,7
+Resupply,8
+Firepower,9
 app_situational_report,0a
-ammo,0B
-stealth,0c
-stability,0d
-nemesis,0e
-drop recon,0f
-wheelman,10
-gunner,11
-requistition,12
-fast track,13
-explosives,14
-none,15
-none,16
-survivor,17
-recharge,18
-resistor,19
+Ammo,0B
+Stealth,0c
+Stability,0d
+Nemesis,0e
+Drop Recon,0f
+Wheelman,10
+Gunner,11
+Requisition,12
+Fast Track,13
+Explosives,14
+None,15
+None,16
+Survivor,17
+Recharge,18
+Resistor,19
