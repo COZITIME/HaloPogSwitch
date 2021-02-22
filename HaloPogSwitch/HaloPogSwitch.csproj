@@ -330,6 +330,9 @@
     <None Include="Resources\feed.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Hi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Dlls\VAMemory.dll" />
     <Content Include="feet.ico" />
   </ItemGroup>

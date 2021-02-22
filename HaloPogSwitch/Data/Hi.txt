@@ -1,0 +1,11 @@
+﻿To get started Launch Halo: Reach, Halo 4 or Halo 2: Anniversary. 
+Then you can get to customising your armour and trolling your mates. 
+
+
+Team: 
+Gamergotten - He found a few hex values.
+Cantaloupe - He apparently helped with something.
+Seraphicy - Made the UI not look like trash.
+Slender - Found all of my stupid bugs.
+Cozi (me) - Just whacked a few lines of jank code together.
+KillSwitch - Inspired the project name. Good Job!
