@@ -182,32 +182,36 @@ namespace HaloPogSwitch
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.primary1).Controls, 0x0000000);
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.secondary1).Controls, 0x0000000);
 
+            //Console.WriteLine("offset: " + (0x2D65464 - 0x2D65448 + 0x2D65480));
 
-            //loadout 1
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade1).Controls, 0x2D65448);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability1).Controls, 0x2D65444);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod1).Controls, 0x2D65430);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod1).Controls, 0x2D65434);
-            //loadout 2
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade2).Controls, 0x2D65464);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability2).Controls, 0x2D65460);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod2).Controls, 0x2D6544C);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod2).Controls, 0x2D65450);
-            //loadout 3
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade3).Controls, 0x2D65480);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability3).Controls, 0x2D6547C);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod3).Controls, 0x2D65468);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod3).Controls, 0x2D6546C);
-            //loadout 4
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade4).Controls, 0x2D6549C);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability4).Controls, 0x2D65498);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod4).Controls, 0x2D65484);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod4).Controls, 0x2D65488);
-            //loadout 5
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade5).Controls, 0x2D654B8);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability5).Controls, 0x2D654B4);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod5).Controls, 0x2D654A0);
-            CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod5).Controls, 0x2D654A4);
+            ////loadout 1
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade1).Controls, 0x2D65448);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability1).Controls, 0x2D65444);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod1).Controls, 0x2D65430);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod1).Controls, 0x2D65434);
+            ////loadout 2
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade2).Controls, 0x2D65464);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability2).Controls, 0x2D65460);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod2).Controls, 0x2D6544C);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod2).Controls, 0x2D65450);
+            ////loadout 3
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade3).Controls, 0x2D65480);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability3).Controls, 0x2D6547C);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod3).Controls, 0x2D65468);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod3).Controls, 0x2D6546C);
+            ////loadout 4
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade4).Controls, 0x2D6549C);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability4).Controls, 0x2D65498);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod4).Controls, 0x2D65484);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod4).Controls, 0x2D65488);
+            ////loadout 5
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade5).Controls, 0x2D654B8);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Ability.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.ability5).Controls, 0x2D654B4);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod5).Controls, 0x2D654A0);
+            //CSVPuller.GetTrainerUpdater<byte>((@"H4L_Mods.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.mod5).Controls, 0x2D654A4);
+
+          
+            CSVPuller.GetLoadoutTrainerUpdater(uC_Halo41.GetHalo4Flow(Halo4MenuType.loadout).Controls, 0x2D654A4);
 
         }
 
@@ -250,7 +254,7 @@ namespace HaloPogSwitch
 
         private void halo3_CheckedChanged(object sender, EventArgs e)
         {
-            if (h4loadouts.Checked) uC_Halo31.BringToFront();
+         //   if (h4loadouts.Checked) uC_Halo31.BringToFront();
         }
 
         private void halo2a_CheckedChanged(object sender, EventArgs e)

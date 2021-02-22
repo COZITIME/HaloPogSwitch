@@ -99,6 +99,12 @@
     <Compile Include="ButtonArray.Designer.cs">
       <DependentUpon>ButtonArray.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadOut.Designer.cs">
+      <DependentUpon>LoadOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="ButtonArray.resx">
       <DependentUpon>ButtonArray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadOut.resx">
+      <DependentUpon>LoadOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyButton.resx">
       <DependentUpon>MyButton.cs</DependentUpon>

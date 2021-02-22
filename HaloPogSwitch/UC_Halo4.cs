@@ -38,6 +38,8 @@ namespace HaloPogSwitch
                     return FlowLayout_Color;
                 case Halo4MenuType.gender:
                     return FlowLayout_Gender;
+                case Halo4MenuType.loadout:
+                    return FlowLayout_Loadout;
                 default:
                     return null;
             }
@@ -60,6 +62,7 @@ namespace HaloPogSwitch
         gender,
         serviceid,
 
+        loadout
 
     }
 }

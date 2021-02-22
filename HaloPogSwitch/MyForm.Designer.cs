@@ -38,7 +38,6 @@ namespace HaloPogSwitch
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.h4loadouts = new Siticone.UI.WinForms.SiticoneButton();
             this.halo2a = new Siticone.UI.WinForms.SiticoneButton();
             this.halo4 = new Siticone.UI.WinForms.SiticoneButton();
             this.haloreach = new Siticone.UI.WinForms.SiticoneButton();
@@ -71,7 +70,6 @@ namespace HaloPogSwitch
             this.siticonePanel1.Controls.Add(this.pictureBox2);
             this.siticonePanel1.Controls.Add(this.label2);
             this.siticonePanel1.Controls.Add(this.pictureBox1);
-            this.siticonePanel1.Controls.Add(this.h4loadouts);
             this.siticonePanel1.Controls.Add(this.halo2a);
             this.siticonePanel1.Controls.Add(this.halo4);
             this.siticonePanel1.Controls.Add(this.haloreach);
@@ -148,32 +146,6 @@ namespace HaloPogSwitch
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // h4loadouts
-            // 
-            this.h4loadouts.Animated = false;
-            this.h4loadouts.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.h4loadouts.CheckedState.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.h4loadouts.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.h4loadouts.CheckedState.Parent = this.h4loadouts;
-            this.h4loadouts.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.h4loadouts.CustomImages.Parent = this.h4loadouts;
-            this.h4loadouts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.h4loadouts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.h4loadouts.ForeColor = System.Drawing.Color.White;
-            this.h4loadouts.HoveredState.Parent = this.h4loadouts;
-            this.h4loadouts.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.h4loadouts.Location = new System.Drawing.Point(0, 188);
-            this.h4loadouts.Margin = new System.Windows.Forms.Padding(2);
-            this.h4loadouts.Name = "h4loadouts";
-            this.h4loadouts.PressedDepth = 0;
-            this.h4loadouts.ShadowDecoration.Parent = this.h4loadouts;
-            this.h4loadouts.Size = new System.Drawing.Size(154, 32);
-            this.h4loadouts.TabIndex = 9;
-            this.h4loadouts.Text = "Loadouts";
-            this.h4loadouts.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.h4loadouts.TextOffset = new System.Drawing.Point(15, 0);
-            this.h4loadouts.CheckedChanged += new System.EventHandler(this.halo3_CheckedChanged);
             // 
             // halo2a
             // 
@@ -414,7 +386,6 @@ namespace HaloPogSwitch
         private System.Windows.Forms.PictureBox pictureBox2;
         private Siticone.UI.WinForms.SiticoneButton Welcome;
         private HaloPog.UC_Welcome uC_Welcome1;
-        private Siticone.UI.WinForms.SiticoneButton h4loadouts;
     }
 }
 

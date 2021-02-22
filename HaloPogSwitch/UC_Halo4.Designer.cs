@@ -39,10 +39,10 @@ namespace HaloPogSwitch
             this.FlowLayout_Shoulder = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Chest = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.FlowLayout_Leg = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Forearms = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.FlowLayout_Leg = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.htTabControl4 = new HTAlt.WinForms.HTTabControl();
             this.tabPage19 = new System.Windows.Forms.TabPage();
@@ -55,14 +55,18 @@ namespace HaloPogSwitch
             this.htTabControl6 = new HTAlt.WinForms.HTTabControl();
             this.tabPage21 = new System.Windows.Forms.TabPage();
             this.FlowLayout_ServiceID = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.htTabControl3 = new HTAlt.WinForms.HTTabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.FlowLayout_Loadout = new System.Windows.Forms.FlowLayoutPanel();
             this.htTabControl2.SuspendLayout();
             this.tabPage22.SuspendLayout();
             this.htTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.htTabControl4.SuspendLayout();
             this.tabPage19.SuspendLayout();
@@ -72,6 +76,9 @@ namespace HaloPogSwitch
             this.tabPage15.SuspendLayout();
             this.htTabControl6.SuspendLayout();
             this.tabPage21.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.htTabControl3.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // siticoneLabel1
@@ -95,6 +102,7 @@ namespace HaloPogSwitch
             this.htTabControl2.Controls.Add(this.tabPage13);
             this.htTabControl2.Controls.Add(this.tabPage14);
             this.htTabControl2.Controls.Add(this.tabPage15);
+            this.htTabControl2.Controls.Add(this.tabPage5);
             this.htTabControl2.DisableClose = true;
             this.htTabControl2.DisableDragging = true;
             this.htTabControl2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -236,27 +244,6 @@ namespace HaloPogSwitch
             this.FlowLayout_Chest.Size = new System.Drawing.Size(792, 501);
             this.FlowLayout_Chest.TabIndex = 1;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.tabPage4.Controls.Add(this.FlowLayout_Leg);
-            this.tabPage4.ForeColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(796, 505);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Legs";
-            // 
-            // FlowLayout_Leg
-            // 
-            this.FlowLayout_Leg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowLayout_Leg.Location = new System.Drawing.Point(2, 2);
-            this.FlowLayout_Leg.Name = "FlowLayout_Leg";
-            this.FlowLayout_Leg.Size = new System.Drawing.Size(792, 501);
-            this.FlowLayout_Leg.TabIndex = 2;
-            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
@@ -277,6 +264,27 @@ namespace HaloPogSwitch
             this.FlowLayout_Forearms.Name = "FlowLayout_Forearms";
             this.FlowLayout_Forearms.Size = new System.Drawing.Size(792, 501);
             this.FlowLayout_Forearms.TabIndex = 2;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage4.Controls.Add(this.FlowLayout_Leg);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Size = new System.Drawing.Size(796, 505);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Legs";
+            // 
+            // FlowLayout_Leg
+            // 
+            this.FlowLayout_Leg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowLayout_Leg.Location = new System.Drawing.Point(2, 2);
+            this.FlowLayout_Leg.Name = "FlowLayout_Leg";
+            this.FlowLayout_Leg.Size = new System.Drawing.Size(792, 501);
+            this.FlowLayout_Leg.TabIndex = 2;
             // 
             // tabPage13
             // 
@@ -476,6 +484,72 @@ namespace HaloPogSwitch
             this.FlowLayout_ServiceID.TabIndex = 0;
             this.FlowLayout_ServiceID.WrapContents = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage5.Controls.Add(this.htTabControl3);
+            this.tabPage5.ForeColor = System.Drawing.Color.White;
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Size = new System.Drawing.Size(795, 533);
+            this.tabPage5.TabIndex = 9;
+            this.tabPage5.Text = "Loadouts";
+            // 
+            // htTabControl3
+            // 
+            this.htTabControl3.AllowDrop = true;
+            this.htTabControl3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.htTabControl3.BorderTabLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.htTabControl3.Controls.Add(this.tabPage7);
+            this.htTabControl3.DisableClose = true;
+            this.htTabControl3.DisableDragging = true;
+            this.htTabControl3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.htTabControl3.HoverTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl3.HoverTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl3.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.htTabControl3.Location = new System.Drawing.Point(-4, 3);
+            this.htTabControl3.Margin = new System.Windows.Forms.Padding(2);
+            this.htTabControl3.Multiline = true;
+            this.htTabControl3.Name = "htTabControl3";
+            this.htTabControl3.Padding = new System.Drawing.Point(8, 5);
+            this.htTabControl3.SelectedIndex = 0;
+            this.htTabControl3.SelectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl3.SelectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl3.Size = new System.Drawing.Size(804, 536);
+            this.htTabControl3.TabIndex = 10;
+            this.htTabControl3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.htTabControl3.UnderBorderTabLineColor = System.Drawing.Color.Transparent;
+            this.htTabControl3.UnselectedBorderTabLineColor = System.Drawing.Color.Transparent;
+            this.htTabControl3.UnselectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl3.UpDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.htTabControl3.UpDownTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage7.Controls.Add(this.FlowLayout_Loadout);
+            this.tabPage7.ForeColor = System.Drawing.Color.White;
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage7.Size = new System.Drawing.Size(796, 503);
+            this.tabPage7.TabIndex = 8;
+            this.tabPage7.Text = "Loadouts";
+            // 
+            // FlowLayout_Loadout
+            // 
+            this.FlowLayout_Loadout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowLayout_Loadout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FlowLayout_Loadout.Location = new System.Drawing.Point(2, 2);
+            this.FlowLayout_Loadout.Name = "FlowLayout_Loadout";
+            this.FlowLayout_Loadout.Size = new System.Drawing.Size(792, 499);
+            this.FlowLayout_Loadout.TabIndex = 0;
+            this.FlowLayout_Loadout.WrapContents = false;
+            // 
             // UC_Halo4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,8 +566,8 @@ namespace HaloPogSwitch
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.tabPage13.ResumeLayout(false);
             this.htTabControl4.ResumeLayout(false);
             this.tabPage19.ResumeLayout(false);
@@ -503,6 +577,9 @@ namespace HaloPogSwitch
             this.tabPage15.ResumeLayout(false);
             this.htTabControl6.ResumeLayout(false);
             this.tabPage21.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.htTabControl3.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,5 +613,9 @@ namespace HaloPogSwitch
         private HTAlt.WinForms.HTTabControl htTabControl6;
         private System.Windows.Forms.TabPage tabPage21;
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_ServiceID;
+        private System.Windows.Forms.TabPage tabPage5;
+        private HTAlt.WinForms.HTTabControl htTabControl3;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayout_Loadout;
     }
 }
