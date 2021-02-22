@@ -254,7 +254,7 @@ namespace HaloPogSwitch
 
         private void halo3_CheckedChanged(object sender, EventArgs e)
         {
-            if (h4loadouts.Checked) uC_Halo31.BringToFront();
+         //   if (h4loadouts.Checked) uC_Halo31.BringToFront();
         }
 
         private void halo2a_CheckedChanged(object sender, EventArgs e)
