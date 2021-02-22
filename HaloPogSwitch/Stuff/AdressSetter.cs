@@ -94,7 +94,7 @@ namespace HaloPogSwitch.Stuff
 
         public override LoadoutData ReadMemory()
         {
-            string n = Meme().ReadStringUnicode((IntPtr)GetOffsetAddress(baseAddresses.name, 26), 16);
+            string n = Meme().ReadStringUnicode((IntPtr)GetOffsetAddress(baseAddresses.name, 26), 24);
 
             byte a = Meme().ReadByte((IntPtr)GetOffsetAddress(baseAddresses.ablity));
             byte g = Meme().ReadByte((IntPtr)GetOffsetAddress(baseAddresses.grenade));
@@ -113,7 +113,7 @@ namespace HaloPogSwitch.Stuff
         {
 
             byte[] nameBytes = Encoding.Unicode.GetBytes( value.name);
-            Array.Resize<byte>(ref nameBytes, 16);
+            Array.Resize<byte>(ref nameBytes, 26);
             Meme().WriteByteArray(GetOffsetAddress(baseAddresses.name, 26), nameBytes);
 
 
@@ -138,7 +138,7 @@ namespace HaloPogSwitch.Stuff
         public override byte ReadMemory()
         {
             var val = Meme().ReadByte(getter.GetFullAdress());
-            var adress = Convert.ToString(getter.GetFullAdress().ToInt64(), 16);
+            var adress = Convert.ToString(getter.GetFullAdress().ToInt64(), 24);
 
 
             return val;

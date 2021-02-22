@@ -73,6 +73,7 @@ namespace UI32
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Location = new System.Drawing.Point(37, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
@@ -82,6 +83,7 @@ namespace UI32
             // 
             // asa
             // 
+            this.asa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.asa.Location = new System.Drawing.Point(272, 46);
             this.asa.Name = "asa";
             this.asa.Size = new System.Drawing.Size(109, 13);
@@ -110,6 +112,7 @@ namespace UI32
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(20, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 13);
@@ -120,6 +123,7 @@ namespace UI32
             // ss
             // 
             this.ss.AutoSize = true;
+            this.ss.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ss.Location = new System.Drawing.Point(255, 70);
             this.ss.Name = "ss";
             this.ss.Size = new System.Drawing.Size(126, 13);
@@ -139,6 +143,7 @@ namespace UI32
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(55, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
@@ -158,6 +163,7 @@ namespace UI32
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label6.Location = new System.Drawing.Point(41, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
@@ -177,6 +183,7 @@ namespace UI32
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(25, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 13);
@@ -205,6 +212,7 @@ namespace UI32
             // NameBox
             // 
             this.NameBox.Location = new System.Drawing.Point(275, 8);
+            this.NameBox.MaxLength = 12;
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(128, 20);
             this.NameBox.TabIndex = 3;
@@ -232,6 +240,7 @@ namespace UI32
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label3.Location = new System.Drawing.Point(272, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
