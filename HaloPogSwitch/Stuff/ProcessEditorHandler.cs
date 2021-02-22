@@ -18,7 +18,13 @@ namespace HaloPogSwitch.Stuff
         public VAMemory memory;
 
 
-        private const string processName = "MCC-Win64-Shipping";
+        private string processName = "MCC-Win64-Shipping";
+
+        public void SwitchProcessName ()
+        {
+            processName = processName == "MCC-Win64-Shipping" ? "MCC-Win64-Shipping-WinStore" : "MCC-Win64-Shipping";
+        }
+
 
         public void UpdateProcess()
         {
@@ -34,9 +40,6 @@ namespace HaloPogSwitch.Stuff
             while (myProcess == null)
             {
 
-
-               
-
                 if (procs.Length > 0)
                 {
                     myProcess = procs[0];
@@ -44,6 +47,7 @@ namespace HaloPogSwitch.Stuff
                 }
                 else
                 {
+                    SwitchProcessName();
                     myProcess = null;
                     Thread.Sleep(50);
                 }

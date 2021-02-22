@@ -15,7 +15,6 @@ using System.Globalization;
 namespace HaloPogSwitch
 {
 
-
     class CSVPuller
     {
 
@@ -212,9 +211,7 @@ namespace HaloPogSwitch
                         byte value = byte.Parse(values[1], System.Globalization.NumberStyles.HexNumber);
                         string name = values[0];
 
-                        // Animal:Dog:Star
-                        // Animal:Cat:Yeet
-                        // Animal:Dog:Base
+          
 
                         string[] nameSplit = name.Split(':');
 
@@ -409,7 +406,7 @@ namespace HaloPogSwitch
                     if (Line > 5)
                     {
 
-                        Console.WriteLine(values[0] + ": " + values[1]);
+                      
                         byte b = Convert.ToByte(values[1], 16);
                         string name = values[0];
 
@@ -441,7 +438,7 @@ namespace HaloPogSwitch
                     string[] values = reader.ReadLine().Split(',');
                     if (Line > 5)
                     {
-                        Console.WriteLine(values[0] + ": " + values[1]);
+                       
 
                         LoadOut.WeaponUiData.WeaponSkinUiData weaponSkinData = new LoadOut.WeaponUiData.WeaponSkinUiData();
                         byte b = Convert.ToByte(values[1], 16);
@@ -461,7 +458,7 @@ namespace HaloPogSwitch
                             
                         }
 
-                        Console.WriteLine(weaponSkinData.weaponName);
+                    
                         weaponData.weapons.Add(b, weaponSkinData);
 
                     }

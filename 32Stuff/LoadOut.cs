@@ -205,7 +205,7 @@ namespace UI32
 
         public void SetAllDataFromUI()
         {
-            Console.WriteLine("CC: " + indexedWeapons.Count);
+            
 
             //if (indexedWeapons.Count == 0) return;
 
@@ -220,7 +220,7 @@ namespace UI32
                 indexedGrenades[Grenade.SelectedIndex].Key);
 
             data = newData;
-            Console.WriteLine("P wep: " + indexedWeapons[WeaponPrimary.SelectedIndex].Value);
+         
             onValueChanged.Invoke(newData);
         }
 
@@ -228,7 +228,7 @@ namespace UI32
 
         private void UpdateData<T>(List<KeyValuePair<byte, T>> indexedWeapons, int selectedIndex, ref byte dataCat)
         {
-            Console.WriteLine("Selected Index = " + selectedIndex + ", IndexedLength = " + indexedWeapons.Count);
+           
             if (selectedIndex != -1 && indexedWeapons.Count > (selectedIndex))
             {
                 
@@ -246,7 +246,7 @@ namespace UI32
             var skinUi = secondary ? SkinSecondaryWeapon : SkinPrimaryWeapon;
             var indexedSkins = secondary ? indexSecondarySkins : indexPrimarySkins;
 
-            Console.WriteLine("WC: " + indexedWeapons.Count + ", " + indexSecondarySkins.Count);
+           
 
             int wepindex = weaponUi.SelectedIndex;
             SortedList<byte, string> skins = indexedWeapons[wepindex].Value.skins;
