@@ -370,13 +370,14 @@ namespace HaloPogSwitch
         internal static void GetLoadoutTrainerUpdater(Control.ControlCollection controls, int loadOutOffset)
         {
             LoadOut.LoudoutUIData UIData = new LoadOut.LoudoutUIData(GetWeaponData(), GetByteNames(@"H4L_Ability.csv"), GetByteNames(@"H4L_Mods.csv"), GetByteNames(@"H4L_Grenade.csv"));
-
+            
 
             LoadoutAdressSetter trainerUpdater = new LoadoutAdressSetter(new AdressGetter(ModuleType.halo4, 0));
 
 
 
-            new TrainerUpdater<LoadoutData>(trainerUpdater, new LoadOut(UIData), controls);
+           var t = new TrainerUpdater<LoadoutData>(trainerUpdater, new LoadOut(UIData), controls);
+           
         }
 
         public static int GetAddress (string fileName)

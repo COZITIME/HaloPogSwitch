@@ -68,7 +68,7 @@ namespace UI32
             this.SkinPrimaryWeapon.Name = "SkinPrimaryWeapon";
             this.SkinPrimaryWeapon.Size = new System.Drawing.Size(121, 21);
             this.SkinPrimaryWeapon.TabIndex = 0;
-            this.SkinPrimaryWeapon.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.SkinPrimaryWeapon.SelectedIndexChanged += new System.EventHandler(this.PrimeSkinChange);
             // 
             // label1
             // 
@@ -105,7 +105,7 @@ namespace UI32
             this.SkinSecondaryWeapon.Name = "SkinSecondaryWeapon";
             this.SkinSecondaryWeapon.Size = new System.Drawing.Size(121, 21);
             this.SkinSecondaryWeapon.TabIndex = 0;
-            this.SkinSecondaryWeapon.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.SkinSecondaryWeapon.SelectedIndexChanged += new System.EventHandler(this.SecSkinChange);
             // 
             // label2
             // 
@@ -134,7 +134,7 @@ namespace UI32
             this.Ablity.Name = "Ablity";
             this.Ablity.Size = new System.Drawing.Size(154, 21);
             this.Ablity.TabIndex = 0;
-            this.Ablity.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.Ablity.SelectedIndexChanged += new System.EventHandler(this.AbilitySelect);
             // 
             // label5
             // 
@@ -153,7 +153,7 @@ namespace UI32
             this.Grenade.Name = "Grenade";
             this.Grenade.Size = new System.Drawing.Size(154, 21);
             this.Grenade.TabIndex = 0;
-            this.Grenade.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.Grenade.SelectedIndexChanged += new System.EventHandler(this.GrenSelect);
             // 
             // label6
             // 
@@ -172,7 +172,7 @@ namespace UI32
             this.Mod0.Name = "Mod0";
             this.Mod0.Size = new System.Drawing.Size(154, 21);
             this.Mod0.TabIndex = 0;
-            this.Mod0.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.Mod0.SelectedIndexChanged += new System.EventHandler(this.ModaSelect);
             // 
             // label7
             // 
@@ -183,7 +183,6 @@ namespace UI32
             this.label7.TabIndex = 1;
             this.label7.Text = "Support Mod";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // LoadoutNum
             // 
@@ -228,7 +227,7 @@ namespace UI32
             this.Mod1.Name = "Mod1";
             this.Mod1.Size = new System.Drawing.Size(154, 21);
             this.Mod1.TabIndex = 0;
-            this.Mod1.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.Mod1.SelectedIndexChanged += new System.EventHandler(this.ModbSelect);
             // 
             // label3
             // 

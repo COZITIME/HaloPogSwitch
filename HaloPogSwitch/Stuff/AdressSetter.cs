@@ -37,6 +37,10 @@ namespace HaloPogSwitch.Stuff
 
     public class LoadoutAdressSetter : AdressSetter<LoadoutData>
     {
+
+       
+             
+
         public LoadoutAdressSetter(AdressGetter getter) : base(getter)
         {
             loadoutIndex = 0;  
@@ -49,9 +53,9 @@ namespace HaloPogSwitch.Stuff
 
         
 
-        public IntPtr GetOffsetAddress(int address)
+        public IntPtr GetOffsetAddress(int address, int offsetunit = 28)
         {
-            int offset = loadoutIndex * 28;
+            int offset = loadoutIndex * offsetunit;
             address += offset;
             return getter.GetFullAdress(address);
         }
@@ -63,9 +67,8 @@ namespace HaloPogSwitch.Stuff
 
         public void IndexChanged (int val)
         {
-            loadoutIndex = 4;
-
-            ReadMemory();
+            loadoutIndex = val;
+            LoadOut.dataUpdate?.Invoke(ReadMemory());
         }
 
         struct LoadoutBaseAddresses
@@ -91,7 +94,7 @@ namespace HaloPogSwitch.Stuff
 
         public override LoadoutData ReadMemory()
         {
-            string n = Meme().ReadStringUnicode((IntPtr)GetOffsetAddress(baseAddresses.name), 16);
+            string n = Meme().ReadStringUnicode((IntPtr)GetOffsetAddress(baseAddresses.name, 26), 16);
 
             byte a = Meme().ReadByte((IntPtr)GetOffsetAddress(baseAddresses.ablity));
             byte g = Meme().ReadByte((IntPtr)GetOffsetAddress(baseAddresses.grenade));
@@ -109,6 +112,9 @@ namespace HaloPogSwitch.Stuff
         public override void WriteMemory(LoadoutData value)
         {
 
+            byte[] nameBytes = Encoding.Unicode.GetBytes( value.name);
+            Array.Resize<byte>(ref nameBytes, 16);
+            Meme().WriteByteArray(GetOffsetAddress(baseAddresses.name, 26), nameBytes);
 
 
             Meme().WriteByte((IntPtr)GetOffsetAddress(baseAddresses.weaponPrimary), value.primary.weapon);
@@ -119,7 +125,7 @@ namespace HaloPogSwitch.Stuff
             Meme().WriteByte((IntPtr)GetOffsetAddress(baseAddresses.ablity), value.ability);
             Meme().WriteByte((IntPtr)GetOffsetAddress(baseAddresses.grenade), value.grenade);
             Meme().WriteByte((IntPtr)GetOffsetAddress(baseAddresses.moda), value.mod0);
-            Meme().WriteByte((IntPtr)GetOffsetAddress(baseAddresses.moda), value.mod1);
+            Meme().WriteByte((IntPtr)GetOffsetAddress(baseAddresses.modb), value.mod1);
         }
     }
 

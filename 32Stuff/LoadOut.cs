@@ -16,14 +16,15 @@ namespace UI32
         LoudoutUIData uiData;
         LoadoutData data;
 
+        public delegate void IndexChangeUpdate(LoadoutData newData);
+        public static IndexChangeUpdate dataUpdate;
+
         public LoadOut(LoudoutUIData loudoutUIData)
         {
             InitializeComponent();
 
-         
-
             LoadoutNum.Minimum = 1;
-            LoadoutNum.Maximum = 10;
+            LoadoutNum.Maximum = 5;
 
             uiData = loudoutUIData;
 
@@ -55,8 +56,7 @@ namespace UI32
                 indexedGrenades.Add(item);
             }
 
-
-
+            dataUpdate += SetValue;
 
         }
 
@@ -66,6 +66,12 @@ namespace UI32
         public List<KeyValuePair<byte, string>> indexedGrenades = new List<KeyValuePair<byte, string>>();
 
         public List<KeyValuePair<byte, WeaponUiData.WeaponSkinUiData>> indexedWeapons = new List<KeyValuePair<byte, WeaponUiData.WeaponSkinUiData>>();
+
+
+        //public void UpdateData(LoadoutData loadoutData)
+        //{
+        //    SetValue(loadoutData);
+        //}
 
         public List<KeyValuePair<byte, string>> indexPrimarySkins = new List<KeyValuePair<byte, string>>();
         public List<KeyValuePair<byte, string>> indexSecondarySkins = new List<KeyValuePair<byte, string>>();
@@ -137,23 +143,45 @@ namespace UI32
         }
 
 
+        bool ignorestuff = false;
+
         public void UpdateUI()
         {
+            byte skinDataP = data.primary.skin;
+            byte skinDataS = data.secondary.skin;
+
+            ignorestuff = true;
             NameBox.Text = data.name;
 
             WeaponPrimary.SelectedIndex = indexedWeapons.IndexOf(indexedWeapons.FirstOrDefault(w => w.Key == data.primary.weapon));
-            SkinPrimaryWeapon.SelectedIndex = indexPrimarySkins.IndexOf(indexPrimarySkins.FirstOrDefault(a => a.Key == data.primary.skin));
-
             WeaponSecondary.SelectedIndex = indexedWeapons.IndexOf(indexedWeapons.FirstOrDefault(w => w.Key == data.secondary.weapon));
-            SkinSecondaryWeapon.SelectedIndex = indexSecondarySkins.IndexOf(indexSecondarySkins.FirstOrDefault(a => a.Key == data.secondary.skin));
+            
 
             Ablity.SelectedIndex = indexedAbilites.IndexOf(indexedAbilites.FirstOrDefault(a => a.Key == data.ability));
             Mod0.SelectedIndex = indexedMods.IndexOf(indexedMods.FirstOrDefault(a => a.Key == data.mod0));
             Mod1.SelectedIndex = indexedMods.IndexOf(indexedMods.FirstOrDefault(a => a.Key == data.mod1));
             Grenade.SelectedIndex = indexedGrenades.IndexOf(indexedGrenades.FirstOrDefault(a => a.Key == data.grenade));
 
-            UpdateSkin(true);
+
+            SkinPrimaryWeapon.SelectedIndex = indexPrimarySkins.IndexOf(indexPrimarySkins.FirstOrDefault(a => a.Key == data.primary.skin));
+            SkinSecondaryWeapon.SelectedIndex = indexSecondarySkins.IndexOf(indexSecondarySkins.FirstOrDefault(a => a.Key == data.secondary.skin));
+
+            ignorestuff = false;
+
             UpdateSkin(false);
+            UpdateSkin(true);
+
+            ignorestuff = true;
+
+            data.primary.skin = skinDataP;
+            data.secondary.skin = skinDataS;
+
+            SkinPrimaryWeapon.SelectedIndex = indexPrimarySkins.IndexOf(indexPrimarySkins.FirstOrDefault(a => a.Key == data.primary.skin));
+            SkinSecondaryWeapon.SelectedIndex = indexSecondarySkins.IndexOf(indexSecondarySkins.FirstOrDefault(a => a.Key == data.secondary.skin));
+
+
+
+            ignorestuff = false;
         }
 
         public void AttemptShuffle()
@@ -161,34 +189,25 @@ namespace UI32
 
         }
 
+
         private void NameBox_TextChanged(object sender, EventArgs e)
         {
-           // SetLoadoutData();
+            data.name = NameBox.Text;
+            onValueChanged(data);
         }
 
         private void LoadoutNum_ValueChanged(object sender, EventArgs e)
         {
             int loadoutIndex = (int)LoadoutNum.Value - 1;
-           ichange.Invoke(loadoutIndex);
-
-            SetLoadoutData();
-        }
-
-       
-
-        private void UIUpdate(object sender, EventArgs e)
-        {
-
-           // SetLoadoutData();
+            ichange.Invoke(loadoutIndex);
         }
 
 
-
-        public void SetLoadoutData()
+        public void SetAllDataFromUI()
         {
             Console.WriteLine("CC: " + indexedWeapons.Count);
 
-            if (indexedWeapons.Count == 0) return;
+            //if (indexedWeapons.Count == 0) return;
 
             LoadoutData newData = new LoadoutData(NameBox.Text,
                 indexedWeapons[WeaponPrimary.SelectedIndex].Key,
@@ -200,34 +219,37 @@ namespace UI32
                  indexedMods[Mod1.SelectedIndex].Key,
                 indexedGrenades[Grenade.SelectedIndex].Key);
 
-            //   data = newData;
+            data = newData;
             Console.WriteLine("P wep: " + indexedWeapons[WeaponPrimary.SelectedIndex].Value);
             onValueChanged.Invoke(newData);
         }
 
-        private void PrimaryChange(object sender, EventArgs e)
-        {
-            UpdateSkin(false);
-        }
+       
 
-        private void SecondaryChange(object sender, EventArgs e)
+        private void UpdateData<T>(List<KeyValuePair<byte, T>> indexedWeapons, int selectedIndex, ref byte dataCat)
         {
-            UpdateSkin(true);
+            Console.WriteLine("Selected Index = " + selectedIndex + ", IndexedLength = " + indexedWeapons.Count);
+            if (selectedIndex != -1 && indexedWeapons.Count > (selectedIndex))
+            {
+                
+                dataCat = indexedWeapons[selectedIndex].Key;
+                onValueChanged.Invoke(data);
+            } 
         }
-
+      
 
         public void UpdateSkin(bool secondary)
         {
+            if (ignorestuff) return;
+
             var weaponUi = secondary ? WeaponSecondary : WeaponPrimary;
             var skinUi = secondary ? SkinSecondaryWeapon : SkinPrimaryWeapon;
             var indexedSkins = secondary ? indexSecondarySkins : indexPrimarySkins;
 
             Console.WriteLine("WC: " + indexedWeapons.Count + ", " + indexSecondarySkins.Count);
 
-            int index = weaponUi.SelectedIndex;
-         
-            var skins = indexedWeapons[index].Value.skins;
-
+            int wepindex = weaponUi.SelectedIndex;
+            SortedList<byte, string> skins = indexedWeapons[wepindex].Value.skins;
 
             skinUi.Items.Clear();
             indexedSkins.Clear();
@@ -238,15 +260,77 @@ namespace UI32
                 indexedSkins.Add(item);
             }
             skinUi.SelectedIndex = 0;
+
+
+            if (secondary)
+            {
+                UpdateData(indexedSkins, skinUi.SelectedIndex, ref data.secondary.skin);
+            }
+            else
+            {
+                UpdateData(indexedSkins, skinUi.SelectedIndex, ref data.primary.skin);
+            }
+
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public delegate void IndexChange(int index);
         public static IndexChange ichange;
+
+
+        private void PrimeSkinChange(object sender, EventArgs e)
+        {
+            UpdateData(indexPrimarySkins, SkinPrimaryWeapon.SelectedIndex, ref data.primary.skin);
+        }
+
+        private void SecSkinChange(object sender, EventArgs e)
+        {
+           
+            UpdateData(indexSecondarySkins, SkinSecondaryWeapon.SelectedIndex, ref data.secondary.skin);
+        }
+
+        private void AbilitySelect(object sender, EventArgs e)
+        {
+            UpdateData(indexedAbilites, Ablity.SelectedIndex, ref data.ability);
+          
+        }
+
+        private void GrenSelect(object sender, EventArgs e)
+        {
+            UpdateData(indexedGrenades, Grenade.SelectedIndex, ref data.grenade);
+        }
+
+        private void ModaSelect(object sender, EventArgs e)
+        {
+
+            UpdateData(indexedMods, Mod0.SelectedIndex, ref data.mod0);
+            
+        }
+
+        private void ModbSelect(object sender, EventArgs e)
+        {
+            UpdateData(indexedMods, Mod1.SelectedIndex, ref data.mod1);
+        }
+
+        private void PrimaryChange(object sender, EventArgs e)
+        {
+            
+            UpdateData(indexedWeapons, WeaponPrimary.SelectedIndex, ref data.primary.weapon);
+            if (!ignorestuff) UpdateSkin(false);
+
+            // SkinPrimaryWeapon.SelectedIndex = indexPrimarySkins.IndexOf(indexPrimarySkins.FirstOrDefault(a => a.Key == data.primary.skin));
+        }
+
+        private void SecondaryChange(object sender, EventArgs e)
+        {
+           
+            UpdateData(indexedWeapons, WeaponSecondary.SelectedIndex, ref data.secondary.weapon);
+            if (!ignorestuff) UpdateSkin(true);
+
+
+            // SkinSecondaryWeapon.SelectedIndex = indexSecondarySkins.IndexOf(indexSecondarySkins.FirstOrDefault(a => a.Key == data.secondary.skin));
+
+        }
     }
 
 
@@ -264,7 +348,7 @@ namespace UI32
             this.primary = new Weapon((byte)pw, (byte)pws);
             this.secondary = new Weapon((byte)sw, (byte)sws);
             this.ability = (byte)a;
-          
+
             this.grenade = (byte)g;
 
             mod0 = m0;
@@ -272,7 +356,7 @@ namespace UI32
         }
 
 
-        
+
 
         //public LoadoutData(string text, int pw, int pws, int sw, int sws, int a, int m, int g)
         //{
