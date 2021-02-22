@@ -369,11 +369,23 @@ namespace HaloPogSwitch
 
         internal static void GetLoadoutTrainerUpdater(Control.ControlCollection controls, int loadOutOffset)
         {
-
             LoadOut.LoudoutUIData UIData = new LoadOut.LoudoutUIData(GetWeaponData(), GetByteNames(@"H4L_Ability.csv"), GetByteNames(@"H4L_Mods.csv"), GetByteNames(@"H4L_Grenade.csv"));
-            controls.Add(new LoadOut(UIData));
-           
-          //  TrainerUpdater<LoadoutData> trainerUpdater = new TrainerUpdater<LoadoutData>(new LoadoutAdressSetter())
+
+
+            LoadoutAdressSetter trainerUpdater = new LoadoutAdressSetter(new AdressGetter(ModuleType.halo4, 0));
+
+
+
+            new TrainerUpdater<LoadoutData>(trainerUpdater, new LoadOut(UIData), controls);
+        }
+
+        public static int GetAddress (string fileName)
+        {
+            string file = GetFile(fileName);
+            file.Split(new string[] { "Adress," }, StringSplitOptions.None);
+            file.Split(new string[] { "," }, StringSplitOptions.None);
+
+            return Convert.ToInt32(file, 16);
         }
 
         public static SortedList<byte, string> GetByteNames(string fileName)
@@ -386,14 +398,14 @@ namespace HaloPogSwitch
             using (var reader = new StreamReader(file))
             {
                 int Line = 0;
-              
+
 
                 while (!reader.EndOfStream)
                 {
                     Line++;
                     string[] values = reader.ReadLine().Split(',');
 
-                    if (Line > 6)
+                    if (Line > 5)
                     {
 
                         Console.WriteLine(values[0] + ": " + values[1]);
@@ -401,11 +413,11 @@ namespace HaloPogSwitch
                         string name = values[0];
 
                         dict.Add(b, name);
-        
+
 
                     }
                 }
-                
+
             }
 
             return dict;
@@ -420,7 +432,7 @@ namespace HaloPogSwitch
             using (var reader = new StreamReader(file))
             {
                 int Line = 0;
-                
+
 
                 while (!reader.EndOfStream)
                 {
@@ -432,7 +444,7 @@ namespace HaloPogSwitch
 
                         LoadOut.WeaponUiData.WeaponSkinUiData weaponSkinData = new LoadOut.WeaponUiData.WeaponSkinUiData();
                         byte b = Convert.ToByte(values[1], 16);
-                        
+
 
                         weaponSkinData.weaponName = values[0];
                         weaponSkinData.skins = new SortedList<byte, string>();
@@ -442,8 +454,10 @@ namespace HaloPogSwitch
                         byte sb = 1;
                         for (int i = 2; i < values.Length; i++)
                         {
+                            if (values[i] != "") weaponSkinData.skins.Add(sb, values[i]);
                             sb++;
-                            weaponSkinData.skins.Add(sb, values[i]);
+
+                            
                         }
 
                         Console.WriteLine(weaponSkinData.weaponName);
@@ -460,7 +474,7 @@ namespace HaloPogSwitch
 
     }
 
-   
+    
 
 
 }

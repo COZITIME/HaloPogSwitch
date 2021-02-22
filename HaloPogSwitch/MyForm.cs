@@ -182,6 +182,7 @@ namespace HaloPogSwitch
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.primary1).Controls, 0x0000000);
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.secondary1).Controls, 0x0000000);
 
+            Console.WriteLine("offset: " + (0x2D65464 - 0x2D65448 + 0x2D65480));
 
             //loadout 1
             CSVPuller.GetTrainerUpdater<byte>((@"H4L_Grenade.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.grenade1).Controls, 0x2D65448);

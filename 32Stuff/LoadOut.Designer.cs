@@ -41,12 +41,14 @@ namespace UI32
             this.label5 = new System.Windows.Forms.Label();
             this.Grenade = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Mod = new System.Windows.Forms.ComboBox();
+            this.Mod0 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.LoadoutNum = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.NameBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.Mod1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LoadoutNum)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,24 +165,25 @@ namespace UI32
             this.label6.Text = "Grenade";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Mod
+            // Mod0
             // 
-            this.Mod.FormattingEnabled = true;
-            this.Mod.Location = new System.Drawing.Point(95, 163);
-            this.Mod.Name = "Mod";
-            this.Mod.Size = new System.Drawing.Size(154, 21);
-            this.Mod.TabIndex = 0;
-            this.Mod.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            this.Mod0.FormattingEnabled = true;
+            this.Mod0.Location = new System.Drawing.Point(95, 163);
+            this.Mod0.Name = "Mod0";
+            this.Mod0.Size = new System.Drawing.Size(154, 21);
+            this.Mod0.TabIndex = 0;
+            this.Mod0.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(25, 166);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Armour Mod";
+            this.label7.Text = "Support Mod";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // LoadoutNum
             // 
@@ -218,6 +221,25 @@ namespace UI32
             this.label9.Text = "Name";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // Mod1
+            // 
+            this.Mod1.FormattingEnabled = true;
+            this.Mod1.Location = new System.Drawing.Point(342, 163);
+            this.Mod1.Name = "Mod1";
+            this.Mod1.Size = new System.Drawing.Size(154, 21);
+            this.Mod1.TabIndex = 0;
+            this.Mod1.SelectedIndexChanged += new System.EventHandler(this.UIUpdate);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(272, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Tatical Mod";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // LoadOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +250,7 @@ namespace UI32
             this.Controls.Add(this.label2);
             this.Controls.Add(this.asa);
             this.Controls.Add(this.SkinSecondaryWeapon);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -235,8 +258,9 @@ namespace UI32
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WeaponSecondary);
+            this.Controls.Add(this.Mod1);
             this.Controls.Add(this.SkinPrimaryWeapon);
-            this.Controls.Add(this.Mod);
+            this.Controls.Add(this.Mod0);
             this.Controls.Add(this.Grenade);
             this.Controls.Add(this.Ablity);
             this.Controls.Add(this.WeaponPrimary);
@@ -263,11 +287,13 @@ namespace UI32
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox Grenade;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox Mod;
+        private System.Windows.Forms.ComboBox Mod0;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown LoadoutNum;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Mod1;
+        private System.Windows.Forms.Label label3;
     }
 }
