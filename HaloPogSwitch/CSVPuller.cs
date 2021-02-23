@@ -30,7 +30,7 @@ namespace HaloPogSwitch
                 int l = 0;
                 while (!reader.EndOfStream)
                 {
-                    l++;
+                    l++; 
 
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');

@@ -18,18 +18,31 @@ namespace HaloPogSwitch.Stuff
         public VAMemory memory;
 
 
-        private string processName = "MCC-Win64-Shipping";
+       
+       
 
-        public void SwitchProcessName ()
+        static bool useWindows = false;
+
+        public static string GetProcessName ()
         {
-            processName = processName == "MCC-Win64-Shipping" ? "MCC-Win64-Shipping-WinStore" : "MCC-Win64-Shipping";
+            string winName = "MCC-Win64-Shipping-WinStore";
+            string steamName = "MCC-Win64-Shipping";
+
+            return (useWindows) ? winName : steamName;
+        }
+        
+        public static void FlipProc ()
+        {
+            useWindows = !useWindows;
         }
 
 
         public void UpdateProcess()
         {
 
-            var procs = Process.GetProcessesByName(processName);
+            var procs = Process.GetProcessesByName(GetProcessName());
+
+            
 
             if (procs.Length > 0)
             {
@@ -39,6 +52,7 @@ namespace HaloPogSwitch.Stuff
 
             while (myProcess == null)
             {
+                
 
                 if (procs.Length > 0)
                 {
@@ -47,18 +61,20 @@ namespace HaloPogSwitch.Stuff
                 }
                 else
                 {
-                    SwitchProcessName();
+                    
                     myProcess = null;
+                    
                     Thread.Sleep(50);
+                    FlipProc();
+                    procs = Process.GetProcessesByName(GetProcessName());
                 }
 
             }
 
+            
 
-             UpdateModules(myProcess);
+            UpdateModules(myProcess);
             haloMods.UpdateButtons();
-
-
 
             memory = new VAMemory(myProcess.ProcessName);
 
@@ -155,7 +171,7 @@ namespace HaloPogSwitch.Stuff
 
             public void AddEntries()
             {
-                moduals.Add(ModuleType.baseModule, new ModuleData("MCC-Win64-Shipping"));
+                moduals.Add(ModuleType.baseModule, new ModuleData(ProcessEditorHandler.GetProcessName()));
                 moduals.Add(ModuleType.reach, new ModuleData("haloreach.dll"));
                 moduals.Add(ModuleType.halo2A, new ModuleData("groundhog.dll"));
                 moduals.Add(ModuleType.halo3, new ModuleData("halo3.dll"));
