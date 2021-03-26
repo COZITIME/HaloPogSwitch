@@ -13,22 +13,34 @@ namespace HaloPogSwitch.Stuff
         public static ProcessEditorHandler instance;
 
         Process myProcess;
-     
-
+    
         public VAMemory memory;
 
 
-       
-       
+       static int nameIndex = 0;
 
         static bool useWindows = false;
 
         public static string GetProcessName ()
         {
             string winName = "MCC-Win64-Shipping-WinStore";
+            string winBetaName = "MCCWinStore-Win64-Shipping";
             string steamName = "MCC-Win64-Shipping";
 
-            return (useWindows) ? winName : steamName;
+            //   return (useWindows) ? winName : steamName;
+            nameIndex += 1;
+            nameIndex %= 3;
+
+            switch (nameIndex)
+            {
+                case 0:
+                    return winName;
+                case 1:
+                    return winBetaName;
+                case 2:
+                    return steamName;
+            }
+            return steamName;
         }
         
         public static void FlipProc ()
@@ -41,7 +53,6 @@ namespace HaloPogSwitch.Stuff
         {
 
             var procs = Process.GetProcessesByName(GetProcessName());
-
             
 
             if (procs.Length > 0)
@@ -71,15 +82,11 @@ namespace HaloPogSwitch.Stuff
 
             }
 
-            
-
             UpdateModules(myProcess);
             haloMods.UpdateButtons();
 
             memory = new VAMemory(myProcess.ProcessName);
-
-            
-
+     
         }
 
         internal VAMemory GetMemory()
