@@ -341,12 +341,6 @@
     <Content Include="feet.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\32Stuff\32Stuff.csproj">
-      <Project>{043c1be8-97e2-4c50-a787-0d509bada490}</Project>
-      <Name>32Stuff</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -357,6 +351,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\32Stuff\32Stuff.csproj">
+      <Project>{043c1be8-97e2-4c50-a787-0d509bada490}</Project>
+      <Name>32Stuff</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

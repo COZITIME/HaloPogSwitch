@@ -164,36 +164,6 @@
     <Compile Include="TrainerTreeList.Designer.cs">
       <DependentUpon>TrainerTreeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Halo2a.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Halo2a.Designer.cs">
-      <DependentUpon>UC_Halo2a.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Halo3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Halo3.Designer.cs">
-      <DependentUpon>UC_Halo3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Halo4.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Halo4.Designer.cs">
-      <DependentUpon>UC_Halo4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_HaloReach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_HaloReach.Designer.cs">
-      <DependentUpon>UC_HaloReach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Welcome.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Welcome.Designer.cs">
-      <DependentUpon>UC_Welcome.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ButtonArray.resx">
       <DependentUpon>ButtonArray.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,21 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerTreeList.resx">
       <DependentUpon>TrainerTreeList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Halo2a.resx">
-      <DependentUpon>UC_Halo2a.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Halo3.resx">
-      <DependentUpon>UC_Halo3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Halo4.resx">
-      <DependentUpon>UC_Halo4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_HaloReach.resx">
-      <DependentUpon>UC_HaloReach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Welcome.resx">
-      <DependentUpon>UC_Welcome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

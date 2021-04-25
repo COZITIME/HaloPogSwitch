@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace HaloPogSwitch
         public ProcessEditorHandler processHandler = new ProcessEditorHandler();
 
         public int prevOpenCount = 0;
-
+        [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlAppDomain)]
         public MyForm()
         {
             InitializeComponent();
