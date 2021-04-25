@@ -78,6 +78,7 @@ namespace HaloPogSwitch
 
         private void FuckingCunt_Load(object sender, EventArgs e)
         {
+            byte nop = 0x90;
 
             DoStuff();
 
@@ -118,9 +119,9 @@ namespace HaloPogSwitch
 
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_FireFightVoice.csv"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.firefightvoice).Controls);
 
+           
 
-            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0xB0F58), new byte[] {0x74, 0x0E}, new byte[] { 0x90, 0x90 }), new TrainerBool("3rd Person Camera", "Use 3rd Person Camera"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.camera).Controls);
-
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0xA8FAC), new byte[] {0x74, 0x0E}, new byte[] { nop, nop }), new TrainerBool("3rd Person Camera (Experimental)", "Use 3rd Person Camera"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.camera).Controls);
 
 
             processHandler.PairModule(haloreach, ModuleType.reach);
@@ -159,6 +160,10 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Arms.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Legs.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
 
+
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0xFDAFE), new byte[] { 0x74, 0x03 }, new byte[] { nop, nop }), new TrainerBool("3rd Person Camera (Experimental)", "Use 3rd Person Camera"), uC_Halo2a1.GetHalo2AFlow(H2ATab.camera).Controls);
+
+
             //// halo 4
 
             new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D6AE14), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo41.GetHalo4Flow(Halo4MenuType.serviceid).Controls);
@@ -178,6 +183,7 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls);
 
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.halo4, 0xFD27E), new byte[] { 0x74, 0x03 }, new byte[] { nop, nop }), new TrainerBool("3rd Person Camera (Experimental)", "Use 3rd Person Camera"), uC_Halo41.GetHalo4Flow(Halo4MenuType.camera).Controls);
 
             //// loadouts
             ///
@@ -187,7 +193,7 @@ namespace HaloPogSwitch
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.primary1).Controls, 0x0000000);
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.secondary1).Controls, 0x0000000);
 
-          
+
             CSVPuller.GetLoadoutTrainerUpdater(uC_Halo41.GetHalo4Flow(Halo4MenuType.loadout).Controls, 0x2D6B7B4);
 
         }
