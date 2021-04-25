@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Text;
 using UI32;
 
@@ -38,12 +39,12 @@ namespace HaloPogSwitch.Stuff
     public class LoadoutAdressSetter : AdressSetter<LoadoutData>
     {
 
-       
-             
+
+
 
         public LoadoutAdressSetter(AdressGetter getter) : base(getter)
         {
-            loadoutIndex = 0;  
+            loadoutIndex = 0;
             ReadMemory();
 
             LoadOut.ichange += IndexChanged;
@@ -51,7 +52,7 @@ namespace HaloPogSwitch.Stuff
 
         public int loadoutIndex;
 
-        
+
 
         public IntPtr GetOffsetAddress(int address, int offsetunit = 28)
         {
@@ -65,7 +66,7 @@ namespace HaloPogSwitch.Stuff
 
         LoadoutBaseAddresses baseAddresses = new LoadoutBaseAddresses(0x2D654D0, 0x2D65448, 0x2D65444, 0x2D65430, 0x2D65434, 0x2D65438, 0x2D6543C, 0x2D65440, 0x2D65441);
 
-        public void IndexChanged (int val)
+        public void IndexChanged(int val)
         {
             loadoutIndex = val;
             LoadOut.dataUpdate?.Invoke(ReadMemory());
@@ -112,7 +113,7 @@ namespace HaloPogSwitch.Stuff
         public override void WriteMemory(LoadoutData value)
         {
 
-            byte[] nameBytes = Encoding.Unicode.GetBytes( value.name);
+            byte[] nameBytes = Encoding.Unicode.GetBytes(value.name);
             Array.Resize<byte>(ref nameBytes, 24);
             Meme().WriteByteArray(GetOffsetAddress(baseAddresses.name, 26), nameBytes);
 
@@ -207,9 +208,85 @@ namespace HaloPogSwitch.Stuff
             Meme().WriteBoolean(getter.GetFullAdress(), value);
         }
     }
+
+    //public class LongComplexBoolAdressSetter : ComplexBoolAdressSetter
+    //{
+    //    int length;
+    //    public LongComplexBoolAdressSetter(AdressGetter getter, byte falseValue, byte trueValue, int length) : base(getter, falseValue, trueValue)
+    //    {
+    //        this.length = length;
+    //    }
+
+    //    public override void WriteMemory(bool value)
+    //    {
+    //        byte[] bytes = new byte[length];
+    //        for (int i = 0; i < bytes.Length; i++)
+    //        {
+    //            bytes[i] = value ? trueV : falseV;
+
+    //        }
+
+    //        Meme().WriteByteArray(getter.GetFullAdress(),bytes);
+    //    }
+    //}
+
+
+    public class BytesComplexBoolAdressSetter : BoolAdressSetter
+    {
+        readonly public byte[] falseV, trueV;
+        bool ready = true;
+        public BytesComplexBoolAdressSetter(AdressGetter getter, byte[] falseValue, byte[] trueValue) : base(getter)
+        {
+            this.falseV = falseValue;
+            this.trueV = trueValue;
+
+            //timer = new System.Timers.Timer(1000);
+            //timer.Elapsed += (a, b) => ready = true;
+        }
+        public override bool ReadMemory()
+        {
+            var bVal = Meme().ReadByteArray(getter.GetFullAdress(), (uint)falseV.Length);
+
+            if (bVal == trueV)
+            {
+                return true;
+            }
+            else if (bVal == falseV)
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public override void WriteMemory(bool value)
+        {
+            // ReadOnReady(value);
+            Console.WriteLine("3rd Person: " + value);
+            Meme().WriteByteArray(getter.GetFullAdress(), value ? trueV : falseV);
+        }
+      
+
+        //async Task(bool value)
+        //{
+        //    yield return ready;
+
+           
+
+        //    ready = false;
+        //    timer.Start();
+        //}
+
+      //  System.Timers.Timer timer;
+    }
+
+
+
+
     public class ComplexBoolAdressSetter : BoolAdressSetter
     {
-        readonly byte falseV = 18, trueV = 38;
+        readonly protected byte falseV = 18, trueV = 38;
 
         public ComplexBoolAdressSetter(AdressGetter getter, byte falseValue, byte trueValue) : base(getter)
         {

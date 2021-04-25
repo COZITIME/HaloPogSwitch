@@ -118,6 +118,10 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_FireFightVoice.csv"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.firefightvoice).Controls);
 
 
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0xB0F58), new byte[] {0x74, 0x0E}, new byte[] { 0x90, 0x90 }), new TrainerBool("3rd Person Camera", "Use 3rd Person Camera"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.camera).Controls);
+
+
+
             processHandler.PairModule(haloreach, ModuleType.reach);
             processHandler.PairModule(halo2a, ModuleType.halo2A);
        //     processHandler.PairModule(halo3, ModuleType.halo3);

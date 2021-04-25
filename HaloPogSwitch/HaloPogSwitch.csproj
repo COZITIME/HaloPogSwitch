@@ -75,6 +75,10 @@
     <ApplicationIcon>feet.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HaloPogSwitch, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Release\HaloPogSwitch.exe</HintPath>
+    </Reference>
     <Reference Include="HTAlt WinForms, Version=0.1.6.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dlls\HTAlt WinForms.dll</HintPath>
