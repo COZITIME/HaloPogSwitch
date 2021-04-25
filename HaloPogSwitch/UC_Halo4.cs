@@ -40,6 +40,8 @@ namespace HaloPogSwitch
                     return FlowLayout_Gender;
                 case Halo4MenuType.loadout:
                     return FlowLayout_Loadout;
+                case Halo4MenuType.camera:
+                    return FlowLayout_Camera;
                 default:
                     return null;
             }
@@ -62,7 +64,8 @@ namespace HaloPogSwitch
         gender,
         serviceid,
 
-        loadout
+        loadout,
+        camera,
 
     }
 }

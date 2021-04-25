@@ -3,11 +3,6 @@ using System.Threading;
 
 namespace HaloPogSwitch.Stuff 
 {
-
-
-    
-
-
     public class AdressGetter
     {
         public int adress;

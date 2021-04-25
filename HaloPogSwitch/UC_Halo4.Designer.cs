@@ -59,6 +59,10 @@ namespace HaloPogSwitch
             this.htTabControl3 = new HTAlt.WinForms.HTTabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.FlowLayout_Loadout = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.htTabControl7 = new HTAlt.WinForms.HTTabControl();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.FlowLayout_Camera = new System.Windows.Forms.FlowLayoutPanel();
             this.htTabControl2.SuspendLayout();
             this.tabPage22.SuspendLayout();
             this.htTabControl1.SuspendLayout();
@@ -79,6 +83,9 @@ namespace HaloPogSwitch
             this.tabPage5.SuspendLayout();
             this.htTabControl3.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.htTabControl7.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.SuspendLayout();
             // 
             // siticoneLabel1
@@ -99,6 +106,7 @@ namespace HaloPogSwitch
             this.htTabControl2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.htTabControl2.BorderTabLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.htTabControl2.Controls.Add(this.tabPage22);
+            this.htTabControl2.Controls.Add(this.tabPage8);
             this.htTabControl2.Controls.Add(this.tabPage13);
             this.htTabControl2.Controls.Add(this.tabPage14);
             this.htTabControl2.Controls.Add(this.tabPage15);
@@ -550,6 +558,69 @@ namespace HaloPogSwitch
             this.FlowLayout_Loadout.TabIndex = 0;
             this.FlowLayout_Loadout.WrapContents = false;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.htTabControl7);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(795, 533);
+            this.tabPage8.TabIndex = 10;
+            this.tabPage8.Text = "Camera";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // htTabControl7
+            // 
+            this.htTabControl7.AllowDrop = true;
+            this.htTabControl7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.htTabControl7.BorderTabLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.htTabControl7.Controls.Add(this.tabPage9);
+            this.htTabControl7.DisableClose = true;
+            this.htTabControl7.DisableDragging = true;
+            this.htTabControl7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.htTabControl7.HoverTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl7.HoverTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl7.HoverUnselectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.htTabControl7.Location = new System.Drawing.Point(-5, -2);
+            this.htTabControl7.Margin = new System.Windows.Forms.Padding(2);
+            this.htTabControl7.Multiline = true;
+            this.htTabControl7.Name = "htTabControl7";
+            this.htTabControl7.Padding = new System.Drawing.Point(8, 5);
+            this.htTabControl7.SelectedIndex = 0;
+            this.htTabControl7.SelectedTabButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl7.SelectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl7.Size = new System.Drawing.Size(804, 536);
+            this.htTabControl7.TabIndex = 11;
+            this.htTabControl7.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.htTabControl7.UnderBorderTabLineColor = System.Drawing.Color.Transparent;
+            this.htTabControl7.UnselectedBorderTabLineColor = System.Drawing.Color.Transparent;
+            this.htTabControl7.UnselectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.htTabControl7.UpDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.htTabControl7.UpDownTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.tabPage9.Controls.Add(this.FlowLayout_Camera);
+            this.tabPage9.ForeColor = System.Drawing.Color.White;
+            this.tabPage9.Location = new System.Drawing.Point(4, 29);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Size = new System.Drawing.Size(796, 503);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Camera";
+            // 
+            // FlowLayout_Camera
+            // 
+            this.FlowLayout_Camera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowLayout_Camera.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FlowLayout_Camera.Location = new System.Drawing.Point(2, 2);
+            this.FlowLayout_Camera.Name = "FlowLayout_Camera";
+            this.FlowLayout_Camera.Size = new System.Drawing.Size(792, 499);
+            this.FlowLayout_Camera.TabIndex = 0;
+            this.FlowLayout_Camera.WrapContents = false;
+            // 
             // UC_Halo4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,6 +651,9 @@ namespace HaloPogSwitch
             this.tabPage5.ResumeLayout(false);
             this.htTabControl3.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.htTabControl7.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,5 +691,9 @@ namespace HaloPogSwitch
         private HTAlt.WinForms.HTTabControl htTabControl3;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.FlowLayoutPanel FlowLayout_Loadout;
+        private System.Windows.Forms.TabPage tabPage8;
+        private HTAlt.WinForms.HTTabControl htTabControl7;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayout_Camera;
     }
 }

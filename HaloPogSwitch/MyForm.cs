@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace HaloPogSwitch
         public ProcessEditorHandler processHandler = new ProcessEditorHandler();
 
         public int prevOpenCount = 0;
-
+        [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlAppDomain)]
         public MyForm()
         {
             InitializeComponent();
@@ -77,6 +78,7 @@ namespace HaloPogSwitch
 
         private void FuckingCunt_Load(object sender, EventArgs e)
         {
+            byte nop = 0x90;
 
             DoStuff();
 
@@ -88,11 +90,11 @@ namespace HaloPogSwitch
 
 
             // Adress Value setters Linked to UI so they update automatically
-            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13C4), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_HaloReach1.GetReachFlow(HaloReachMenuType.serviceid).Controls);
-            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13A4)), new TrainerBool("Species", "Elite Biped"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.species).Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E1208), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.gender).Controls);
+            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.reach, 0x27E7194), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_HaloReach1.GetReachFlow(HaloReachMenuType.serviceid).Controls);
+            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E7174)), new TrainerBool("Species", "Elite Biped"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.species).Controls);
+            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0x27E6FD8), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.gender).Controls);
 
-            new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, 0x27E13B1)), CSVPuller.GetTrainerEnumFromFile(@"data\Reach_Chest.csv"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.chest).Controls);
+            new TrainerUpdater<byte>(new ByteAdressSetter(new AdressGetter(ModuleType.reach, 0x27E7181)), CSVPuller.GetTrainerEnumFromFile(@"data\Reach_Chest.csv"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.chest).Controls);
             //CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourPrimary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
             //CSVPuller.GetTrainerUpdater<byte>((@"Reach_ColourSecondary.csv"), uC_HaloReach1.GetFlow(HaloReachMenuType.extra).Controls);
 
@@ -117,6 +119,10 @@ namespace HaloPogSwitch
 
             CSVPuller.GetTrainerUpdater<byte>((@"Reach_FireFightVoice.csv"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.firefightvoice).Controls);
 
+           
+
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.reach, 0xA8FAC), new byte[] {0x74, 0x0E}, new byte[] { nop, nop }), new TrainerBool("3rd Person Camera (Experimental)", "Use 3rd Person Camera"), uC_HaloReach1.GetReachFlow(HaloReachMenuType.camera).Controls);
+
 
             processHandler.PairModule(haloreach, ModuleType.reach);
             processHandler.PairModule(halo2a, ModuleType.halo2A);
@@ -132,9 +138,9 @@ namespace HaloPogSwitch
 
             //// Halo 2A
 
-            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BA32C), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo2a1.GetHalo2AFlow(H2ATab.serviceid).Controls);
-            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BA30C)), new TrainerBool("Species", "Elite Biped"), uC_Halo2a1.GetHalo2AFlow(H2ATab.species).Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BA148), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo2a1.GetHalo2AFlow(H2ATab.gender).Controls);
+            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BF62C), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo2a1.GetHalo2AFlow(H2ATab.serviceid).Controls);
+            new TrainerUpdater<bool>(new BoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BF60C)), new TrainerBool("Species", "Elite Biped"), uC_Halo2a1.GetHalo2AFlow(H2ATab.species).Controls);
+            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0x19BF448), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo2a1.GetHalo2AFlow(H2ATab.gender).Controls);
 
 
 
@@ -154,10 +160,14 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Arms.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H2A_E_Legs.csv"), uC_Halo2a1.GetHalo2AFlow(H2ATab.elitearmor).Controls);
 
+
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.halo2A, 0xFDAFE), new byte[] { 0x74, 0x03 }, new byte[] { nop, nop }), new TrainerBool("3rd Person Camera (Experimental)", "Use 3rd Person Camera"), uC_Halo2a1.GetHalo2AFlow(H2ATab.camera).Controls);
+
+
             //// halo 4
 
-            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D64B04), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo41.GetHalo4Flow(Halo4MenuType.serviceid).Controls);
-            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D64928), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo41.GetHalo4Flow(Halo4MenuType.gender).Controls);
+            new TrainerUpdater<string>(new StringAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D6AE14), 4), new TrainerText("Service Tag", "4 Letter Tag:", 4, true, CharacterCasing.Upper, true), uC_Halo41.GetHalo4Flow(Halo4MenuType.serviceid).Controls);
+            new TrainerUpdater<bool>(new ComplexBoolAdressSetter(new AdressGetter(ModuleType.halo4, 0x2D6AC38), 0x18, 0x38), new TrainerBool("Spartan Gender", "Is Female"), uC_Halo41.GetHalo4Flow(Halo4MenuType.gender).Controls);
 
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Helmets.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H4_Visors.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.helmateVisor).Controls);
@@ -173,6 +183,7 @@ namespace HaloPogSwitch
             CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourPrimary.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls);
             CSVPuller.GetTrainerUpdater<byte>((@"H4_ColourSecondary.csv"), uC_Halo41.GetHalo4Flow(Halo4MenuType.color).Controls);
 
+            new TrainerUpdater<bool>(new BytesComplexBoolAdressSetter(new AdressGetter(ModuleType.halo4, 0xFD27E), new byte[] { 0x74, 0x03 }, new byte[] { nop, nop }), new TrainerBool("3rd Person Camera (Experimental)", "Use 3rd Person Camera"), uC_Halo41.GetHalo4Flow(Halo4MenuType.camera).Controls);
 
             //// loadouts
             ///
@@ -182,8 +193,8 @@ namespace HaloPogSwitch
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.primary1).Controls, 0x0000000);
             // CSVPuller.GetTrainerUpdater<byte>((@"H4L_Weapons.csv"), uC_Halo31.GetLoadoutFlow(Halo4LoadoutMenuType.secondary1).Controls, 0x0000000);
 
-          
-            CSVPuller.GetLoadoutTrainerUpdater(uC_Halo41.GetHalo4Flow(Halo4MenuType.loadout).Controls, 0x2D654A4);
+
+            CSVPuller.GetLoadoutTrainerUpdater(uC_Halo41.GetHalo4Flow(Halo4MenuType.loadout).Controls, 0x2D6B7B4);
 
         }
 

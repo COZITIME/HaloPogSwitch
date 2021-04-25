@@ -49,6 +49,8 @@ namespace HaloPogSwitch
                     return FlowLayout_EliteEffects;
                 case HaloReachMenuType.firefightvoice:
                     return FlowLayout_FirefightVoice;
+                case HaloReachMenuType.camera:
+                    return FlowLayout_Camera;
                 default:
                     return null;
             }
@@ -88,6 +90,7 @@ namespace HaloPogSwitch
         gender,
         serviceid,
         firefightvoice,
+        camera,
 
     }
 

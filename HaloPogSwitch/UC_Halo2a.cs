@@ -34,13 +34,15 @@ namespace HaloPogSwitch
                 case H2ATab.serviceid:
                     return FlowLayout_ServiceID;
                 case H2ATab.color:
-                    return FlowLayout_Color;
+                    return FlowLayout_Colour;
                 case H2ATab.elitearmor:
                     return FlowLayout_EliteArmor;
                 case H2ATab.species:
                     return FlowLayout_Species;
                 case H2ATab.gender:
                     return FlowLayout_Gender;
+                case H2ATab.camera:
+                    return FlowLayout_Camera;
                 default:
                     return null;
             }
@@ -65,5 +67,6 @@ public enum H2ATab
     species,
     gender,
     serviceid,
+    camera,
 
 }
