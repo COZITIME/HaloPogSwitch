@@ -1,6 +1,6 @@
 Setting Name,Knee Guard
 Module,haloreach.dll
-Adress,0x27E7184
+Adress,0x27E7184+3F20
 Values,
 Value Name,Value
 DEFAULT,0

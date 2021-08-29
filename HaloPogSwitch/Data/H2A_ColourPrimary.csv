@@ -1,6 +1,6 @@
 Setting Name,Primary Colour
 Module,groundhog.dll
-Adress,0x19BF600
+Adress,0x19BF600+2E30
 Values,
 Value Name,Value
 #222121-Steel,0

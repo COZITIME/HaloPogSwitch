@@ -1,6 +1,6 @@
 Setting Name,Left Shoulder
 Module,haloreach.dll
-Adress,0x27E717F
+Adress,0x27E717F+3F20
 Values,
 Value Name,Value
 DEFAULT,0

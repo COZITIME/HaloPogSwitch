@@ -1,6 +1,6 @@
 Setting Name,FireFight Voice
 Module,haloreach.dll
-Adress,0x27E7188
+Adress,0x27E7188+3F20
 Values,
 Value Name,Value
 NOBLE SIX,00

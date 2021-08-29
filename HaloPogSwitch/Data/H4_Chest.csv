@@ -1,6 +1,6 @@
 Setting Name,Chest
 Module,halo4.dll
-Adress,0x2D6ADFF
+Adress,0x2D6ADFF+1D64
 Values,
 Value Name,Value
 RECRUIT,0

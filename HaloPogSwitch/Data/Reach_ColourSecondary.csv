@@ -1,6 +1,6 @@
 Setting Name,Secondary Color
 Module,haloreach.dll
-Adress,0x27E716C
+Adress,0x27E716C+3F20
 Values,
 Value Name,Value
 #646464-Steel,0

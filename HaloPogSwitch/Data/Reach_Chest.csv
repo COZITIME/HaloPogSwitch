@@ -1,6 +1,6 @@
 Setting Name,Chest Piece
 Module,haloreach.dll
-Adress,0x27E7181
+Adress,0x27E7181+3F20
 Values,
 Value Name,Value
 DEFAULT,0

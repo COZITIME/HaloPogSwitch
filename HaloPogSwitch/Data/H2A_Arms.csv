@@ -1,6 +1,6 @@
 Setting Name,Forearms
 Module,groundhog.dll
-Adress,0x19BF61B
+Adress,0x19BF61B+2E30
 Values,
 Value Name,Value
 MARK VI,0
