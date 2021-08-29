@@ -1,6 +1,6 @@
 Setting Name,Utility
 Module,haloreach.dll
-Adress,0x27E7183
+Adress,0x27E7183+3F20
 Values,
 Value Name,Value
 DEFAULT,0

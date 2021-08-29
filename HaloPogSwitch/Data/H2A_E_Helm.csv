@@ -1,6 +1,6 @@
 Setting Name,Elite Helmet
 Module,groundhog.dll
-Adress,0x19BF616
+Adress,0x19BF616+2E30
 Values,
 Value Name,Value
 COMBAT,4

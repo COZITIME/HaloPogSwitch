@@ -1,6 +1,6 @@
 Setting Name,Elite Armor
 Module,haloreach.dll
-Adress,0x27E7185
+Adress,0x27E7185+3F20
 Values,
 Value Name,Value
 MINOR,0

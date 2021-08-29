@@ -1,6 +1,6 @@
 Setting Name,Helmates
 Module,groundhog.dll
-Adress,0x19BF616
+Adress,0x19BF616+2E30
 Values,
 Value Name,Value
 MARK VI,0

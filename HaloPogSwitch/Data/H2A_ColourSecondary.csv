@@ -1,6 +1,6 @@
 Setting Name,Secondary Colour
 Module,groundhog.dll
-Adress,0x19BF604
+Adress,0x19BF604+2E30
 Values,
 Value Name,Value
 #222121-Steel,0

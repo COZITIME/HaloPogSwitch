@@ -1,6 +1,6 @@
 Setting Name,Left Shoulder
 Module,halo4.dll
-Adress,0x2D6AE01
+Adress,0x2D6AE01+1D64
 Values,
 Value Name,Value
 RECRUIT,0

@@ -1,6 +1,6 @@
 Setting Name,Helmets
 Module,halo4.dll
-Adress,0x2D6ADFE
+Adress,0x2D6ADFE+1D64
 Values,
 Value Name,Value
 RECRUIT,0

@@ -135,7 +135,17 @@ namespace HaloPogSwitch
                     {
                         if (Taddress == 0)
                         {
-                            address = Convert.ToInt32(values[1], 16);
+                            string value = values[1];
+                            if (value.Contains("+"))
+                            {
+                                int writeaddress = Convert.ToInt32(value.Split('+')[0], 16);
+                                int updateoffset = Convert.ToInt32(value.Split('+')[1], 16);
+                                address = writeaddress + updateoffset;
+                            }
+                            else
+                            {
+                                address = Convert.ToInt32(values[1], 16);
+                            }
                         }
                         else
                         {

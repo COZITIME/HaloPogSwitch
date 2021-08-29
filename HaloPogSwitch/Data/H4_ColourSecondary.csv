@@ -1,6 +1,6 @@
 Setting Name,Secondary Colour
 Module,halo4.dll
-Adress,0x2D6ADEC
+Adress,0x2D6ADEC+1D64
 Values,
 Value Name,Value
 #222121-Steel,0
