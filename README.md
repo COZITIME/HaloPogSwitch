@@ -3,7 +3,7 @@ Tool for customising your Halo: Reach, Halo 4 and Halo 2: Anniversary armour in 
 
 instructions to update: (this needs to be done per halo game)
 
-0: download the pogswitch source code (the file you will be looking in will be )
+0: download the pogswitch source code (the file you will be looking in will be \HaloPogSwitch\CSVPuller.cs)
 
 1: open the halo game, eg go into custom games
 
