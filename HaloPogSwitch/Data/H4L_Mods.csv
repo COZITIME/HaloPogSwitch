@@ -1,6 +1,6 @@
 Setting Name,Armor Mods
 Module,halo4.dll
-Adress,0x0000000
+Adress,0
 Values,
 Value Name,Value
 sensor,0

@@ -1,6 +1,6 @@
 Setting Name,Armor Abilities
 Module,halo4.dll
-Adress,0x0000000
+Adress,0
 Values,
 Value Name,Value
 Jet Pack,1

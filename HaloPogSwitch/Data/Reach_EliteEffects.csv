@@ -1,6 +1,6 @@
 Setting Name,Elite Effect
 Module,haloreach.dll
-Adress,0x27E7187+3F20
+Adress,13
 Values,
 Value Name,Value
 DEFAULT,0

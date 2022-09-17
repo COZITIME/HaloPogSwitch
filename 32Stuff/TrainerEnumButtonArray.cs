@@ -48,6 +48,7 @@ namespace UI32
             {
                 item.Value.Checked = false;
             }
+            if (buttons.Count > theValue)
             buttons[theValue].Checked = true;
            
 

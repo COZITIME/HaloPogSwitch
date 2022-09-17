@@ -1,6 +1,6 @@
 Setting Name,Visors
 Module,halo4.dll
-Adress,0x2D6ADF0+1D64
+Adress,36
 Values,
 Value Name,Value
 #FEAA00-DEFAULT,00

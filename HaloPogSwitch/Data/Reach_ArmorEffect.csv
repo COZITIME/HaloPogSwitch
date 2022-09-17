@@ -1,6 +1,6 @@
 Setting Name,Armor Effect
 Module,haloreach.dll
-Adress,0x27E7186+3F20
+Adress,14
 Values,
 Value Name,Value
 DEFAULT,0

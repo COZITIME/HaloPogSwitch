@@ -18,6 +18,11 @@ namespace HaloPogSwitch
     class CSVPuller
     {
 
+        public static long haloreachoffset = 0x2A218C4;
+        public static long halo4offset = 0x30E88B4;
+        public static long halo2Aoffset = 0x1B0EEBC;
+
+
         public static UI32.TrainerEnumButton GetTrainerEnumFromFile(string file)
         {
 
@@ -118,6 +123,9 @@ namespace HaloPogSwitch
             long address = 0;
             ModuleType moduleType = ModuleType.baseModule;
 
+            bool is_reach = fileName.Substring(0,5) == "Reach";
+            bool is_4 = fileName.Substring(0,2) == "H4";
+            bool is_2A = fileName.Substring(0,3) == "H2A";
 
 
             using (var reader = new StreamReader(file))
@@ -136,15 +144,19 @@ namespace HaloPogSwitch
                         if (Taddress == 0)
                         {
                             string value = values[1];
-                            if (value.Contains("+"))
+
+                            address = Convert.ToInt32(values[1]);
+                            if (is_reach)
                             {
-                                int writeaddress = Convert.ToInt32(value.Split('+')[0], 16);
-                                int updateoffset = Convert.ToInt32(value.Split('+')[1], 16);
-                                address = writeaddress + updateoffset;
+                                address = haloreachoffset - address;
                             }
-                            else
+                            else if (is_4)
                             {
-                                address = Convert.ToInt32(values[1], 16);
+                                address = halo4offset - address;
+                            }
+                            else if (is_2A)
+                            {
+                                address = halo2Aoffset - address;
                             }
                         }
                         else
@@ -379,7 +391,7 @@ namespace HaloPogSwitch
             LoadOut.LoudoutUIData UIData = new LoadOut.LoudoutUIData(GetWeaponData(), GetByteNames(@"H4L_Ability.csv"), GetByteNames(@"H4L_Mods.csv"), GetByteNames(@"H4L_Grenade.csv"));
             
 
-            LoadoutAdressSetter trainerUpdater = new LoadoutAdressSetter(new AdressGetter(ModuleType.halo4, 0));
+            LoadoutAdressSetter trainerUpdater = new LoadoutAdressSetter(new AdressGetter(ModuleType.halo4, loadOutOffset));
 
 
 

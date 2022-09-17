@@ -63,8 +63,16 @@ namespace HaloPogSwitch.Stuff
 
 
 
-
-        LoadoutBaseAddresses baseAddresses = new LoadoutBaseAddresses(0x2D654D0 + 0x6310, 0x2D65448 + 0x6310, 0x2D65444 + 0x6310, 0x2D65430 + 0x6310, 0x2D65434 + 0x6310, 0x2D65438 + 0x6310, 0x2D6543C + 0x6310, 0x2D65440 + 0x6310, 0x2D65441 + 0x6310);
+        // TODO: fix these addresses, why are they like this??
+        LoadoutBaseAddresses baseAddresses = new LoadoutBaseAddresses(0x2D654D0 + 0x6310, 
+                                                                      0x2D65448 + 0x6310, 
+                                                                      0x2D65444 + 0x6310, 
+                                                                      0x2D65430 + 0x6310, 
+                                                                      0x2D65434 + 0x6310, 
+                                                                      0x2D65438 + 0x6310, 
+                                                                      0x2D6543C + 0x6310, 
+                                                                      0x2D65440 + 0x6310, 
+                                                                      0x2D65441 + 0x6310);
 
 
         public void IndexChanged(int val)

@@ -5,10 +5,10 @@ namespace HaloPogSwitch.Stuff
 {
     public class AdressGetter
     {
-        public int adress;
+        public long adress;
         public ModuleType moduleType;
 
-        public AdressGetter(ModuleType moduleType, int adress)
+        public AdressGetter(ModuleType moduleType, long adress)
         {
 
             this.moduleType = moduleType;
@@ -54,7 +54,7 @@ namespace HaloPogSwitch.Stuff
            
 
 
-            return mod + adress;
+            return mod + (int)adress;
         }
 
 

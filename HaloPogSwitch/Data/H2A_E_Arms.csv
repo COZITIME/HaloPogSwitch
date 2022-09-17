@@ -1,6 +1,6 @@
 Setting Name,Elite Arms
 Module,groundhog.dll
-Adress,0x19BF61B+2E30
+Adress,17
 Values,
 Value Name,Value
 COMBAT,3

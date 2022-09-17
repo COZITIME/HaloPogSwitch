@@ -1,6 +1,6 @@
 Setting Name,Elite Chest
 Module,groundhog.dll
-Adress,0x19BF617+2E30
+Adress,21
 Values,
 Value Name,Value
 COMBAT,4
